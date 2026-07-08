@@ -15,25 +15,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Grandiflora+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- 해더 영역 -->
     <div class ="container">
+      <!-- 해더 영역 -->
     <header class ="header">
+      <!-- 모바일 검색창 체크 박스 -->
+      <input type="checkbox" id="MobileSearch" class="mobile-checkbox">
+      <!-- 햄배거 버튼 체크박스 -->
+      <input type="checkbox" id = "CheckBox" class = "header-hamburger">
       <div class ="hamburger-container">
-        <input type="checkbox" id = "CheckBox" class = "header-hamburger">
         <label for="CheckBox" class = "hamburger-label">☰</label>
         <img src="./images/main/Logo.png" alt="로고" class = "logo-img">
       </div>
-      <!-- 헤더 검색 부분 -->
+      <!-- 헤더 검색 컨테이너 -->
       <div class ="search-container"> 
+        <label for="MobileSearch" class="back-btn">←</label>
         <input type="text" class ="header-search" placeholder="Search">
         <button class = "search-btn">
           <img src="./images/main/btn-search.png" alt="검색버튼">
         </button>
-        <img src="./images/main/btn-mic.png" alt="마이크버튼">
+        <!-- 마이크 버튼 -->
+        <div class = "header-mic-container">
+          <img src="./images/main/btn-mic.png" alt="마이크버튼">
+        </div> 
       </div>
-      <!-- 헤더 네비 부분 -->
+
+      <!-- 헤더 네비 영역 -->
       <nav class ="header-nav">
         <div class="header-nav-container">
+          <!-- 모바일용 검색창 -->
+          <label for="MobileSearch" class = "mobile-search-label">
+            <img src="./images/main/btn-search.png" alt="검색버튼">
+          </label>
+          
+          <!-- 헤더-오른쪽-네비 -->
           <img src="./images/main/btn-video.png" alt="비디오버튼" class = "header-profile header-play">
           <img src="./images/main/btn-apps.png" alt="앱버튼" class = "header-profile">
           <img src="./images/main/btn-notifications.png" alt="알림버튼" class = "header-profile">
@@ -75,7 +89,7 @@
         </nav>
       </div>
 
-      <!-- 비디오 카드 -->
+      <!-- 메인 내 콘텐츠(비디오카드) -->
       <section class = "video-list">
         <article class ="video-card">
           <img src="./images/main/img-youtube.png" alt="유튜브" class = "video-card-img">
@@ -271,7 +285,7 @@
       </section>
     </main>
 
-    <!-- 왼쪽 사이드 영역 -->
+    <!-- 왼쪽 사이드바 영역 -->
     <aside class = "aside">
       <nav class ="aside-nav">
         <section class ="aside-nav-container">
