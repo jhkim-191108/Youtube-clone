@@ -1,0 +1,106 @@
+:root {
+  --bg: #212121;
+  --bg-2: #000000;
+  --bg-3: #181818;
+  --bg-4: #303030;
+  --text: #ffffff;
+  --text-2: #aaaaaa;
+  --accent: #cc0000;
+}
+
+body {
+  background-color: var(--bg-3);
+}
+
+.video-main {
+  display: flex;
+  gap: 24px;
+  max-width: 1114px;
+  padding: 0 24px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.video-content {
+  flex: 640 1 640px;
+}
+
+.video-bx iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 비디오 :: 관련 비디오 리스트 */
+.video-list {
+  flex: 402 1 402px;
+}
+
+.video-list > input {
+  display: none;
+}
+
+.video-tab {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.video-tab label {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 32px;
+  border: 0.3px solid #aaaaaa;
+  background: var(--bg-4);
+  cursor: pointer;
+}
+
+.video-list .video-tab-content {
+  display: none;
+}
+
+.video-list > input#all:checked ~ .video-tab label[for="all"],
+.video-list > input#from:checked ~ .video-tab label[for="from"] {
+  color: #303030;
+  background-color: #fff;
+  border-color: #ffffff;
+}
+
+.video-list > input#all:checked ~ .video-list-content #all,
+.video-list > input#from:checked ~ .video-list-content #from {
+  display: block;
+}
+
+.video-bx {
+  display: flex;
+  gap: 8px;
+}
+
+.video-bx .video-img {
+  position: relative;
+  flex: 0 0 168px;
+  height: 94px;
+  background-color: #444;
+}
+
+.video-bx .video-img .time {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  display: inline-block;
+  font-size: 0.625rem;
+  color: var(--text);
+  padding: 3px 4px;
+  background-color: var(--bg-2);
+}
+
+.video-bx .video-info {
+  padding: 7px 0;
+}
+
+.video-bx .video-info .title {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: var(--text);
+}

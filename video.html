@@ -11,5 +11,178 @@
     <link rel="stylesheet" href="./css/video.css" />
     <title>First Class Youtube - Video</title>
   </head>
-  <body></body>
+  <body>
+    <main class="video-main">
+      <div class="video-content">
+        <!-- 비디오 :: 비디오 영역 -->
+        <div class="video-bx">
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/prkygi2am8E?si=ZL3-Yq1isMjuoIFL"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- 비디오 :: 제목 -->
+        <header class="video-title">
+          <p class="title">Blind Woodturner: Turning passion into fine art</p>
+          <div class="video-info">
+            <div class="video-info-date">576,969 views . Oct 8, 2021</div>
+            <div class="video-info-btns">
+              <button class="btn-like">1.7K</button>
+              <button class="btn-dislike">632</button>
+              <button class="btn-share">SHARE</button>
+              <button class="btn-save">SAVE</button>
+              <button class="btn-more"></button>
+            </div>
+          </div>
+        </header>
+
+        <!-- 비디오 :: 유저정보 -->
+        <div class="video-user">
+          <div class="user-img"></div>
+          <div class="user-info">
+            <div class="user-info-top">
+              <div class="user-name">
+                <strong>Marcus Levin</strong>
+                <p>1.2M subscribers</p>
+              </div>
+              <div class="user-btn">
+                <a href="#" class="btn-subscribes">Subscribes</a>
+              </div>
+            </div>
+            <div class="video-info-bottom">
+              <p>Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
+              <a href="#">show more</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 비디오 :: 댓글 -->
+        <div class="video-comments">
+          <div class="video-comments-top">
+            <p>286 Comments</p>
+            <div class="video-sort">
+              <button>sort by</button>
+              <div class="video-sort-list">
+                <ul>
+                  <li>
+                    <strong>인기순</strong>
+                    추천 댓글 표시
+                  </li>
+                  <li>
+                    <strong>최신순</strong>
+                    스팸 가능성이 있는 댓글을 포함하여 최근 댓글 표시
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="video-comments-bottom">
+            <div class="video-comments-input">
+              <div class="video-comments-img"></div>
+              <div class="video-comments-info">
+                <input type="text" placeholder="Add a public comment..." />
+              </div>
+            </div>
+            <div class="video-comments-list">
+              <div class="video-comments-bx">
+                <div class="video-comments-img"></div>
+                <div class="video-comments-info">
+                  <p class="name">James Gouse <span> 8 hours ago</span></p>
+                  <p class="comments">Wow, world is full of different skills</p>
+                  <div class="video-comments-btns">
+                    <button class="like">3</button>
+                    <button class="dislike"></button>
+                    <button class="like">REPLY</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 비디오 :: 댓글 더보기 -->
+              <div class="video-comments-more">
+                <input type="checkbox" id="btnMore" />
+                <div class="comments-more">
+                  <div class="video-comments-bx">
+                    <div class="video-comments-img"></div>
+                    <div class="video-comments-info">
+                      <p class="name">James Gouse <span> 8 hours ago</span></p>
+                      <p class="comments">Wow, world is full of different skills</p>
+                      <div class="video-comments-btns">
+                        <button class="like">3</button>
+                        <button class="dislike"></button>
+                        <button class="like">REPLY</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video-comments-bx">
+                    <div class="video-comments-img"></div>
+                    <div class="video-comments-info">
+                      <p class="name">James Gouse <span> 8 hours ago</span></p>
+                      <p class="comments">Wow, world is full of different skills</p>
+                      <div class="video-comments-btns">
+                        <button class="like">3</button>
+                        <button class="dislike"></button>
+                        <button class="like">REPLY</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label for="btnMore">댓글 <span class="open">더보기</span><span class="close">숨기기</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 비디오 :: 관련 비디오 리스트 -->
+      <aside class="video-list">
+        <!-- 비디오 :: 리스트 탭 -->
+        <input type="radio" name="videoListTab" id="all" checked />
+        <input type="radio" name="videoListTab" id="from" />
+        <div class="video-tab">
+          <label for="all">All</label>
+          <label for="from">From Marcus Levin </label>
+        </div>
+        <!-- 비디오 :: 리스트 내용 -->
+        <div class="video-list-content">
+          <!-- 비디오 :: all 리스트 -->
+          <div class="video-tab-content" id="all">
+            <div class="video-bx">
+              <div class="video-img">
+                <span class="time">23:45</span>
+              </div>
+              <div class="video-info">
+                <p class="title">Ep 6: Living to Serve | SEARCH ON</p>
+                <p class="maker">James Gouse</p>
+                <p class="info">1M views . 3 years ago</p>
+              </div>
+            </div>
+          </div>
+          <!-- 비디오 :: from 리스트 -->
+          <div class="video-tab-content" id="from"></div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- 공통 :: 모달 -->
+    <div id="subscribeModal" class="modal-layout">
+      <div class="modal-layout-inner">
+        <a href="#" class="modal-bg"></a>
+        <div class="modal-content">
+          <div class="subscribe-content">
+            <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
+            <div class="subscribe-btn"></div>
+            <a href="#">취소</a>
+            <a href="#" class="unsubscribe">구독 취소</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
