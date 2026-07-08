@@ -13,8 +13,13 @@ body {
 }
 
 .video-main {
-  display: flex;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 60% 37.7%;
+  grid-template-areas:
+    "video list"
+    "comment list";
+  column-gap: 24px;
+  row-gap: 0;
   max-width: 1114px;
   padding: 0 24px;
   margin: 0 auto;
@@ -23,15 +28,22 @@ body {
 }
 
 .video-content {
-  flex: 640 1 640px;
+  grid-area: video;
 }
 
-.video-bx iframe {
-  width: 100%;
-  max-width: 100%;
+.video-list {
+  grid-area: list;
+}
+
+.video-comments {
+  grid-area: comment;
 }
 
 /* 비디오 :: 비디오 영역 */
+.video-iframe-bx iframe {
+  width: 100%;
+  max-width: 100%;
+}
 
 /* 비디오 :: 제목 */
 .video-title {
@@ -40,9 +52,8 @@ body {
 
 .video-title .title {
   font-size: 1.125rem;
+  line-height: 1.5;
   color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .video-title .video-title-info {
@@ -74,6 +85,11 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.video-title-info .video-info-btns button:hover {
+  color: var(--text-2);
 }
 
 .video-title-info .video-info-btns button img {
@@ -94,6 +110,13 @@ body {
   height: 48px;
   border-radius: 50%;
   background: var(--bg-2);
+  overflow: hidden;
+}
+
+.video-user .user-img-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-user .user-info-top {
@@ -106,22 +129,58 @@ body {
 
 .video-user .user-name .name {
   font-size: 0.875rem;
+  line-height: 1.2;
   color: var(--text);
 }
 
 .video-user .user-name .subscribers {
   font-size: 0.75rem;
+  line-height: 1.2;
   color: var(--text-2);
 }
 
-.video-user .user-btn a {
+.video-user .user-btn .btn-subscribes {
+  position: relative;
+  display: inline-block;
+  background-color: var(--accent);
+  border-radius: 2px;
+  padding: 10px 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.video-user .user-btn .btn-subscribes::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.video-user .user-btn .btn-subscribes:hover::before {
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+}
+
+.video-user .user-btn .btn-subscribes span {
+  position: relative;
+  z-index: 1;
   font-size: 0.875rem;
   color: var(--text);
   font-weight: 700;
   text-transform: uppercase;
-  background-color: var(--accent);
-  border-radius: 2px;
-  padding: 10px 16px;
+  transition: all 0.3s;
+}
+
+.video-user .user-btn .btn-subscribes:hover span {
+  color: var(--accent);
 }
 
 .video-user .video-info-bottom p {
@@ -165,6 +224,11 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px 0;
+  transition: color 0.3s;
+}
+
+.video-comments .video-sort:hover button {
+  color: var(--text-2);
 }
 
 .video-comments .video-sort button img {
@@ -238,6 +302,13 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: var(--bg-2);
+  overflow: hidden;
+}
+
+.video-comments-img .video-img-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-comments-info {
@@ -281,6 +352,11 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.video-comments-btns button:hover {
+  color: var(--text);
 }
 
 /* 비디오 :: 댓글 더보기 */
@@ -314,15 +390,11 @@ body {
 }
 
 /* 비디오 :: 관련 비디오 리스트 */
-.video-list {
-  flex: 402 1 402px;
-}
-
+/* 비디오 :: 리스트 탭 */
 .video-list > input {
   display: none;
 }
 
-/* 비디오 :: 리스트 탭 */
 .video-tab {
   display: flex;
   gap: 8px;
@@ -338,6 +410,11 @@ body {
   border: 0.3px solid #aaaaaa;
   background: var(--bg-4);
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.video-tab label:hover {
+  background: var(--bg-3);
 }
 
 .video-list .video-tab-content {
@@ -358,6 +435,7 @@ body {
 
 /* 비디오 :: 리스트 내용 */
 .video-bx {
+  position: relative;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -365,8 +443,26 @@ body {
   cursor: pointer;
 }
 
+.video-bx::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-4);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.video-bx:hover::before {
+  opacity: 1;
+  transform: scale(1.02, 1.08);
+}
+
 .video-bx .video-img {
   position: relative;
+  z-index: 1;
   flex: 0 0 168px;
   height: 94px;
   background-color: #444;
@@ -388,6 +484,8 @@ body {
 }
 
 .video-bx .video-info {
+  position: relative;
+  z-index: 1;
   padding: 7px 24px 7px 0;
 }
 
@@ -485,4 +583,62 @@ body {
 
 .subscribe-btn a.unsubscribe {
   color: #fe2a3e;
+}
+
+/* 반응형 :: Tablet */
+@media (max-width: 1024px) {
+  .video-main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "video"
+      "list"
+      "comment";
+  }
+}
+
+/* 반응형 :: Mobile */
+@media (max-width: 768px) {
+  /* 비디오 :: 제목 */
+  .video-title .video-title-info {
+    display: block;
+  }
+
+  .video-title-info .video-info-btns {
+    margin-top: 8px;
+  }
+
+  /* 비디오 :: 관련 비디오 리스트 */
+  .video-list {
+    margin-top: 24px;
+  }
+
+  .video-list > input#all:checked ~ .video-list-content #all,
+  .video-list > input#from:checked ~ .video-list-content #from {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .video-bx {
+    flex-direction: column;
+    width: calc(50% - 5px);
+  }
+
+  .video-bx .video-img {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .video-bx .video-img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 비디오 :: 댓글 */
+  .video-comments .video-sort-list {
+    width: 200px;
+  }
 }
