@@ -3,13 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
+    <meta
+      name="description"
+      content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트"
+    />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
-    <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
-    <!-- reset css -->
+    <meta
+      name="keywords"
+      content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트"
+    />
+    <!--- reset css --->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/channel.css" />
     <title>First Class Youtube - Channel</title>
   </head>
-  <body></body>
+  <body>
+    <!-- ===================== 채널 배너 ===================== -->
+    <main class="channel">
+      <!-- 채널 :: 커버 이미지 -->
+      <section class="channel-banner">
+        <img src="./images/img/channel-banner.jpg" alt="채널 커버 이미지" />
+      </section>
+
+      <!-- ===================== 채널 정보 ===================== -->
+      
+      <section class="channel-cover">
+        <!-- 채널 :: 프로필 -->
+        <div class="channel-title">
+     
+          <img
+            src="./images/img/User-Avatar.png"
+            alt="Marcus Levin 프로필 이미지"
+          />
+          <div class="channel-profile">
+            <h1 class="channel-name">Marcus Levin</h1>
+            <p class="channel-subscribers">1.2M subscribers</p>
+          </div>
+        </div>
+        
+        <!-- 채널 :: 구독자 수 -->
+       
+      </section>
+
+      <!-- ===================== 채널 :: 메뉴 ===================== -->
+      <nav class="channel-toolbar">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">VIDEOS</a></li>
+          <li><a href="#">PLAYLISTS</a></li>
+          <li><a href="#">COMMUNITY</a></li>
+          <li><a href="#">CHANNELS</a></li>
+          <li><a href="#">ABOUT</a></li>
+        </ul>
+        <button type="button" class="channel-search-btn">🔍</button>
+      </nav>
+      <!-- ===================== 채널 :: 왼쪽 유튜브 영상 ===================== -->
+      <section class="small-video">
+       
+        <div class="player">
+          <iframe
+            class="youtube-player"
+            src="https://www.youtube.com/embed/jqlDfEeY0co"
+            title="Blind Woodturner: Turning passion into fine art"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <!-- 채널 :: 오른쪽 | 영상 설명 -->
+        <div class="video-description">
+          <h2 class="video-title">
+            Blind Woodturner: Turning passion into fine art
+          </h2>
+          <p class="video-time">576,969 views · 3 weeks ago</p>
+          <p class="video-desc">
+            Chris Fisher, also known as the Blind Woodturner, learned his craft
+            by listening to hundreds of hours of YouTube videos and
+            experimenting in his workshop. Now he’s a YouTube creator himself,
+            sells his products worldwide, and does demonstrations all around the
+            country.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== 영상 섹션 1 ===================== -->
+
+      <section class="playlist">
+        <!-- 섹션 1 :: 제목 -->
+        <div class="playlist-header">
+          <h2 class="playlist-title">Search On '21</h2>
+          <!-- PLAY ALL -->
+          <button type="button" class="play-all-btn">▶ PLAY ALL</button>
+        </div>
+        <!-- 섹션 1 :: 영상 카드 목록 -->
+        <div class="playlist-content">
+          <!-- 섹션 1 :: 영상 카드 -->
+          <!-----------------------------------< 영상 01 >---------------------------------->
+          <article class="video-card">
+          
+            <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 02 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 03 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 04 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 05 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== 영상 섹션 2 ===================== -->
+      <section class="playlist">
+        <!-- 섹션 2 ::  제목 -->
+        <div class="playlist-header">
+          <h2 class="playlist-title">Search On '21</h2>
+          <!-- PLAY ALL -->
+          <button type="button" class="play-all-btn">▶ PLAY ALL</button>
+        </div>
+        <!-- 섹션 2 :: 영상 카드 목록 -->
+        <div class="playlist-content">
+          <!-- 섹션 2 :: 영상 카드 -->
+          <!-----------------------------------< 영상 01 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 02 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 03 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 04 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+          <!-----------------------------------< 영상 05 >---------------------------------->
+          <article class="video-card">
+            <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+            <h3 class="video-card-title">
+              Lorem ipsum dolor sit amet, consecte...
+            </h3>
+            <p class="video-channel">Marcus Levin</p>
+            <p class="video-meta">329K views · 1 month ago</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
