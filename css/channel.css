@@ -1,0 +1,31 @@
+:root {
+  --bg: #212121;
+  --bg-2: #000000;
+  --bg-3: #181818;
+  --bg-4: #303030;
+  --text: #ffffff;
+  --text-2: #aaaaaa;
+  --accent: #cc0000;
+}
+
+/* ===================== 기본 설정 ===================== */
+
+body {
+    background-color: var(--bg-2);
+    color: var(--text);
+    font-family: Roboto, sans-serif; 
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===================== 전체 채널 ===================== */
+
