@@ -1,3 +1,7 @@
+/*=======================
+1.루트
+=======================*/
+
 :root {
     --bg: #212121;
     --bg-2: #000000;
@@ -7,15 +11,22 @@
     --accent: #cc0000;
 }
 
+/*=======================
+2.컨테이너
+=======================*/
+
 .container{
     display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 64px 1fr;
-    height: 100vh;
+    grid-template-columns: 240px minmax(0,1fr);
+    grid-template-rows: 64px minmax(0, 1fr);
     grid-template-areas: 
         "header header"
         "aside main";
 }
+
+/*=======================
+3.헤더
+=======================*/
 
 .header{
     position: fixed;
@@ -28,9 +39,12 @@
     grid-area: header;
     width: 100%;
     height: 64px;
-    
-    
+    z-index: 10;
 }
+
+/*=======================
+4.햄버거
+=======================*/
 
 .hamburger-container{
     display: flex;
@@ -57,9 +71,30 @@
     display: none;
 }
 
+.container:has(#CheckBox:checked){
+    grid-template-columns: 70px 1fr;
+}
+.container:has(#CheckBox:checked) .aside{
+    width: 70px;
+}
+
+.container:has(#CheckBox:checked) .aside h2,
+.container:has(#CheckBox:checked) .aside p
+{
+    display: none;
+}
+
+/*=======================
+5.로고
+=======================*/
+
 .logo-img{
     cursor: pointer;
 }
+
+/*=======================
+6.검색창
+=======================*/
 
 .search-container{
     display: flex;
@@ -77,6 +112,16 @@
     padding-left: 4px;
 }
 
+.back-btn{
+    color: var(--text);
+    font-weight: 700;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+.back-btn:hover{
+    background: #383838;
+}
 .search-btn{
     background-color: #303030;
     width: 64px;
@@ -88,37 +133,72 @@
     cursor: pointer;
 
 }
-
-.search-container > img{
-    background-color: #121212;
-    border-radius: 50%;
-    margin-left: 4px;
-    padding: 8px;
-    cursor: pointer;
-    margin-left: 3px;
+.mobile-search-container{
+    display: none;
 }
+
+.mobile-checkbox{
+    display: none;
+}
+.mobile-search-label{
+    display: none;
+}
+.mobile-search-label img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.mobile-search-label:hover{
+    background: #383838;
+    
+}
+
 .search-container > img:hover{
     background: #303030;
 }
+
+/*=======================
+7.마이크
+=======================*/
+
+.header-mic-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: var(--bg-2);
+    border-radius: 50%;
+}
+
+.header-mic-container img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/*=======================
+8.헤더 네비
+=======================*/
+
 .header-nav{
     width: 208px;
-    height: 40px;
-    
+    height: 40px;  
 }
 .header-nav-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
     margin-right: 30px;
 }
 
 .header-profile{
-    
-    border-radius: 30%;
     cursor: pointer;
-    
-}
-.header-nav-profile{
     border-radius: 50%;
 }
 
@@ -126,12 +206,16 @@
     background: gray;
 }
 
+/*=======================
+9.사이드바 
+=======================*/
+
 .aside{
     grid-area: aside;
     width: 240px;
     height: calc(100vh - 64px);
     background: var(--bg);
-    position: fixed;
+    position:fixed;
     top: 64px;
     left:0;
     overflow-y: auto;
@@ -197,16 +281,31 @@
     font-weight: 600;
 }
 
+.aside-nav-item img{
+    width: 22px;
+    height: 22px;
+}
+
 .user-avatar{
     border-radius: 50%;
 }
 
+/*=======================
+10.메인
+=======================*/
+
 .main{
     grid-area: main;
     background: var(--bg-2);
-    width: 100%;
-
+    min-width: 0;
+    min-height: calc(100vh - 64px);
+    
 }
+
+/*=======================
+11.메인 네비
+=======================*/
+
 .main-nav{
     background: var(--bg);
     height: 58px;
@@ -230,11 +329,6 @@
     
 }
 
-.aside-nav-item img{
-    width: 22px;
-    height: 22px;
-}
-
 .item{
     flex-shrink: 0;
     color: var(--text);
@@ -251,11 +345,14 @@
     color: #000000;
 }
 
+/*=======================
+12.비디오 카드
+=======================*/
+
 .video-list{
     display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
-    row-gap: 40px;
-    column-gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px 16px;
     padding: 24px;
 }
 
@@ -265,9 +362,10 @@
 }
 
 .video-card-img{
-    display: block;
-    width: 100%;
-    border-radius: 12px;
+    width:100%;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
+    border-radius:12px;
 }
 
 .avatar{
@@ -306,6 +404,141 @@
     border-radius: 50%;
 }
 
+/*=======================
+13. 테블릿
+=======================*/
+
+@media(max-width:1024px){
+
+    .search-container{
+        width: 360px;
+    }
+    .mic-container{
+        margin-left: 10px;
+    }
+    .container{
+        grid-template-columns:70px minmax(0,1fr);
+    }
+
+    .aside{
+        width:70px;
+        position:fixed;
+        z-index:10;
+    }
+
+    .aside h2,
+    .aside p{
+        display:none;
+    }
+
+    .container:has(#CheckBox:checked) .aside{
+        width:240px;
+        transition:width .3s;
+    }
+
+    .container:has(#CheckBox:checked) .aside h2,
+    .container:has(#CheckBox:checked) .aside p{
+        display:block;
+    }
+
+    .container:has(#CheckBox:checked) .aside-nav-item{
+        justify-content:flex-start;
+        padding:0 24px;
+        gap:24px;
+    }
+
+    .container:has(#CheckBox:checked) .main::after{
+        content:"";
+        position:fixed;
+        top:64px;
+        left:0;
+        width:100%;
+        height:calc(100vh - 64px);
+        background:rgba(0,0,0,0.5);
+        z-index: 5;
+    }
+
+}
+
+/*=======================
+14.모바일
+=======================*/
+
+@media(max-width:768px){
+
+    .container{
+        grid-template-columns:1fr;
+        grid-template-areas:
+            "header"
+            "main";
+    }
+    
+    .aside{
+        display:block;
+        width:240px;
+        top:64px;
+        left:0;
+        height:calc(100vh - 64px);
+        transform:translateX(-100%);
+        transition:transform .3s ease;
+    }
+
+    .container:has(#CheckBox:checked){
+        grid-template-columns: 1fr;
+    }
+
+    .container:has(#CheckBox:checked) .aside{
+        transform:translateX(0);
+    }
+
+    .container:has(#CheckBox:checked) .aside h2,
+    .container:has(#CheckBox:checked) .aside p{
+        display:block;
+    }
+
+    .search-container{
+        display: none;
+    }
+    
+    .mobile-search-label{
+        display: block;
+    }
+
+    #MobileSearch:checked ~ .header-nav{
+        display: none;
+    }
+
+    #MobileSearch:checked ~ .hamburger-container{
+        display: none;
+    }
+
+    #MobileSearch:checked ~ .search-container{
+        display:flex;
+        width:100%;
+        height:100%;
+        align-items:center;
+    }
+
+    .back-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        margin-right: 24px;
+        margin-left: 12px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+    }
+
+    .header-mic-container{
+        margin-right: 12px;
+    }
+
+}
 
 
 
