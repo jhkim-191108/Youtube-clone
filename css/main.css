@@ -6,9 +6,11 @@
     --bg: #212121;
     --bg-2: #000000;
     --bg-3: #181818;
+    --bg-4: #303030;
     --text: #ffffff;
     --text-2: #aaaaaa;
     --accent: #cc0000;
+    --hover: #717171;
 }
 
 /*=======================
@@ -62,7 +64,7 @@
 }
 
 .hamburger-label:hover{
-    background-color: gray;
+    background-color: var(--hover);
     border-radius: 50%;
 }
 
@@ -103,7 +105,8 @@
     height: 100%;
 }
 .header-search{
-    background: #121212;
+    background: #121212;  
+    /* root 없음 */
     width: 100%;
     height: 70%;
     color: #AAAAAA;
@@ -120,10 +123,10 @@
     cursor: pointer;
 }
 .back-btn:hover{
-    background: #383838;
+    background: var(--hover);
 }
 .search-btn{
-    background-color: #303030;
+    background-color: var(--bg-4);
     width: 64px;
     height: 40px;
     border: none;
@@ -132,6 +135,10 @@
     margin-left: 2px;
     cursor: pointer;
 
+}
+
+.search-btn:hover{
+    background: var(--hover);
 }
 .mobile-search-container{
     display: none;
@@ -151,12 +158,12 @@
 }
 
 .mobile-search-label:hover{
-    background: #383838;
+    background: var(--hover);
     
 }
 
 .search-container > img:hover{
-    background: #303030;
+    background: var(--hover);
 }
 
 /*=======================
@@ -179,6 +186,10 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+
+.header-mic-container:hover{
+    background: var(--hover);
 }
 
 /*=======================
@@ -230,7 +241,7 @@
 }
 
 .aside::-webkit-scrollbar-thumb{
-    background: #717171;
+    background: var(--hover);
     border-radius: 10px;
 }
 
@@ -268,7 +279,7 @@
 
 .aside-nav-container{
     padding: 12px 0;
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid var(--hover);
 }
 
 
@@ -326,7 +337,6 @@
     height: 100%;
     align-items: center;
     width: max-content;
-    
 }
 
 .item{
@@ -334,15 +344,20 @@
     color: var(--text);
     border: 0.3px solid #AAAAAA;
     padding: 8px 12px;
-    background: #303030;
+    background: var(--bg-4);
     border-radius: 20px;
     cursor: pointer;
     
 }
 
 .item.active{
-    background:var(--text);
-    color: #000000;
+    background:#FFFFFF;
+    color: #030303;
+    
+}
+
+.item:hover{
+    background: var(--hover);
 }
 
 /*=======================
@@ -360,12 +375,26 @@
     width: 100%;
     
 }
+.video-relative{
+    position: relative;
+}
 
 .video-card-img{
     width:100%;
     aspect-ratio:16 / 9;
     object-fit:cover;
     border-radius:12px;
+}
+
+.play-time{
+    position: absolute;
+    background: var(--bg-2);
+    color: var(--text);
+    bottom: 10px;
+    right: 10px;
+    padding: 5px;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .avatar{
@@ -526,12 +555,12 @@
 
         width: 40px;
         height: 40px;
-
+        padding: 0 7px;
         margin-right: 24px;
         margin-left: 12px;
         cursor: pointer;
         color: white;
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .header-mic-container{
