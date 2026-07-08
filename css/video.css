@@ -368,6 +368,7 @@ body {
 .video-comments-more label {
   font-size: 0.75rem;
   color: var(--text-2);
+  cursor: pointer;
 }
 
 .video-comments-more label .close {
