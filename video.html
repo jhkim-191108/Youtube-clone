@@ -31,29 +31,31 @@
         <!-- 비디오 :: 제목 -->
         <header class="video-title">
           <p class="title">Blind Woodturner: Turning passion into fine art</p>
-          <div class="video-info">
+          <div class="video-title-info">
             <div class="video-info-date">576,969 views . Oct 8, 2021</div>
             <div class="video-info-btns">
-              <button class="btn-like">1.7K</button>
-              <button class="btn-dislike">632</button>
-              <button class="btn-share">SHARE</button>
-              <button class="btn-save">SAVE</button>
-              <button class="btn-more"></button>
+              <button class="btn-like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 1.7K</button>
+              <button class="btn-dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /> 632</button>
+              <button class="btn-share"><img src="./images/video/btn-share.svg" alt="공유" /> SHARE</button>
+              <button class="btn-save"><img src="./images/video/btn-save.svg" alt="저장" /> SAVE</button>
+              <button class="btn-more"><img src="./images/video/btn-more.svg" alt="더보기" /></button>
             </div>
           </div>
         </header>
 
         <!-- 비디오 :: 유저정보 -->
         <div class="video-user">
-          <div class="user-img"></div>
+          <div class="user-img">
+            <div class="user-img-inner"></div>
+          </div>
           <div class="user-info">
             <div class="user-info-top">
               <div class="user-name">
-                <strong>Marcus Levin</strong>
-                <p>1.2M subscribers</p>
+                <p class="name">Marcus Levin</p>
+                <p class="subscribers">1.2M subscribers</p>
               </div>
               <div class="user-btn">
-                <a href="#" class="btn-subscribes">Subscribes</a>
+                <a href="#subscribeModal" class="btn-subscribes">Subscribes</a>
               </div>
             </div>
             <div class="video-info-bottom">
@@ -68,37 +70,60 @@
           <div class="video-comments-top">
             <p>286 Comments</p>
             <div class="video-sort">
-              <button>sort by</button>
+              <button><img src="./images/video/btn-sort.svg" alt="리스트 정렬" /> sort by</button>
               <div class="video-sort-list">
                 <ul>
                   <li>
-                    <strong>인기순</strong>
-                    추천 댓글 표시
+                    <a href="#">
+                      <strong>인기순</strong>
+                      추천 댓글 표시
+                    </a>
                   </li>
                   <li>
-                    <strong>최신순</strong>
-                    스팸 가능성이 있는 댓글을 포함하여 최근 댓글 표시
+                    <a href="#">
+                      <strong>최신순</strong>
+                      스팸 가능성이 있는 댓글을 포함하여 최근 댓글 표시
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="video-comments-bottom">
-            <div class="video-comments-input">
-              <div class="video-comments-img"></div>
+            <div class="video-comments-bx video-comments-input">
+              <div class="video-comments-img">
+                <div class="video-img-inner"></div>
+              </div>
               <div class="video-comments-info">
                 <input type="text" placeholder="Add a public comment..." />
               </div>
             </div>
             <div class="video-comments-list">
               <div class="video-comments-bx">
-                <div class="video-comments-img"></div>
+                <div class="video-comments-img">
+                  <div class="video-img-inner"></div>
+                </div>
                 <div class="video-comments-info">
                   <p class="name">James Gouse <span> 8 hours ago</span></p>
                   <p class="comments">Wow, world is full of different skills</p>
                   <div class="video-comments-btns">
-                    <button class="like">3</button>
-                    <button class="dislike"></button>
+                    <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                    <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
+                    <button class="like">REPLY</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="video-comments-bx">
+                <div class="video-comments-img">
+                  <div class="video-img-inner"></div>
+                </div>
+                <div class="video-comments-info">
+                  <p class="name">Alan Cooper <span> 4 days ago</span></p>
+                  <p class="comments">Can you provide? <br /><br />On January 2, 2022</p>
+                  <div class="video-comments-btns">
+                    <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                    <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
                     <button class="like">REPLY</button>
                   </div>
                 </div>
@@ -109,25 +134,29 @@
                 <input type="checkbox" id="btnMore" />
                 <div class="comments-more">
                   <div class="video-comments-bx">
-                    <div class="video-comments-img"></div>
+                    <div class="video-comments-img">
+                      <div class="video-img-inner"></div>
+                    </div>
                     <div class="video-comments-info">
                       <p class="name">James Gouse <span> 8 hours ago</span></p>
                       <p class="comments">Wow, world is full of different skills</p>
                       <div class="video-comments-btns">
-                        <button class="like">3</button>
-                        <button class="dislike"></button>
+                        <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                        <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
                         <button class="like">REPLY</button>
                       </div>
                     </div>
                   </div>
                   <div class="video-comments-bx">
-                    <div class="video-comments-img"></div>
+                    <div class="video-comments-img">
+                      <div class="video-img-inner"></div>
+                    </div>
                     <div class="video-comments-info">
                       <p class="name">James Gouse <span> 8 hours ago</span></p>
                       <p class="comments">Wow, world is full of different skills</p>
                       <div class="video-comments-btns">
-                        <button class="like">3</button>
-                        <button class="dislike"></button>
+                        <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                        <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
                         <button class="like">REPLY</button>
                       </div>
                     </div>
@@ -344,9 +373,10 @@
         <div class="modal-content">
           <div class="subscribe-content">
             <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
-            <div class="subscribe-btn"></div>
-            <a href="#">취소</a>
-            <a href="#" class="unsubscribe">구독 취소</a>
+            <div class="subscribe-btn">
+              <a href="#">취소</a>
+              <a href="#" class="unsubscribe">구독 취소</a>
+            </div>
           </div>
         </div>
       </div>
