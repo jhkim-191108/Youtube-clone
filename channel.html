@@ -28,21 +28,25 @@
 
       <!-- ===================== 채널 정보 ===================== -->
       
-      <section class="channel-cover">
-        <!-- 채널 :: 프로필 -->
-        <div class="channel-title">
-     
-          <img
+<!-- ===================== 채널 정보 영역 ===================== -->
+<section class="channel-cover">
+
+    <!-- 왼쪽: 프로필 이미지 + 채널 정보 -->
+    <div class="channel-title">
+        <img
             src="./images/img/User-Avatar.png"
             alt="Marcus Levin 프로필 이미지"
-          />
-          <div class="channel-profile">
+        />
+
+        <div class="channel-profile">
             <h1 class="channel-name">Marcus Levin</h1>
-            <!-- 채널 :: 구독자 수 -->
             <p class="channel-subscribers">1.2M subscribers</p>
-          </div>
         </div>
-        </section>
+    </div>
+    <div class="user-btn">
+        <a href="#subscribeModal" class="btn-subscribes"><span>Subscribes</span></a>
+          </div>
+    </section>
         <!-- ===================== 네비게이션바 ===================== -->
         <nav class="channel-toolbar">
             <ul>
@@ -54,6 +58,7 @@
                 <li><a href="#">ABOUT</a></li>
             </ul>         
             <!--  네이게이션바 안에 있는 버튼 (돋보기 , 화살표)  -->
+            <div class="channel-actions">
               <button class="channel-search-btn">
                   <!-- 돋보기 이미지 -->
                 <img src="./images/img/search.png" alt="검색" />
@@ -62,7 +67,8 @@
                   <!-- 오른쪽 화살표 이미지 -->
                 <img src="./images/img/chevron-right.png" alt="다음" />
           </button>
-      </nav>
+        </div>
+    </nav>
 
 
       <!-- ===================== 채널 :: 왼쪽 유튜브 영상 ===================== -->
