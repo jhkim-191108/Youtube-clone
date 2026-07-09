@@ -9,7 +9,413 @@
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>First Class Youtube - Main</title>
+    <title>First Class Youtube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Grandiflora+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-  <body></body>
+  <body>
+    <div class ="container">
+      <!-- 해더 영역 -->
+    <header class ="header">
+      <!-- 모바일 검색창 체크 박스 -->
+      <input type="checkbox" id="MobileSearch" class="mobile-checkbox">
+      <!-- 햄배거 버튼 체크박스 -->
+      <input type="checkbox" id = "CheckBox" class = "header-hamburger">
+      <div class ="hamburger-container">
+        <label for="CheckBox" class = "hamburger-label">☰</label>
+        <img src="./images/main/Logo.png" alt="로고" class = "logo-img">
+      </div>
+      <!-- 헤더 검색 컨테이너 -->
+      <div class ="search-container"> 
+        <label for="MobileSearch" class="back-btn">←</label>
+        <input type="text" class ="header-search" placeholder="Search">
+        <button class = "search-btn">
+          <img src="./images/main/btn-search.png" alt="검색버튼">
+        </button>
+        <!-- 마이크 버튼 -->
+        <div class = "header-mic-container">
+          <img src="./images/main/btn-mic.png" alt="마이크버튼">
+        </div> 
+      </div>
+
+      <!-- 헤더 네비 영역 -->
+      <nav class ="header-nav">
+        <div class="header-nav-container">
+          <!-- 모바일용 검색창 -->
+          <label for="MobileSearch" class = "mobile-search-label">
+            <img src="./images/main/btn-search.png" alt="검색버튼">
+          </label>
+          
+          <!-- 헤더-오른쪽-네비 -->
+          <img src="./images/main/btn-video.png" alt="비디오버튼" class = "header-profile header-play">
+          <img src="./images/main/btn-apps.png" alt="앱버튼" class = "header-profile">
+          <img src="./images/main/btn-notifications.png" alt="알림버튼" class = "header-profile">
+          <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class = "header-profile header-nav-profile">
+          </div>
+      </nav>
+    </header>
+
+    <!-- 메인영역 -->
+    <main class = "main">
+      <!-- main-navigation -->
+      <div class ="main-nav-container">
+        <nav class ="main-nav">
+          <ul class ="main-nav-ul">
+            <li class="item active">All</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+            <li class="item">Item</li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- 메인 내 콘텐츠(비디오카드) -->
+      <section class = "video-list">
+        <article class ="video-card">
+          <img src="./images/main/img-youtube.png" alt="유튜브" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-instagram.png" alt="인스타그램" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>alan cooper</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-tiktok.png" alt="틱톡" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>marcus levin</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-netflix.png" alt="넷플릭스" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>alexis sears</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-twitter.png" alt="트위터" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>jesica lambert</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-Spotify.png" alt="스포티파이" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>anna white</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-discord.png" alt="디스코드" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>skylar dias</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/igm-tesla.png" alt="테슬라" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-instagram.png" alt="인스타그램" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-youtube.png" alt="유튜브" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-tiktok.png" alt="틱톡" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-netflix.png" alt="넷플릭스" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-twitter.png" alt="트위터" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-Spotify.png" alt="스포티파이" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/img-discord.png" alt="디스코드" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+
+        <article class ="video-card">
+          <img src="./images/main/igm-tesla.png" alt="테슬라" class = "video-card-img">
+          <div class = "video-card-container">
+            <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="avatar">
+            <div class = "video-card-content">
+              <h2>Lorem ipsum dolor sit amet, consecte adpiscing elit.</h2>
+              <p>james gouse</p>
+              <p>15K Views.1 week ago</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- 왼쪽 사이드바 영역 -->
+    <aside class = "aside">
+      <nav class ="aside-nav">
+        <section class ="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item active">
+              <img src="./images/main/btn-home.png" alt="홈">
+              <p>Home</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-explore.png" alt="익스플로어">
+              <p>Explore</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-subscriptions.png" alt="서브스크립션">
+              <p>Subscriptions</p>
+            </li>
+          </ul>
+      </section>
+
+      <section class ="aside-nav-container">
+        <ul>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-Library.png" alt="라이브러리">
+            <p>Library</p>
+          </li>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-history.png" alt="히스토리">
+            <p>History</p>
+          </li>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-yourvideos.png" alt="나의 비디오">
+            <p>Your Videos</p>
+          </li>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-watchLater.png" alt="와치레이터">
+            <p>Watch Later</p>
+          </li>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-likedvideos.png" alt="링크 비디오">
+            <p>Linke Videos</p>
+          </li>
+          <li class="aside-nav-item">
+            <img src="./images/main/btn-arrowBotton.png" alt="더보기버튼">
+            <p>Show More</p>
+          </li>
+        </ul>
+        </section>
+
+        <section class ="aside-nav-container">
+          <h2>subscriptions</h2>
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="user-avatar">
+              <p>James Gouse</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3">
+              <p>Alan Cooper</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4">
+              <p>Marcus Levin</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5">
+              <p>Alexis Sears</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6">
+              <p>Jesica Lambert</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7">
+              <p>Anna White</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8">
+              <p>Sky Dias</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-arrowBotton.png" alt="더보기">
+              <p>Show 13 more</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class ="aside-nav-container">
+          <h2>more from youtube</h2>
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-youtubeprimium.png" alt="프리미엄">
+              <p>Youtube Premium</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-gaming.png" alt="게이밍">
+              <p>Gaming</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-live.png" alt="라이브">
+              <p>Live</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-sports.png" alt="스포츠">
+              <p>Sports</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class ="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-settings.png" alt="세팅">
+              <p>Settings</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-report.png" alt="리포트">
+              <p>Report history</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-help.png" alt="헬프">
+              <p> Help</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-send-feedback.png" alt="피드백">
+              <p>Send feedback</p>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </aside>
+  </div>
+  </body>
 </html>
