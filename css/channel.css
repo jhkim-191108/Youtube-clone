@@ -7,7 +7,7 @@
   --text-2: #aaaaaa;
   --accent: #cc0000;
 }
-/* 네이게이션 바에 사용할 구글 아이콘 적용 */
+/* 네비게이션 바에 사용할 구글 아이콘 적용 */
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
@@ -48,7 +48,11 @@ img {
 
 /* ===================== 전체 채널 ===================== */
 .channel {
-    width: 100%;
+    --layout-max-width: 1200px;
+    --content-padding: clamp(1.5rem, 3.2vw, 4rem);
+
+    width: min(100%, var(--layout-max-width));
+    margin: 0 auto;
     padding: 1rem 1.5rem;
     background-color: #000;
 }
@@ -66,21 +70,22 @@ img {
 
 /* ===================== 채널 정보 ===================== */
 
-/* 프로필 + 구독 버튼 영역 */
+/* ===================== 프로필 + 구독 버튼 전체 영역 ===================== */
 .channel-cover {
     width: 100%;
-    height: 6.6rem;
-    padding: 0 4.0625rem;
-    padding-top: 0.3rem;
-  
+    height: 106px;
+    padding: 0 var(--content-padding);
+
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+
+    /* 기존 가운데 정렬 제거 */
     align-items: flex-start;
 
     background-color: var(--bg-3);
-}
 
+    position: relative; /* 위치이동 기준점 */
+}
 .channel-title {
     
     display: flex;
@@ -129,28 +134,39 @@ img {
 /*  네비게이션바 :: 메뉴 전체 영역  */
 nav.channel-toolbar {
     height: 3rem;
-    padding: 0 0.4375rem;
-  
+    padding: 0 var(--content-padding);
+
     background-color: var(--bg-3);
-    border-bottom: 0.0625rem solid var(--bg-4); 
+    border-bottom: 0.0625rem solid var(--bg-4);
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.channel-menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.channel-actions {
+    margin-left: auto;
 
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding-left: 4.0625rem;
-
-    /* 스크롤 시 화면 상단에 고정 */
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    flex-shrink: 0;
 }
 /* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
 nav.channel-toolbar ul {
     display: flex;
     align-items: center;
     height: 100%;
-    gap: 5rem;
-
     margin: 0;
     padding: 0;
     list-style: none;
@@ -161,13 +177,12 @@ nav.channel-toolbar li {
     height: 100%;
     display: flex;
     justify-content: center;
-
     width: auto;
 }
 
 nav.channel-toolbar a {
-    padding: 0 0.5rem;
-    width: 100%;
+    padding: 16px 32px;
+    width: auto;
     height: 100%;
 
     display: flex;
@@ -191,7 +206,7 @@ nav.channel-toolbar a.active {
 
 /* 네이게이션바 :: < 네이게이션 밑 언더바 > */
 /* 마우스를 올렸을 때 + 현재 선택된 메뉴의 밑줄 */
-nav.channel-toolbar a:hover::after
+nav.channel-toolbar a:hover::after,
 nav.channel-toolbar a.active::after {
     content: "";
     position: absolute;
@@ -199,7 +214,7 @@ nav.channel-toolbar a.active::after {
     left: 50%;
     bottom: -0.1rem;
 
-    width: 150%; 
+    width: 100%; 
     height: 0.1875rem;
 
     border-bottom: 0.1rem solid var(--text-2);
@@ -213,37 +228,108 @@ nav.channel-toolbar a.active::after {
     height: 3rem;
     margin-left: 3rem;
 
-    color: var(--text-2);
-    font-size: 1.125rem;
-}
-.channel-arrow-btn {
-    margin-left: auto;
-    margin-right: 5rem;
-
-    width: 3rem;
-    height: 3rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     color: var(--text-2);
+    font-size: 1.125rem;
+
+    border: none;
+    background: none;
+    cursor: pointer;
 }
-/*  네비게이션바 :: 화살표만 크게  */
-.channel-arrow-btn .material-symbols-outlined {
-    font-size: 2.3rem;      
-    color: var(--text-2);
-    margin-bottom: 0.01rem;
-    transform: translateY(0.125rem); 
+/* 네비게이션바 :: 화살표 버튼 */
+.channel-arrow-btn {
+    margin-left: auto;
+    margin-right: clamp(1rem, 2.4vw, 2.75rem);
+
+    width: 48px;  /* 아이콘 24px + 좌우 패딩 12px씩 */
+    height: 48px; /* 아이콘 24px + 상하 패딩 12px씩 */
+
+    padding: 12px; /* 아이콘 주변 상하좌우 12px */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: none;
+    cursor: pointer;
 }
-.channel-search-btn .material-symbols-outlined {
-    transform: translateY(0.125rem); 
+
+
+/* 네비게이션바 :: 버튼 안 이미지 공통 */
+.channel-search-btn,
+.channel-arrow-btn {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================== 구독 버튼 ===================== */
+.btn-subscribes {
+    position: absolute;
+
+    top: 38px;    /* 회색 배경 위쪽에서 38px */
+    inset-inline-end: calc(var(--content-padding) + 0.25rem);
+
+    width: 116px;
+    height: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--accent);
+    border-radius: 2px;
+
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-subscribes::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;       
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.btn-subscribes:hover::before {
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+}
+
+.btn-subscribes span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.875rem;
+  color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn-subscribes:hover span {
+  color: var(--accent);
 }
 /* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
 .small-video {
     display: flex;
     gap: 2.5rem;
-    padding: 1rem 4rem;
+    padding: 1rem var(--content-padding);
 
     background-color: var(--bg-2);
 
@@ -263,7 +349,7 @@ nav.channel-toolbar a.active::after {
 }
 
 /* 채널 :: 오른쪽 | 영상 설명 */
-.video-description {
+.video-description{
     flex: 1;
     width: 25rem;
     height: 14.875rem;
@@ -297,7 +383,7 @@ nav.channel-toolbar a.active::after {
 /* ===================== 섹션 :: 1 , 2 공 통 ===================== */
 
 .playlist { 
-    padding: 0 4rem 1.5rem;
+    padding: 0 var(--content-padding) 1.5rem;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     
