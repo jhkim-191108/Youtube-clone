@@ -15,10 +15,12 @@
     <!--- reset css --->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/channel.css" />
+    <!-- 네이게이션바에 사용할 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>First Class Youtube - Channel</title>
   </head>
   <body>
-    <!-- ===================== 채널 배너 ===================== -->
+    <!-- ===================== 채널 배너 ====================== -->
     <main class="channel">
       <!-- 채널 :: 커버 이미지 -->
       <section class="channel-banner">
@@ -37,26 +39,31 @@
           />
           <div class="channel-profile">
             <h1 class="channel-name">Marcus Levin</h1>
+            <!-- 채널 :: 구독자 수 -->
             <p class="channel-subscribers">1.2M subscribers</p>
           </div>
         </div>
-        
-        <!-- 채널 :: 구독자 수 -->
-       
-      </section>
-
-      <!-- ===================== 채널 :: 메뉴 ===================== -->
-      <nav class="channel-toolbar">
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">VIDEOS</a></li>
-          <li><a href="#">PLAYLISTS</a></li>
-          <li><a href="#">COMMUNITY</a></li>
-          <li><a href="#">CHANNELS</a></li>
-          <li><a href="#">ABOUT</a></li>
-        </ul>
-        <button type="button" class="channel-search-btn">🔍</button>
+        </section>
+        <!-- ===================== 네비게이션바 ===================== -->
+        <nav class="channel-toolbar">
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">VIDEOS</a></li>
+                <li><a href="#">PLAYLISTS</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#">CHANNELS</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>         
+            <!--  네이게이션바 안에 있는 버튼 (돋보기 , 화살표)  -->
+              <button class="channel-search-btn">
+                  <span class="material-symbols-outlined">search</span>
+          </button>
+              <button class="channel-arrow-btn">
+                  <span class="material-symbols-outlined">chevron_right</span>
+          </button>
       </nav>
+
+
       <!-- ===================== 채널 :: 왼쪽 유튜브 영상 ===================== -->
       <section class="small-video">
        
@@ -88,7 +95,7 @@
             Chris Fisher, also known as the Blind Woodturner, learned his craft
             by listening to hundreds of hours of YouTube videos and
             experimenting in his workshop. Now he’s a YouTube creator himself,
-            sells his products worldwide, and does demonstrations all around the
+            sells his products worldwide, and does<br> demonstrations all around the
             country.
           </p>
         </div>
@@ -101,7 +108,7 @@
         <div class="playlist-header">
           <h2 class="playlist-title">Search On '21</h2>
           <!-- PLAY ALL -->
-          <button type="button" class="play-all-btn">▶ PLAY ALL</button>
+          <button type="button" class="play-all-btn">▶ &nbsp;&nbsp;&nbsp;PLAY ALL</button>
         </div>
         <!-- 섹션 1 :: 영상 카드 목록 -->
         <div class="playlist-content">
@@ -161,7 +168,7 @@
         <div class="playlist-header">
           <h2 class="playlist-title">Search On '21</h2>
           <!-- PLAY ALL -->
-          <button type="button" class="play-all-btn">▶ PLAY ALL</button>
+          <button type="button" class="play-all-btn">▶&nbsp;&nbsp;&nbsp;PLAY ALL</button>
         </div>
         <!-- 섹션 2 :: 영상 카드 목록 -->
         <div class="playlist-content">
