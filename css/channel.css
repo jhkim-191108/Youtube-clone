@@ -1,0 +1,375 @@
+:root {
+  --bg: #212121;
+  --bg-2: #000000;
+  --bg-3: #181818;
+  --bg-4: #303030;
+  --text: #ffffff;
+  --text-2: #aaaaaa;
+  --accent: #cc0000;
+}
+/* 네이게이션 바에 사용할 구글 아이콘 적용 */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+}
+
+html {
+    font-size: 16px; /* 1rem = 16px 기준 고정 */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ===================== 기본 설정 ===================== */
+
+body {
+    margin: 0;
+
+    background-color: var(--bg-2);
+    color: var(--text);
+    font-family: Roboto, sans-serif; 
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+
+}
+
+/* ===================== 전체 채널 ===================== */
+.channel {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #000;
+}
+
+/* ===================== 채널 배너 ===================== */
+
+.channel-banner {
+    width: 100%;
+}
+
+.channel-banner img {
+    width: 100%;
+    display: block;
+}
+
+/* ===================== 채널 정보 ===================== */
+
+/* 프로필 + 구독 버튼 영역 */
+.channel-cover {
+    width: 100%;
+    height: 6.6rem;
+    padding: 0 4.0625rem;
+    padding-top: 0.3rem;
+  
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background-color: var(--bg-3);
+}
+
+.channel-title {
+    
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.channel-title img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+    opacity: 65%;
+}
+
+.channel-name {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+/* 채널 :: 구독자수 */
+.channel-subscribers {
+    margin-top: 0.3125rem;
+    font-size: 0.875rem;
+    color: var(--text-2);
+}
+
+
+/* ===================== 구독 버튼 ===================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== 채널 :: 네이게이션바 ===================== */
+
+/*  네비게이션바 :: 메뉴 전체 영역  */
+nav.channel-toolbar {
+    height: 3rem;
+    padding: 0 0.4375rem;
+  
+    background-color: var(--bg-3);
+    border-bottom: 0.0625rem solid var(--bg-4); 
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-left: 4.0625rem;
+
+    /* 스크롤 시 화면 상단에 고정 */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
+nav.channel-toolbar ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5rem;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav.channel-toolbar li {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    width: auto;
+}
+
+nav.channel-toolbar a {
+    padding: 0 0.5rem;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    position: relative;
+}
+nav.channel-toolbar a:hover {
+    color: var(--text); 
+}
+/* 현재 선택된 메뉴의 글자색 유지 */
+nav.channel-toolbar a.active {
+    color: var(--text);
+}
+
+/* 네이게이션바 :: < 네이게이션 밑 언더바 > */
+/* 마우스를 올렸을 때 + 현재 선택된 메뉴의 밑줄 */
+nav.channel-toolbar a:hover::after
+nav.channel-toolbar a.active::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -0.1rem;
+
+    width: 150%; 
+    height: 0.1875rem;
+
+    border-bottom: 0.1rem solid var(--text-2);
+    transform: translateX(-50%);
+}
+
+
+/* 네비게이션바 :: 돋보기, 화살표 */
+.channel-search-btn {
+    width: 3.75rem;
+    height: 3rem;
+    margin-left: 3rem;
+
+    color: var(--text-2);
+    font-size: 1.125rem;
+}
+.channel-arrow-btn {
+    margin-left: auto;
+    margin-right: 5rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-2);
+}
+/*  네비게이션바 :: 화살표만 크게  */
+.channel-arrow-btn .material-symbols-outlined {
+    font-size: 2.3rem;      
+    color: var(--text-2);
+    margin-bottom: 0.01rem;
+    transform: translateY(0.125rem); 
+}
+.channel-search-btn .material-symbols-outlined {
+    transform: translateY(0.125rem); 
+}
+/* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
+.small-video {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1rem 4rem;
+
+    background-color: var(--bg-2);
+
+    margin-top: 1.5rem;
+}
+/* 채널 :: 유튜브 영상 박스 */
+.player {
+    width: 35%;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+}
+/* 채널 :: iframe 실제 유튜브 영상 */
+.youtube-player {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 채널 :: 오른쪽 | 영상 설명 */
+.video-description {
+    flex: 1;
+    width: 25rem;
+    height: 14.875rem;
+    padding-bottom: 5rem;
+
+    flex: none;
+    line-height: 1.6rem;
+
+    
+}
+.video-title {
+    margin: 0 0 0.875rem;
+    
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.375rem;
+}
+
+.video-time {
+    margin: 0 0 0.875rem;
+    color: var(--text-2);
+}
+
+.video-desc {
+    margin: 0;
+
+    font-size: 0.825rem;
+    line-height: 1.25rem;
+}
+
+/* ===================== 섹션 :: 1 , 2 공 통 ===================== */
+
+.playlist { 
+    padding: 0 4rem 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    
+}
+
+.playlist-header {
+    position: relative;
+
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+    
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+/* ===== 섹션 :: 헤더 위에 선 추가 ===== */
+.playlist-header::before {
+    content: "";
+    position: absolute; 
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 0.1rem;
+    background: var(--bg-4);
+}
+.playlist-title {
+    font-size: 1rem;
+    font-weight: 500;
+    gap: 1rem;
+}
+.play-all-btn {
+    color: var(--text-2);
+    font-size: 1rem;
+    font-weight: 700;
+}
+/* 섹션 :: 카드 목록 */
+.playlist-content {
+    display: flex;
+    gap: 0.6rem;
+}
+/* 섹션 :: 카드 */
+.video-card {
+    width: calc((100% - 2.4rem) / 5);       
+    flex-shrink: 0;
+    
+}
+.video-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.1rem;
+    margin-bottom: 0.75rem;
+}
+.video-card-title {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+/* 섹션 :: name | views | days */
+.video-meta {
+    font-size: 0.75rem;
+    color: var(--text-2);
+}
+
+.video-channel {
+    margin-bottom: 0.25rem;
+
+    font-size: 0.75rem;
+    color: var(--text-2);
+}
