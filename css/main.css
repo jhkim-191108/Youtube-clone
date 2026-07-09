@@ -115,8 +115,10 @@
     padding-left: 4px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    outline: none;
     
+}
+.header-search:focus{
+    outline: .05px solid var(--hover);
 }
 .header-search-container{
     display: flex;
