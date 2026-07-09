@@ -247,13 +247,17 @@
 /*=======================
 4-1.사이드바 스크롤
 =======================*/
+
+
 .aside::-webkit-scrollbar{
     width: 6px;
 }
 
+
 .aside::-webkit-scrollbar-track{
     background: transparent;
 }
+
 
 .aside::-webkit-scrollbar-thumb{
     background: var(--hover);
@@ -267,9 +271,9 @@
 /*=======================
 4-2.사이드바 섹션
 =======================*/
-.aside-nav{
+/* .aside-nav{
     top: 64px;
-}
+} */
 
 .aside-nav-container ul{
     list-style: none;
@@ -388,7 +392,7 @@
 .item.active{
     background:#FFFFFF;
     color: #030303;
-    
+    font-weight: 700;
 }
 
 li:not(.active):hover {
