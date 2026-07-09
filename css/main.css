@@ -397,7 +397,7 @@
 
 .video-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px 16px;
     padding: 24px;
 }
@@ -481,9 +481,8 @@
     }
     .aside{
         width:70px;
-        position:fixed;
         z-index:10;
-        transition: width 0.3s;
+        transition: width .3s;
     }
 
     .aside h2,
