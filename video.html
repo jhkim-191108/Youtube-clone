@@ -9,9 +9,49 @@
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/video.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>First Class Youtube - Video</title>
   </head>
   <body>
+    <!-- 해더 영역 -->
+    <header class="header">
+      <!-- 모바일 검색창 체크 박스 -->
+      <input type="checkbox" id="MobileSearch" class="mobile-checkbox" />
+      <!-- 햄배거 버튼 체크박스 -->
+      <input type="checkbox" id="CheckBox" class="header-hamburger" />
+      <div class="hamburger-container">
+        <label for="CheckBox" class="hamburger-label">☰</label>
+        <img src="./images/main/Logo.png" alt="로고" class="logo-img" />
+      </div>
+      <!-- 헤더 검색 컨테이너 -->
+      <div class="search-container">
+        <label for="MobileSearch" class="back-btn">←</label>
+        <input type="text" class="header-search" placeholder="Search" />
+        <button class="search-btn">
+          <img src="./images/main/btn-search.png" alt="검색버튼" />
+        </button>
+        <!-- 마이크 버튼 -->
+        <div class="header-mic-container">
+          <img src="./images/main/btn-mic.png" alt="마이크버튼" />
+        </div>
+      </div>
+
+      <!-- 헤더 네비 영역 -->
+      <nav class="header-nav">
+        <div class="header-nav-container">
+          <!-- 모바일용 검색창 -->
+          <label for="MobileSearch" class="mobile-search-label">
+            <img src="./images/main/btn-search.png" alt="검색버튼" />
+          </label>
+
+          <!-- 헤더-오른쪽-네비 -->
+          <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
+          <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
+          <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-profile" />
+          <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile header-nav-profile" />
+        </div>
+      </nav>
+    </header>
     <main class="video-main">
       <section class="video-content">
         <!-- 비디오 :: 비디오 영역 -->
