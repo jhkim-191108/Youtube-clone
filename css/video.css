@@ -13,6 +13,7 @@ body {
   background-color: var(--bg-3);
 }
 
+/* 비디오 :: 메인 */
 .video-main {
   display: grid;
   grid-template-columns: 60% 37.7%;

@@ -21,38 +21,174 @@
       <!-- 햄배거 버튼 체크박스 -->
       <input type="checkbox" id="CheckBox" class="header-hamburger" />
       <div class="hamburger-container">
-        <label for="CheckBox" class="hamburger-label">☰</label>
+        <label for="CheckBox" class="hamburger-label">
+          <img src="./images/main/icon-hamburger.png" alt="햄버거버튼" />
+        </label>
         <img src="./images/main/Logo.png" alt="로고" class="logo-img" />
       </div>
       <!-- 헤더 검색 컨테이너 -->
       <div class="search-container">
+        <!-- 모바일 뒤로가기 버튼 -->
         <label for="MobileSearch" class="back-btn">←</label>
-        <input type="text" class="header-search" placeholder="Search" />
-        <button class="search-btn">
-          <img src="./images/main/btn-search.png" alt="검색버튼" />
-        </button>
+        <!--  검색 컨테이너 -->
+        <div class="header-search-container">
+          <input type="text" class="header-search" placeholder="Search" />
+          <button class="search-btn">
+            <img src="./images/main/btn-search.png" alt="검색버튼" />
+          </button>
+        </div>
         <!-- 마이크 버튼 -->
         <div class="header-mic-container">
           <img src="./images/main/btn-mic.png" alt="마이크버튼" />
         </div>
       </div>
-
       <!-- 헤더 네비 영역 -->
       <nav class="header-nav">
         <div class="header-nav-container">
-          <!-- 모바일용 검색창 -->
+          <!-- 모바일용 검색버튼 -> 클릭시 검색창 출력 -->
           <label for="MobileSearch" class="mobile-search-label">
             <img src="./images/main/btn-search.png" alt="검색버튼" />
           </label>
-
           <!-- 헤더-오른쪽-네비 -->
           <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
           <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
           <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-profile" />
-          <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile header-nav-profile" />
+          <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
         </div>
       </nav>
     </header>
+
+    <aside class="aside">
+      <nav class="aside-nav">
+        <section class="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item active">
+              <img src="./images/main/btn-home.png" alt="홈" />
+              <p>home</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-explore.png" alt="익스플로어" />
+              <p>explore</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-subscriptions.png" alt="서브스크립션" />
+              <p>subscriptions</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-Library.png" alt="라이브러리" />
+              <p>library</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-history.png" alt="히스토리" />
+              <p>history</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-yourvideos.png" alt="나의 비디오" />
+              <p>your videos</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-watchLater.png" alt="와치레이터" />
+              <p>watch later</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-likedvideos.png" alt="링크 비디오" />
+              <p>linke videos</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-arrowBotton.png" alt="더보기버튼" />
+              <p>show more</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="aside-nav-container">
+          <h2>subscriptions</h2>
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class="user-avatar" />
+              <p>james gouse</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3" />
+              <p>alan cooper</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4" />
+              <p>marcus levin</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5" />
+              <p>alexis sears</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6" />
+              <p>jesica lambert</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7" />
+              <p>anna white</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8" />
+              <p>sky dias</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-arrowBotton.png" alt="더보기" />
+              <p class="item-show">show 13 more</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="aside-nav-container">
+          <h2>more from youtube</h2>
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-youtubeprimium.png" alt="프리미엄" />
+              <p>youtube premium</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-gaming.png" alt="게이밍" />
+              <p>gaming</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-live.png" alt="라이브" />
+              <p>live</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-sports.png" alt="스포츠" />
+              <p>sports</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-settings.png" alt="세팅" />
+              <p>settings</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-report.png" alt="리포트" />
+              <p>report history</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-help.png" alt="헬프" />
+              <p>help</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-send-feedback.png" alt="피드백" />
+              <p>send feedback</p>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </aside>
+
     <main class="video-main">
       <section class="video-content">
         <!-- 비디오 :: 비디오 영역 -->
