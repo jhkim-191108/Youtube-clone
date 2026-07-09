@@ -214,7 +214,7 @@ nav.channel-toolbar a.active::after {
     left: 50%;
     bottom: -0.1rem;
 
-    width: 150%; 
+    width: 100%; 
     height: 0.1875rem;
 
     border-bottom: 0.1rem solid var(--text-2);
