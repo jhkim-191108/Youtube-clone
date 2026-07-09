@@ -6,6 +6,7 @@
   --text: #ffffff;
   --text-2: #aaaaaa;
   --accent: #cc0000;
+  --hover: #717171;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
   margin: 0 auto;
   margin-top: 24px;
   padding-bottom: 50px;
+  margin-top: 75px;
 }
 
 .video-content {
