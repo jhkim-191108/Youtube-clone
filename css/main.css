@@ -236,44 +236,27 @@
 .aside{
     grid-area: aside;
     width: 240px;
-    height: calc(100vh - 64px);
+    /* height: calc(100vh - 64px); */
     background: var(--bg);
     position:fixed;
     top: 64px;
     left:0;
-    overflow-y: auto;
+    padding-bottom: 50px;
+    
 }
 
-/*=======================
-4-1.사이드바 스크롤
-=======================*/
-
-
-.aside::-webkit-scrollbar{
-    width: 6px;
+.aside-logo{
+    display:none;
 }
 
-
-.aside::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-
-.aside::-webkit-scrollbar-thumb{
-    background: var(--hover);
-    border-radius: 10px;
-}
-
-.aside::-webkit-scrollbar-thumb:hover{
-    background: #909090;
-}
-
-/*=======================
-4-2.사이드바 섹션
-=======================*/
-/* .aside-nav{
+.aside-nav{
     top: 64px;
-} */
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 64px;
+    
+}
 
 .aside-nav-container ul{
     list-style: none;
@@ -334,6 +317,33 @@
     border-radius: 50%;
 }
 
+
+/*=======================
+4-1.사이드바 스크롤
+=======================*/
+
+
+.aside-nav::-webkit-scrollbar{
+    width: 6px;
+}
+
+
+.aside-nav::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+
+.aside-nav::-webkit-scrollbar-thumb{
+    background: var(--hover);
+    border-radius: 10px;
+}
+
+.aside-nav::-webkit-scrollbar-thumb:hover{
+    background: #909090;
+}
+
+
+
 /*=======================
 5.메인
 =======================*/
@@ -351,7 +361,7 @@
 .main-nav-wrapper{
     position: sticky;
     top: 64px;
-    z-index: 10;
+    z-index: 3;
 }
 
 .main-nav-container{
@@ -512,6 +522,34 @@ li:not(.active):hover {
 6. 반응형(테블릿)
 =======================*/
 @media(max-width:1024px){
+
+    .aside-logo{
+        display: none;
+    }
+
+    .aside{
+        width:70px;
+        top:64px;
+        height:calc(100vh - 64px);
+    }
+
+    .container:has(#CheckBox:checked) .aside{
+        width:240px;
+        top:0;
+        height:100vh;
+        z-index:20;
+    }
+
+    .container:has(#CheckBox:checked) .hamburger-container{
+        visibility:hidden;
+    }
+
+    .container:has(#CheckBox:checked) .aside-logo{
+        display:flex;
+        align-items:center;
+        height:64px;
+        gap:12px;
+    }
     .mic-container{
         margin-left: 10px;
     }
@@ -556,6 +594,17 @@ li:not(.active):hover {
         background:rgba(0,0,0,0.5);
         z-index: 5;
     }
+
+    .container:has(#CheckBox:checked) .header::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:64px;
+    background:rgba(0,0,0,0.5);
+    z-index:5;
+}
 }
 
 /*=======================
@@ -578,6 +627,19 @@ li:not(.active):hover {
         transform:translateX(-100%);
         transition: transform .3s ease;
     }
+
+    .aside-logo{
+        display:flex;
+        align-items:center;
+        height:64px;
+        gap: 14px;
+    }
+
+    .aside{
+        top:0;
+        height:100vh;
+    }
+    
 
     .container:has(#CheckBox:checked){
         grid-template-columns: 1fr;
