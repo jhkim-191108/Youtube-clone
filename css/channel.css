@@ -191,7 +191,19 @@ nav.channel-toolbar a {
     text-decoration: none;
 
     position: relative;
+    transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 *//
 }
+nav.channel-toolbar a:hover {
+    color: var(--text); 
+    opacity: 1; /* 마우스 올리면 선명하게 */
+    
+}
+/* 현재 선택된 메뉴의 글자색 유지 */
+nav.channel-toolbar a.active {
+    color: var(--text);
+    opacity: 1; /* 선택된 메뉴는 항상 선명하게 */
+}
+
 /* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
 
 nav.channel-toolbar li:nth-child(1) a {
@@ -227,25 +239,22 @@ nav.channel-toolbar li:nth-child(6) a {
 
 /* 네이게이션바 :: < 네이게이션 밑 언더바 > */
 /* 마우스를 올렸을 때 + 현재 선택된 메뉴의 밑줄 */
-nav.channel-toolbar a:hover::after,
-nav.channel-toolbar a.active::after {
+nav.channel-toolbar a::after {
     content: "";
     position: absolute;
-
-    left: 0; 
-    bottom: 0; 
-    width: 100%; /* 메뉴 너비만큼 */
-    height: 1px; /* 밑줄 두께 */
-    background-color: var(--text-2); 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-2);
+    opacity: 0; /* 평소에는 안 보임 */
+    transition: opacity 0.8s ease; /* 밑줄 천천히 나타남 */
+}
+nav.channel-toolbar a:hover::after,
+nav.channel-toolbar a.active::after {
+    opacity: 1;
 }
 
-nav.channel-toolbar a:hover {
-    color: var(--text); 
-}
-/* 현재 선택된 메뉴의 글자색 유지 */
-nav.channel-toolbar a.active {
-    color: var(--text);
-}
 
 
 /* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
@@ -388,7 +397,7 @@ nav.channel-toolbar a.active {
 /* 포인터 올렸을때 흰색으로 */
 .channel-toolbar .channel-search-btn img,
 .channel-toolbar .channel-arrow-btn img {
-  transition: filter 0.3s; /* 부드럽게 색 변화 */
+  transition: filter 1s ease; /* 부드럽게 색 변화 */
 }
 
 .channel-toolbar .channel-search-btn:hover img,
