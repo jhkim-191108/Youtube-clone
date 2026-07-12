@@ -474,64 +474,66 @@ nav.channel-toolbar a.active::after {
 /* 1024px 이하 화면에서 적용 */
 @media (max-width: 1024px) {
   .channel {
-    padding: 12px; /* 전체 여백 줄이기 */
+    padding: 12px;
   }
+
   .channel-cover {
-    padding: 0 24px; /* 채널 정보 좌우 여백 줄이기 */
+    padding: 0 24px;
   }
+
   .channel-arrow-btn {
     transform: translateX(20px);
   }
+
   nav.channel-toolbar {
-    padding: 0 24px; /* 네비게이션 좌우 여백 줄이기 */
-    
+    padding: 0 24px;
   }
 
   nav.channel-toolbar ul {
-    flex-shrink: 0; /* 메뉴들이 찌그러지지 않게 */
+    flex-shrink: 0;
   }
 
   .channel-actions {
-    width: 180px; /* 검색/화살표 영역 줄이기 */
-    padding: 0 24px 0 16px; /* 아이콘 위치 조절 */
+    width: 180px;
+    padding: 0 24px 0 16px;
   }
 
   .small-video {
-    gap: 24px; /* 영상과 설명 사이 간격 줄이기 */
+    gap: 24px;
     padding: 16px 24px;
   }
 
   .player {
-    width: 55%; /* 대표 영상 너비 조절 */
+    width: 55%;
   }
 
   .video-description {
-    width: auto; /* 고정 너비 해제 */
-    height: auto; /* 고정 높이 해제 */
     flex: 1;
     min-width: 0;
     width: auto;
+    height: auto;
     padding-bottom: 0;
   }
+
   .video-desc {
     word-break: keep-all;
     overflow-wrap: break-word;
   }
-}
 
   .playlist {
-    padding: 0 24px 24px; /* 섹션 좌우 여백 줄이기 */
+    padding: 0 24px 24px;
   }
 
   .playlist-content {
-    flex-wrap: wrap; /* 줄바꿈 유지 */
+    flex-wrap: wrap;
     gap: 12px;
-    overflow-x: visible; /* 가로 스크롤 제거 */
+    overflow-x: visible;
   }
 
   .video-card {
-    width: calc((100% - 12px) / 2); /* 한 줄에 2개 */
+    width: calc((100% - 12px) / 2); /* 태블릿에서 2개 */
   }
+}
 
 /* ===================== 모바일 반응형 ===================== */
 /* 767px 이하 화면에서 적용 */
