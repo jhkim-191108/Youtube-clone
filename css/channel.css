@@ -12,13 +12,13 @@
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;
+    font-size: 1.5rem;
     display: inline-block;
     line-height: 1;
 }
 
 html {
-    font-size: 16px; /* 1rem = 16px 기준 고정 */
+    font-size: 1rem; /* 1rem = 16px 기준 고정 */
 }
 
 *, *::before, *::after {
@@ -43,7 +43,6 @@ button {
 
 img {
     display: block;
-
 }
 
 /* ===================== 전체 채널 ===================== */
@@ -69,7 +68,6 @@ img {
 }
 
 /* ===================== 채널 정보 ===================== */
-
 /* ===================== 프로필 + 구독 버튼 전체 영역 ===================== */
 .channel-cover {
     width: 100%;
@@ -181,7 +179,6 @@ nav.channel-toolbar li {
 }
 
 nav.channel-toolbar a {
-    
     height: 100%;
 
     display: flex;
@@ -211,32 +208,26 @@ nav.channel-toolbar a.active {
 
 nav.channel-toolbar li:nth-child(1) a {
   width: 104px; /* HOME */
-  height: 48px;
 }
 
 nav.channel-toolbar li:nth-child(2) a {
   width: 113px; /* VIDEOS */
-  height: 48px;
 }
 
 nav.channel-toolbar li:nth-child(3) a {
   width: 136px; /* PLAYLISTS */
-  height: 48px;
 }
 
 nav.channel-toolbar li:nth-child(4) a {
   width: 148px; /* COMMUNITY */
-  height: 48px;
 }
 
 nav.channel-toolbar li:nth-child(5) a {
   width: 137px; /* CHANNELS */
-  height: 48px;
 }
 
 nav.channel-toolbar li:nth-child(6) a {
   width: 110px; /* ABOUT */
-  height: 48px;
 }
 
 
@@ -288,7 +279,6 @@ nav.channel-toolbar a.active::after {
 
 /* 채널 :: 오른쪽 | 영상 설명 */
 .video-description{
-    flex: 1;
     width: 25rem;
     height: auto;        /* 기존 고정 높이 제거 */
     padding-bottom: 0;   /* 아래 여백 제거 */
@@ -330,7 +320,7 @@ nav.channel-toolbar a.active::after {
     position: relative;
 
     padding-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     
     display: flex;
     align-items: center;
@@ -391,16 +381,14 @@ nav.channel-toolbar a.active::after {
     cursor: pointer;
 }
 /* 섹션 :: name | views | days */
-.video-meta {
+.video-meta,
+.video-channel {
     font-size: 0.75rem;
     color: var(--text-2);
 }
 
 .video-channel {
     margin-bottom: 0.25rem;
-
-    font-size: 0.75rem;
-    color: var(--text-2);
 }
 
 
