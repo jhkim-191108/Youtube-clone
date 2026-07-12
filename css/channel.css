@@ -353,6 +353,10 @@ nav.channel-toolbar a.active::after {
     color: var(--text-2);
     font-size: 1rem;
     font-weight: 700;
+    transition: color 0.3s ease; /* 색이 부드럽게 바뀜 */
+}
+.play-all-btn:hover {
+    color: var(--text); /* 마우스를 올리면 흰색 */
 }
 /* 섹션 :: 카드 목록 */
 .playlist-content {
@@ -458,4 +462,158 @@ nav.channel-toolbar a.active::after {
 
 .btn-subscribes:hover span {
   color: var(--accent);
+}
+
+/* ===================== 태블릿 반응형 ===================== */
+/* 1024px 이하 화면에서 적용 */
+@media (max-width: 1024px) {
+  .channel {
+    padding: 12px; /* 전체 여백 줄이기 */
+  }
+
+  .channel-cover {
+    padding: 0 24px; /* 채널 정보 좌우 여백 줄이기 */
+  }
+
+  nav.channel-toolbar {
+    padding: 0 24px; /* 네비게이션 좌우 여백 줄이기 */
+    
+  }
+
+  nav.channel-toolbar ul {
+    flex-shrink: 0; /* 메뉴들이 찌그러지지 않게 */
+  }
+
+  .channel-actions {
+    width: 180px; /* 검색/화살표 영역 줄이기 */
+    padding: 0 24px 0 16px; /* 아이콘 위치 조절 */
+  }
+
+  .small-video {
+    gap: 24px; /* 영상과 설명 사이 간격 줄이기 */
+    padding: 16px 24px;
+  }
+
+  .player {
+    width: 45%; /* 대표 영상 너비 조절 */
+  }
+
+  .video-description {
+    width: auto; /* 고정 너비 해제 */
+    height: auto; /* 고정 높이 해제 */
+    padding-bottom: 0;
+  }
+
+  .playlist {
+    padding: 0 24px 24px; /* 섹션 좌우 여백 줄이기 */
+  }
+
+  .playlist-content {
+    flex-wrap: wrap; /* 줄바꿈 유지 */
+    gap: 12px;
+    overflow-x: visible; /* 가로 스크롤 제거 */
+  }
+
+  .video-card {
+    width: calc((100% - 12px) / 2); /* 한 줄에 2개 */
+  }
+}
+/* ===================== 모바일 반응형 ===================== */
+/* 767px 이하 화면에서 적용 */
+@media (max-width: 767px) {
+  .playlist-content {
+    flex-wrap: wrap; /* 줄바꿈 */
+    gap: 16px;
+    overflow-x: visible; /* 가로 스크롤 제거 */
+  }
+
+  .channel-cover {
+    height: auto; /* 내용만큼 높이 자동 */
+    padding: 16px;
+    flex-direction: column; /* 프로필과 버튼 세로 배치 */
+    gap: 16px;
+  }
+
+  .channel-title {
+    gap: 12px; /* 프로필 사진과 텍스트 간격 */
+  }
+
+  .channel-title img {
+    width: 56px;
+    height: 56px;
+    margin-top: 0;
+  }
+
+  .channel-name {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+
+  .btn-subscribes {
+    position: static; /* absolute 해제 */
+    width: 116px;
+    height: 36px;
+  }
+
+  nav.channel-toolbar {
+    padding: 0;
+    
+  }
+
+  nav.channel-toolbar ul {
+    flex-shrink: 0; /* 메뉴 크기 유지 */
+  }
+
+  .channel-actions {
+    display: none; /* 모바일에서는 검색/화살표 숨김 */
+  }
+
+  .small-video {
+    flex-direction: column; /* 대표 영상과 설명 세로 배치 */
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .player {
+    width: 100%; /* 영상 가로 꽉 차게 */
+  }
+
+  .video-description {
+    width: auto;
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  .video-desc br {
+    display: none; /* 모바일에서 강제 줄바꿈 제거 */
+  }
+
+  .playlist {
+    padding: 0 16px 24px;
+  }
+
+  .playlist-header {
+    padding-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  .playlist-content {
+    gap: 12px;
+    
+  }
+
+  .video-card {
+    width: 100%; /* 한 줄에 1개 */
+  }
+}
+/* 가로 스크롤은 가능하지만 스크롤바는 숨김 */
+nav.channel-toolbar,
+.playlist-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+
+nav.channel-toolbar::-webkit-scrollbar,
+.playlist-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
