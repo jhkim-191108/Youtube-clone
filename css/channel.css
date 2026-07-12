@@ -159,7 +159,9 @@ nav.channel-toolbar {
     border-radius: 4px;
     background: none;
     cursor: pointer;
-    
+}
+.channel-arrow-btn {
+  transform: translateX(10px); /* 살짝 왼쪽 */
 }
 nav.channel-toolbar ul {
     display: flex;
@@ -261,16 +263,19 @@ nav.channel-toolbar a.active::after {
 /* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
 .small-video {
     display: flex;
-    gap: 2.5rem;
-    padding: 1rem var(--content-padding);
-
+    gap: 40px;
+  
+    padding-top: 8px;      /* 위 간격 */
+    padding-bottom: 8px;   /* 아래 간격 */
+    padding-left: var(--content-padding);  /* 좌우 기존 유지 */
+    padding-right: var(--content-padding);
+  
     background-color: var(--bg-2);
-
-    margin-top: 1.5rem;
+    margin-top: 12px; /* 네비게이션바와 영상 사이 간격 */
 }
 /* 채널 :: 유튜브 영상 박스 */
 .player {
-    width: 35%;
+    width: 42%; /* 고정값 없이 기존보다 크게 */
     aspect-ratio: 16 / 9;
     flex-shrink: 0;
 }
@@ -285,13 +290,10 @@ nav.channel-toolbar a.active::after {
 .video-description{
     flex: 1;
     width: 25rem;
-    height: 14.875rem;
-    padding-bottom: 5rem;
-
+    height: auto;        /* 기존 고정 높이 제거 */
+    padding-bottom: 0;   /* 아래 여백 제거 */
     flex: none;
     line-height: 1.6rem;
-
-    
 }
 .video-title {
     margin: 0 0 0.875rem;
@@ -318,21 +320,21 @@ nav.channel-toolbar a.active::after {
 /* ===================== 섹션 :: 1 , 2 공 통 ===================== */
 
 .playlist { 
-    padding: 0 var(--content-padding) 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    padding: 0 var(--content-padding) 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
     
 }
 
 .playlist-header {
     position: relative;
 
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     margin-bottom: 2.5rem;
     
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
     
 }
 /* ===== 섹션 :: 헤더 위에 선 추가 ===== */
@@ -418,7 +420,7 @@ nav.channel-toolbar a.active::after {
     position: absolute;
 
     top: 38px;    /* 회색 배경 위쪽에서 38px */
-    inset-inline-end: calc(var(--content-padding) + 0.25rem);
+    inset-inline-end: calc(var(--content-padding) + 25px);
 
     width: 116px;
     height: 36px;
@@ -474,11 +476,12 @@ nav.channel-toolbar a.active::after {
   .channel {
     padding: 12px; /* 전체 여백 줄이기 */
   }
-
   .channel-cover {
     padding: 0 24px; /* 채널 정보 좌우 여백 줄이기 */
   }
-
+  .channel-arrow-btn {
+    transform: translateX(20px);
+  }
   nav.channel-toolbar {
     padding: 0 24px; /* 네비게이션 좌우 여백 줄이기 */
     
@@ -499,14 +502,22 @@ nav.channel-toolbar a.active::after {
   }
 
   .player {
-    width: 45%; /* 대표 영상 너비 조절 */
+    width: 55%; /* 대표 영상 너비 조절 */
   }
 
   .video-description {
     width: auto; /* 고정 너비 해제 */
     height: auto; /* 고정 높이 해제 */
+    flex: 1;
+    min-width: 0;
+    width: auto;
     padding-bottom: 0;
   }
+  .video-desc {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
 
   .playlist {
     padding: 0 24px 24px; /* 섹션 좌우 여백 줄이기 */
@@ -521,7 +532,7 @@ nav.channel-toolbar a.active::after {
   .video-card {
     width: calc((100% - 12px) / 2); /* 한 줄에 2개 */
   }
-}
+
 /* ===================== 모바일 반응형 ===================== */
 /* 767px 이하 화면에서 적용 */
 @media (max-width: 767px) {
