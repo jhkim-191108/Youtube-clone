@@ -48,7 +48,7 @@ button {
     /* 기존 가운데 정렬 제거 */
     align-items: flex-start;
 
-    background-color: var(--bg-3);
+    background-color: var(--bg);
 
     position: relative; /* 위치이동 기준점 */
 }
@@ -89,11 +89,15 @@ nav.channel-toolbar {
     padding: 0 var(--content-padding);
     box-sizing: border-box;  
 
-    background-color: var(--bg-3);
+    background-color: var(--bg);          /* 스크롤 전 기존 네비바 색 */
+    transition: background-color 0.3s ease; /* 배경색을 부드럽게 변경 */
     border-bottom: 1px solid var(--bg-4);
 
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 56px;
+    z-index: 20;
 }
 .channel-actions {
   width: auto;              /* 고정 너비 제거 */
@@ -582,9 +586,6 @@ nav.channel-toolbar {
   .playlist-header {
     padding-top: 24px;
     margin-bottom: 16px;
-  }
-  .channel-actions {
-    display: none; /* 모바일에서는 검색·화살표 숨김 */
   }
 }
 /* 가로 스크롤은 가능하지만 스크롤바는 숨김 */
