@@ -12,15 +12,17 @@ button {
 
 /* ===================== 전체 채널 ===================== */
 .channel {
-    --layout-max-width: 1200px;
-    --content-padding: clamp(1.5rem, 3.2vw, 4rem);
-  
-    width: min(100%, var(--layout-max-width));
-    /* margin: 0 auto; */
-    margin-top: 64px;
-    margin-left: 250px;
-    padding: 1rem 1.5rem;
-    background-color: #000;
+  --content-padding: clamp(24px, 3.2vw, 64px);
+
+  grid-area: main;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 16px 24px;
+  box-sizing: border-box;
+
+  background-color: #000;
 }
 
 /* ===================== 채널 배너 ===================== */
@@ -276,6 +278,7 @@ nav.channel-toolbar a.active::after {
 /* ===================== 섹션 :: 1 , 2 , 3 공 통 ===================== */
 
 .playlist { 
+    width: 100%;
     padding: 0 var(--content-padding) 16px;
     margin-bottom: 16px;
     margin-top: 16px;
@@ -349,20 +352,7 @@ nav.channel-toolbar a.active::after {
     cursor: pointer; 
     
 }
-.play-time {
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
 
-  padding: 3px 5px;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  border-radius: 2px;
-
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1;
-}
 
 .video-card-title {
     margin-bottom: 0.5rem;
