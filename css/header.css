@@ -1,17 +1,17 @@
 /*=======================
-2.컨테이너
+1.컨테이너
 =======================*/
 .container {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
     grid-template-rows: 64px minmax(0, 1fr);
     grid-template-areas:
-    "header header"
-    "aside main";
+        "header header"
+        "aside main";
 }
 
 /*=======================
-3.헤더
+2-1.헤더
 =======================*/
 .header {
     position: fixed;
@@ -28,7 +28,7 @@
 }
 
 /*=======================
-3-1.헤더 햄버거
+2-2.헤더 햄버거
 =======================*/
 .hamburger-container {
     display: flex;
@@ -56,28 +56,29 @@
     display: none;
 }
 
-.container:has(#CheckBox:checked) {
+/* 메인/채널 데스크탑 접기 */
+.container:not(.page-video):has(#CheckBox:checked) {
     grid-template-columns: 70px 1fr;
 }
 
-.container:has(#CheckBox:checked) .aside {
+.container:not(.page-video):has(#CheckBox:checked) .aside {
     width: 70px;
 }
 
-.container:has(#CheckBox:checked) .aside h2,
-.container:has(#CheckBox:checked) .aside p {
+.container:not(.page-video):has(#CheckBox:checked) .aside h2,
+.container:not(.page-video):has(#CheckBox:checked) .aside p {
     display: none;
 }
 
 /*=======================
-3-2. 헤더 로고
+2-3. 헤더 로고
 =======================*/
 .logo-img {
     cursor: pointer;
 }
 
 /*=======================
-3-3.헤더 검색창
+2-4.헤더 검색창
 =======================*/
 .search-container {
     display: flex;
@@ -115,7 +116,7 @@
 
 .search-btn {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
     background-color: var(--bg-4);
     width: 64px;
@@ -128,7 +129,7 @@
     border-bottom-right-radius: 12px;
 }
 
-.search-btn img{
+.search-btn img {
     width: 30px;
     height: 30px;
 }
@@ -136,6 +137,7 @@
 .search-btn:hover {
     background: var(--hover);
 }
+
 .back-btn {
     color: var(--text);
     font-weight: 700;
@@ -149,7 +151,7 @@
 }
 
 /*=======================
-3-4.헤더 모바일 검색창용
+2-5.헤더 모바일 검색창용
 =======================*/
 .mobile-search-container {
     display: none;
@@ -175,7 +177,7 @@
 }
 
 /*=======================
-3-5.헤더 마이크
+2-6.헤더 마이크
 =======================*/
 .header-mic-container {
     display: flex;
@@ -200,7 +202,7 @@
 }
 
 /*=======================
-3-6.헤더 네비
+2-7.헤더 네비
 =======================*/
 .header-nav {
     width: 208px;
@@ -225,7 +227,7 @@
 }
 
 /*=======================
-4.사이드바 
+3-1.사이드바
 =======================*/
 .aside {
     grid-area: aside;
@@ -310,9 +312,8 @@
 }
 
 /*=======================
-4-1.사이드바 스크롤
+3-2.사이드바 스크롤
 =======================*/
-
 .aside-nav::-webkit-scrollbar {
     width: 6px;
 }
@@ -327,24 +328,85 @@
 }
 
 .aside-nav::-webkit-scrollbar-thumb:hover {
-background: #909090;
+    background: #909090;
 }
 
 /*=======================
-6. 반응형(테블릿)
+3-3. 비디오 페이지 전용 사이드바
+=======================*/
+.container.page-video {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main";
+}
+
+.container.page-video:has(#CheckBox:checked) {
+    grid-template-columns: 1fr;
+}
+
+.container.page-video .aside {
+    display: block;
+    width: 240px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 300;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.container.page-video .aside h2,
+.container.page-video .aside p {
+    display: block;
+}
+
+.container.page-video .aside-logo {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    gap: 14px;
+}
+
+.container.page-video:has(#CheckBox:checked) .aside {
+    transform: translateX(0);
+    width: 240px;
+}
+
+.container.page-video:has(#CheckBox:checked) .hamburger-container {
+    visibility: hidden;
+}
+
+.container.page-video:has(#CheckBox:checked) .aside-nav-item {
+    justify-content: flex-start;
+    padding: 0 24px;
+    gap: 24px;
+}
+
+.container.page-video:has(#CheckBox:checked)::after {
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+/*=======================
+4-1. 반응형(테블릿)
 =======================*/
 @media (max-width: 1024px) {
-    .aside-logo {
+    .container:not(.page-video) .aside-logo {
         display: none;
     }
 
-    .aside {
+    .container:not(.page-video) .aside {
         width: 70px;
         top: 64px;
         height: calc(100vh - 64px);
     }
 
-    .container:has(#CheckBox:checked) .aside {
+    .container:not(.page-video):has(#CheckBox:checked) .aside {
         width: 240px;
         top: 0;
         height: 100vh;
@@ -355,48 +417,49 @@ background: #909090;
         visibility: hidden;
     }
 
-    .container:has(#CheckBox:checked) .aside-logo {
+    .container:not(.page-video):has(#CheckBox:checked) .aside-logo {
         display: flex;
         align-items: center;
         height: 64px;
         gap: 12px;
     }
+
     .mic-container {
         margin-left: 10px;
     }
 
-    .container {
+    .container:not(.page-video) {
         grid-template-columns: 70px minmax(0, 1fr);
     }
 
-    .aside {
+    .container:not(.page-video) .aside {
         width: 70px;
         z-index: 10;
         transition: width 0.3s;
     }
 
-    .aside h2,
-    .aside p {
+    .container:not(.page-video) .aside h2,
+    .container:not(.page-video) .aside p {
         display: none;
     }
 
-    .container:has(#CheckBox:checked) .aside {
+    .container:not(.page-video):has(#CheckBox:checked) .aside {
         width: 240px;
     }
 
-    .container:has(#CheckBox:checked) .aside h2,
-    .container:has(#CheckBox:checked) .aside p {
+    .container:not(.page-video):has(#CheckBox:checked) .aside h2,
+    .container:not(.page-video):has(#CheckBox:checked) .aside p {
         display: block;
     }
 
-    .container:has(#CheckBox:checked) .aside-nav-item {
+    .container:not(.page-video):has(#CheckBox:checked) .aside-nav-item {
         justify-content: flex-start;
         padding: 0 24px;
         gap: 24px;
     }
 
-    .container:has(#CheckBox:checked) .main::after, 
-    .container:has(#CheckBox:checked) .channel::after{
+    .container:not(.page-video):has(#CheckBox:checked) .main::after,
+    .container:not(.page-video):has(#CheckBox:checked) .channel::after {
         content: "";
         position: fixed;
         top: 64px;
@@ -407,7 +470,7 @@ background: #909090;
         z-index: 200;
     }
 
-    .container:has(#CheckBox:checked) .header::after {
+    .container:not(.page-video):has(#CheckBox:checked) .header::after {
         content: "";
         position: fixed;
         top: 0;
@@ -420,48 +483,50 @@ background: #909090;
 }
 
 /*=======================
-6-1.반응형(모바일)
+4-2.반응형(모바일)
 =======================*/
 @media (max-width: 768px) {
-    .container {
+    .container:not(.page-video) {
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
             "main";
     }
 
-    .aside {
+    .container:not(.page-video) .aside {
         display: block;
         width: 240px;
-        top: 64px;
+        top: 0;
         left: 0;
-        height: calc(100vh - 64px);
+        height: 100vh;
+        z-index: 300;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
     }
 
-    .aside-logo {
+    .container:not(.page-video) .aside-logo {
         display: flex;
         align-items: center;
         height: 64px;
         gap: 14px;
     }
 
-    .aside {
-        top: 0;
-        height: 100vh;
+    .container:not(.page-video) .aside h2,
+    .container:not(.page-video) .aside p {
+        display: block;
     }
 
-    .container:has(#CheckBox:checked) {
+    .container:not(.page-video):has(#CheckBox:checked) {
         grid-template-columns: 1fr;
     }
 
-    .container:has(#CheckBox:checked) .aside {
+    .container:not(.page-video):has(#CheckBox:checked) .aside {
         transform: translateX(0);
+        width: 240px;
     }
 
-    .container:has(#CheckBox:checked) .aside h2,
-    .container:has(#CheckBox:checked) .aside p {
+    .container:not(.page-video):has(#CheckBox:checked) .aside h2,
+    .container:not(.page-video):has(#CheckBox:checked) .aside p {
         display: block;
     }
 
@@ -506,5 +571,4 @@ background: #909090;
         margin-right: 12px;
     }
 }
-
 
