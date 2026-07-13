@@ -337,7 +337,6 @@
   font-size: 0.875rem;
 }
 
-
 .notification-dropdown-area {
   border-bottom: 1px solid var(--hover);
 }
@@ -349,14 +348,14 @@
 .notification-btn:checked ~ .notification-dropdown {
   display: block;
 }
-
+/* -------------------------- */
 .header-profile {
   cursor: pointer;
   border-radius: 50%;
 }
 
 .header-profile:hover {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .profile-btn {
@@ -391,6 +390,7 @@
   padding: 10px 16px;
   font-size: 0.875rem;
   color: var(--text);
+  gap: 12px;
 }
 .profile-dropdown-area {
   border-bottom: 1px solid var(--hover);
@@ -440,10 +440,10 @@
   display: flex;
   color: var(--text);
   align-items: center;
+  gap: 24px;
   height: 40px;
   padding: 0 24px;
   cursor: pointer;
-  
 }
 
 .aside-nav-item p:not(.item-show) {
@@ -621,6 +621,7 @@
   .container:not(.page-video):has(#CheckBox:checked) .aside-nav-item {
     justify-content: flex-start;
     padding: 0 24px;
+    gap: 24px;
   }
 
   .container:not(.page-video):has(#CheckBox:checked) .main::after,
