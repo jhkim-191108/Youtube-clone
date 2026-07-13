@@ -223,6 +223,10 @@ body {
   transition: color 0.3s;
 }
 
+.video-comments .video-sort img {
+  display: inline-block;
+}
+
 .video-comments .video-sort:hover button {
   color: var(--text-2);
 }
