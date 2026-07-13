@@ -1,14 +1,3 @@
-/* 네비게이션 바에 사용할 구글 아이콘 적용 */
-.material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.5rem;
-    display: inline-block;
-    line-height: 1;
-}
-
-
 /* ===================== 기본 설정 ===================== */
 body {
     background-color: var(--bg-2);
@@ -23,15 +12,16 @@ button {
 
 /* ===================== 전체 채널 ===================== */
 .channel {
-    --layout-max-width: 1200px;
-    --content-padding: clamp(1.5rem, 3.2vw, 4rem);
-  
-    width: min(100%, var(--layout-max-width));
-    
-    
-    grid-area: main;
-    padding: 1rem 1.5rem;
-    background-color: #000;
+  --content-padding: clamp(24px, 3.2vw, 64px); /* 화면에 따라 콘텐츠 여백 조절 */
+
+  grid-area: main;        /* 부모 Grid의 메인 영역에 배치 */
+  width: 100%;            /* 메인 영역의 가로폭을 전부 사용 */
+  max-width: none;        /* 기존 1200px 최대 너비 제한 해제 */
+  min-width: 0;           /* 내부 콘텐츠로 인한 가로 넘침 방지 */
+  margin: 0;              /* 중복된 바깥 여백 제거 */
+  padding: 0;             /* 배너를 좌우 끝까지 표시 */
+  box-sizing: border-box; /* 패딩과 테두리를 너비 안에 포함 */
+  background-color: #000; /* 채널 영역 배경색 */
 }
 
 /* ===================== 채널 배너 ===================== */
@@ -65,20 +55,20 @@ button {
 .channel-title {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 24px;
 }
 
 .channel-title img {
-    width: 5rem;
-    height: 5rem;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-top: 1rem;
+    margin-top: 16px;
     opacity: 65%;
     cursor: pointer; 
 }
 
 .channel-name {
-    margin-top: 1rem;
+    margin-top: 16px;
     font-size: 1.5rem;
     font-weight: 400;
     cursor: pointer;
@@ -168,7 +158,7 @@ nav.channel-toolbar a {
     text-decoration: none;
 
     position: relative;
-    transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 *//
+    transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 */
 }
 nav.channel-toolbar a:hover {
     color: var(--text); 
@@ -284,14 +274,16 @@ nav.channel-toolbar a.active::after {
     line-height: 1.25rem;
 }
 
-/* ===================== 섹션 :: 1 , 2 공 통 ===================== */
+/* ===================== 섹션 :: 1 , 2 , 3 공 통 ===================== */
 
 .playlist { 
-    padding: 0 var(--content-padding) 16px;
-    margin-bottom: 16px;
-    margin-top: 16px;
+    width: 100%;                            /* 세 섹션의 전체 너비 통일 */
+    margin: 16px 0;                         /* 좌우 바깥 여백 제거 */
+    padding: 0 var(--content-padding) 16px; /* 내부 좌우 여백만 적용 */
+    box-sizing: border-box; 
     
 }
+
 
 .playlist-header {
     position: relative;
@@ -332,14 +324,23 @@ nav.channel-toolbar a.active::after {
 }
 /* 섹션 :: 카드 목록 */
 .playlist-content {
-    display: flex;
-    gap: 0.6rem;
+    display: flex;                          /* 카드를 가로로 배치 */
+    width: 100%;                            /* 카드 목록 너비 통일 */
+    gap: 10px;                              /* 카드 사이 간격 */
 }
 /* 섹션 :: 카드 */
 .video-card {
     width: calc((100% - 2.4rem) / 5);       
     flex-shrink: 0;
-    
+    border-radius: 1px;
+
+    transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.video-card:hover {
+  background: var(--bg-4);
+  box-shadow: 0 0 0 6px var(--bg-4);
 }
 .video-card img {
     width: 100%;
@@ -349,7 +350,10 @@ nav.channel-toolbar a.active::after {
     border-radius: 0.1rem;
     margin-bottom: 0.75rem;
     cursor: pointer; 
+    
 }
+
+
 .video-card-title {
     margin-bottom: 0.5rem;
     font-size: 0.875rem;
@@ -442,16 +446,13 @@ nav.channel-toolbar a.active::after {
     padding: 12px;
   }
 
-  .channel-cover {
-    padding: 0 24px;
+  .channel-cover,
+  nav.channel-toolbar {
+    padding-inline: 24px;
   }
 
   .channel-arrow-btn {
     transform: translateX(20px);
-  }
-
-  nav.channel-toolbar {
-    padding: 0 24px;
   }
 
   nav.channel-toolbar ul {
@@ -476,8 +477,6 @@ nav.channel-toolbar a.active::after {
     flex: 1;
     min-width: 0;
     width: auto;
-    height: auto;
-    padding-bottom: 0;
   }
 
   .video-desc {
@@ -492,32 +491,25 @@ nav.channel-toolbar a.active::after {
   .playlist-content {
     flex-wrap: wrap;
     gap: 12px;
-    overflow-x: visible;
   }
 
   .video-card {
-    width: calc((100% - 12px) / 2); /* 태블릿에서 2개 */
+    width: calc((100% - 12px) / 2);
   }
 }
 
 /* ===================== 모바일 반응형 ===================== */
 /* 767px 이하 화면에서 적용 */
 @media (max-width: 767px) {
-  .playlist-content {
-    flex-wrap: wrap; /* 줄바꿈 */
-    gap: 16px;
-    overflow-x: visible; /* 가로 스크롤 제거 */
-  }
-
   .channel-cover {
-    height: auto; /* 내용만큼 높이 자동 */
+    height: auto;
     padding: 16px;
-    flex-direction: column; /* 프로필과 버튼 세로 배치 */
+    flex-direction: column;
     gap: 16px;
   }
 
   .channel-title {
-    gap: 12px; /* 프로필 사진과 텍스트 간격 */
+    gap: 12px;
   }
 
   .channel-title img {
@@ -532,42 +524,30 @@ nav.channel-toolbar a.active::after {
   }
 
   .btn-subscribes {
-    position: static; /* absolute 해제 */
-    width: 116px;
-    height: 36px;
+    position: static;
   }
 
   nav.channel-toolbar {
     padding: 0;
-    
-  }
-
-  nav.channel-toolbar ul {
-    flex-shrink: 0; /* 메뉴 크기 유지 */
   }
 
   .channel-actions {
-    display: none; /* 모바일에서는 검색/화살표 숨김 */
+    display: none;
   }
 
   .small-video {
-    flex-direction: column; /* 대표 영상과 설명 세로 배치 */
+    flex-direction: column;
     gap: 16px;
     padding: 16px;
   }
 
-  .player {
-    width: 100%; /* 영상 가로 꽉 차게 */
-  }
-
-  .video-description {
-    width: auto;
-    height: auto;
-    padding-bottom: 0;
+  .player,
+  .video-card {
+    width: 100%;
   }
 
   .video-desc br {
-    display: none; /* 모바일에서 강제 줄바꿈 제거 */
+    display: none;
   }
 
   .playlist {
@@ -577,15 +557,6 @@ nav.channel-toolbar a.active::after {
   .playlist-header {
     padding-top: 24px;
     margin-bottom: 16px;
-  }
-
-  .playlist-content {
-    gap: 12px;
-    
-  }
-
-  .video-card {
-    width: 100%; /* 한 줄에 1개 */
   }
 }
 /* 가로 스크롤은 가능하지만 스크롤바는 숨김 */
