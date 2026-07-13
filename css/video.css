@@ -1,19 +1,11 @@
-:root {
-  --bg: #212121;
-  --bg-2: #000000;
-  --bg-3: #181818;
-  --bg-4: #303030;
-  --text: #ffffff;
-  --text-2: #aaaaaa;
-  --accent: #cc0000;
-  --hover: #717171;
-}
-
 body {
   background-color: var(--bg-3);
 }
 
+/* 비디오 :: 메인 */
 .video-main {
+  grid-area: main;
+  min-width: 0;
   display: grid;
   grid-template-columns: 60% 37.7%;
   grid-template-areas:
@@ -24,7 +16,6 @@ body {
   max-width: 1114px;
   padding: 0 24px;
   margin: 0 auto;
-  margin-top: 24px;
   padding-bottom: 50px;
   margin-top: 75px;
 }
@@ -33,8 +24,10 @@ body {
   grid-area: video;
 }
 
-.video-list {
+.video-main .video-list {
   grid-area: list;
+  display: block;
+  padding: 0;
 }
 
 .video-comments {
@@ -513,82 +506,6 @@ body {
   color: var(--text-2);
 }
 
-/* 공통 :: 모달 */
-.modal-layout {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-
-  display: none;
-}
-
-.modal-layout:target {
-  display: block;
-}
-
-.modal-bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-layout-inner {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 300px;
-  background-color: #fff;
-  padding: 16px;
-  border-radius: 15px;
-  height: 100%;
-  max-height: 152px;
-}
-
-.subscribe-content p {
-  font-size: 0.875rem;
-  color: #828282;
-  word-break: keep-all;
-  padding: 16px 0;
-}
-
-.subscribe-content p span {
-  color: #000;
-}
-
-.subscribe-btn {
-  display: flex;
-  justify-content: end;
-  gap: 10px;
-  margin-top: 31px;
-}
-
-.subscribe-btn a {
-  display: block;
-  font-size: 0.9375rem;
-  color: #000;
-  font-weight: 600;
-  padding: 11px 18px;
-}
-
-.subscribe-btn a.unsubscribe {
-  color: #fe2a3e;
-}
-
 /* 반응형 :: Tablet */
 @media (max-width: 1024px) {
   .video-main {
@@ -650,4 +567,69 @@ body {
   .video-comments .video-sort-list {
     width: 200px;
   }
+}
+
+/*사이드바 동작*/
+.container {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+}
+
+.container:has(#CheckBox:checked) {
+  grid-template-columns: 1fr;
+}
+
+.aside {
+  display: block;
+  width: 240px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 20;
+  margin-bottom: 24px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.aside h2,
+.aside p {
+  display: block;
+}
+
+.aside-logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 14px;
+}
+
+.container:has(#CheckBox:checked) .aside {
+  transform: translateX(0);
+  width: 240px;
+}
+
+.container:has(#CheckBox:checked) .hamburger-container {
+  visibility: hidden;
+}
+
+.container:has(#CheckBox:checked) .aside h2,
+.container:has(#CheckBox:checked) .aside p {
+  display: block;
+}
+
+.container:has(#CheckBox:checked) .aside-nav-item {
+  justify-content: flex-start;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.container:has(#CheckBox:checked)::after {
+  content: "";
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 15;
 }
