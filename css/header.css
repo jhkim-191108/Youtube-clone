@@ -319,7 +319,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-right: 15px;
+  padding: 0 15px;
   font-size: 0.875rem;
   color: var(--text);
 }
@@ -335,7 +335,6 @@
 .notification-area p {
   color: var(--text);
   font-size: 0.875rem;
-  padding: 10px 20px;
 }
 
 .notification-dropdown-area {
