@@ -27,9 +27,9 @@ button {
     --content-padding: clamp(1.5rem, 3.2vw, 4rem);
   
     width: min(100%, var(--layout-max-width));
-    /* margin: 0 auto; */
-    margin-top: 64px;
-    margin-left: 250px;
+    
+    
+    grid-area: main;
     padding: 1rem 1.5rem;
     background-color: #000;
 }
