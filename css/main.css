@@ -145,7 +145,7 @@ li:not(.active):hover {
 .video-card h2 {
   margin: 0;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -153,7 +153,7 @@ li:not(.active):hover {
 .video-card-content p {
   margin: 4px 0 0;
   color: var(--text-2);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .video-card-container {
