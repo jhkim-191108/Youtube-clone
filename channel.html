@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
+    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class 1차 프로젝트 Youtube 클론 코딩입니다." />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
-    <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
+    <meta name="keywords" content="유튜브 클론, HTML, CSS, Video, 오르미, 이스트소프트" />
+    <!-- material icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!--- reset css --->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
@@ -34,7 +36,26 @@
           <label for="MobileSearch" class="back-btn">←</label>
           <!--  검색 컨테이너 -->
           <div class="header-search-container">
-            <input type="text" class="header-search" placeholder="Search" />
+            <div class="header-search">
+              <input type="text" placeholder="Search" />
+              <!-- 검색 히스토리 -->
+              <div class="search-history">
+                <ul>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 오르미 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프론트엔드 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> First Class <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프로젝트 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <button class="search-btn">
               <img src="./images/main/btn-search.png" alt="검색버튼" />
             </button>
@@ -183,7 +204,7 @@
             <!-----------------------------------< 영상 01 >---------------------------------->
             <article class="video-card">
               <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-              
+
               <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
               <p class="video-channel">Marcus Levin</p>
               <p class="video-meta">329K views · 1 month ago</p>
