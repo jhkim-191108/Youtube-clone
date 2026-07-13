@@ -80,8 +80,10 @@
 ├── 📄 video.html         # 비디오 상세 페이지
 ├── 📄 channel.html       # 채널 상세 페이지
 ├── 📂 css
-│   ├── 📄 reset.css     # 공통 스타일
-│   ├── 📄 home.css       # 홈 스타일
+│   ├── 📄 reset.css      # 공통 스타일 reset
+│   ├── 📄 common.css     # 공통 스타일 ( font, root, modal )
+│   ├── 📄 header.css     # 공통 헤더 스타일
+│   ├── 📄 main.css       # 홈 스타일
 │   ├── 📄 video.css      # 비디오 스타일
 │   └── 📄 channel.css    # 채널 스타일
 └── 📂 images             # 이미지 리소스
