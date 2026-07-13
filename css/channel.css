@@ -282,7 +282,7 @@ nav.channel-toolbar a.active::after {
     line-height: 1.25rem;
 }
 
-/* ===================== 섹션 :: 1 , 2 공 통 ===================== */
+/* ===================== 섹션 :: 1 , 2 , 3 공 통 ===================== */
 
 .playlist { 
     padding: 0 var(--content-padding) 16px;
