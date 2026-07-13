@@ -3,420 +3,566 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
     <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/video.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/video.css" />
     <title>First Class Youtube - Video</title>
   </head>
   <body>
-    <!-- 해더 영역 -->
-    <header class="header">
-      <!-- 모바일 검색창 체크 박스 -->
-      <input type="checkbox" id="MobileSearch" class="mobile-checkbox" />
-      <!-- 햄배거 버튼 체크박스 -->
-      <input type="checkbox" id="CheckBox" class="header-hamburger" />
-      <div class="hamburger-container">
-        <label for="CheckBox" class="hamburger-label">☰</label>
-        <img src="./images/main/Logo.png" alt="로고" class="logo-img" />
-      </div>
-      <!-- 헤더 검색 컨테이너 -->
-      <div class="search-container">
-        <label for="MobileSearch" class="back-btn">←</label>
-        <input type="text" class="header-search" placeholder="Search" />
-        <button class="search-btn">
-          <img src="./images/main/btn-search.png" alt="검색버튼" />
-        </button>
-        <!-- 마이크 버튼 -->
-        <div class="header-mic-container">
-          <img src="./images/main/btn-mic.png" alt="마이크버튼" />
-        </div>
-      </div>
-
-      <!-- 헤더 네비 영역 -->
-      <nav class="header-nav">
-        <div class="header-nav-container">
-          <!-- 모바일용 검색창 -->
-          <label for="MobileSearch" class="mobile-search-label">
-            <img src="./images/main/btn-search.png" alt="검색버튼" />
+    <div class="container">
+      
+      <!-- 해더 영역 -->
+      <header class="header">
+        <!-- 모바일 검색창 체크 박스 -->
+        <input type="checkbox" id="MobileSearch" class="mobile-checkbox" />
+        <!-- 햄배거 버튼 체크박스 -->
+        <input type="checkbox" id="CheckBox" class="header-hamburger" />
+        <div class="hamburger-container">
+          <label for="CheckBox" class="hamburger-label">
+            <img src="./images/main/icon-hamburger.png" alt="햄버거버튼" />
           </label>
-
-          <!-- 헤더-오른쪽-네비 -->
-          <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
-          <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
-          <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-profile" />
-          <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile header-nav-profile" />
+          <img src="./images/main/Logo.png" alt="로고" class="logo-img" />
         </div>
-      </nav>
-    </header>
-    <main class="video-main">
-      <section class="video-content">
-        <!-- 비디오 :: 비디오 영역 -->
-        <div class="video-iframe-bx">
-          <iframe
-            width="640"
-            height="360"
-            src="https://www.youtube.com/embed/prkygi2am8E?si=ZL3-Yq1isMjuoIFL"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <!-- 비디오 :: 제목 -->
-        <header class="video-title">
-          <h2 class="title">Blind Woodturner: Turning passion into fine art</h2>
-          <div class="video-title-info">
-            <div class="video-info-date">576,969 views . Oct 8, 2021</div>
-            <div class="video-info-btns">
-              <button class="btn-like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 1.7K</button>
-              <button class="btn-dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /> 632</button>
-              <button class="btn-share"><img src="./images/video/btn-share.svg" alt="공유" /> SHARE</button>
-              <button class="btn-save"><img src="./images/video/btn-save.svg" alt="저장" /> SAVE</button>
-              <button class="btn-more"><img src="./images/video/btn-more.svg" alt="더보기" /></button>
-            </div>
+        <!-- 헤더 검색 컨테이너 -->
+        <div class="search-container">
+          <!-- 모바일 뒤로가기 버튼 -->
+          <label for="MobileSearch" class="back-btn">←</label>
+          <!--  검색 컨테이너 -->
+          <div class="header-search-container">
+            <input type="text" class="header-search" placeholder="Search" />
+            <button class="search-btn">
+              <img src="./images/main/btn-search.png" alt="검색버튼" />
+            </button>
           </div>
-        </header>
-
-        <!-- 비디오 :: 유저정보 -->
-        <div class="video-user">
-          <div class="user-img">
-            <div class="user-img-inner">
-              <img src="./images/video/user-img-1.jpg" alt="유저 이미지" />
-            </div>
-          </div>
-          <div class="user-info">
-            <div class="user-info-top">
-              <div class="user-name">
-                <p class="name">Marcus Levin</p>
-                <p class="subscribers">1.2M subscribers</p>
-              </div>
-              <div class="user-btn">
-                <a href="#subscribeModal" class="btn-subscribes"><span>Subscribes</span></a>
-              </div>
-            </div>
-            <div class="video-info-bottom">
-              <p>Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
-              <a href="#">show more</a>
-            </div>
+          <!-- 마이크 버튼 -->
+          <div class="header-mic-container">
+            <img src="./images/main/btn-mic.png" alt="마이크버튼" />
           </div>
         </div>
-      </section>
+        <!-- 헤더 네비 영역 -->
+        <nav class="header-nav">
+          <div class="header-nav-container">
+            <!-- 모바일용 검색버튼 -> 클릭시 검색창 출력 -->
+            <label for="MobileSearch" class="mobile-search-label">
+              <img src="./images/main/btn-search.png" alt="검색버튼" />
+            </label>
+            <!-- 헤더-오른쪽-네비 -->
+            <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
+            <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
+            <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-profile" />
+            <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
+          </div>
+        </nav>
+      </header>
 
-      <!-- 비디오 :: 관련 비디오 리스트 -->
-      <section class="video-list">
-        <!-- 비디오 :: 리스트 탭 -->
-        <input type="radio" name="videoListTab" id="all" checked />
-        <input type="radio" name="videoListTab" id="from" />
-        <div class="video-tab">
-          <label for="all">All</label>
-          <label for="from">From Marcus Levin </label>
+      <aside class = "aside">
+        <div class="aside-logo">
+          <label for="CheckBox" class="hamburger-label">
+            <img src="./images/main/icon-hamburger.png" alt="">
+          </label>
+          <img src="./images/main/Logo.png" class="logo-img" alt="">
         </div>
-        <!-- 비디오 :: 리스트 내용 -->
-        <div class="video-list-content">
-          <!-- 비디오 :: all 리스트 -->
-          <div class="video-tab-content all-content">
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-1.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-2.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living Living Living Living Living Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-3.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-4.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-5.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-6.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-7.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-8.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-          </div>
-          <!-- 비디오 :: from 리스트 -->
-          <div class="video-tab-content from-content">
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-3.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-4.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-5.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-6.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-7.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-8.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-1.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-            <div class="video-bx">
-              <div class="video-img">
-                <img src="./images/video/video-img-2.jpg" alt="비디오 이미지" />
-                <span class="time">23:45</span>
-              </div>
-              <div class="video-info">
-                <h3 class="title">Ep 6: Living Living Living Living Living Living to Serve | SEARCH ON</h3>
-                <p class="maker">James Gouse</p>
-                <p class="info">1M views . 3 years ago</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <nav class ="aside-nav">
+          <section class ="aside-nav-container">
+            <ul>
+              <li class="aside-nav-item active">
+                <img src="./images/main/btn-home.png" alt="홈">
+                <p>home</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-explore.png" alt="익스플로어">
+                <p>explore</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-subscriptions.png" alt="서브스크립션">
+                <p>subscriptions</p>
+              </li>
+            </ul>
+        </section>
 
-      <!-- 비디오 :: 댓글 -->
-      <section class="video-comments">
-        <header class="video-comments-top">
-          <p>286 Comments</p>
-          <div class="video-sort">
-            <button><img src="./images/video/btn-sort.svg" alt="리스트 정렬" /> sort by</button>
-            <div class="video-sort-list">
-              <ul>
-                <li>
-                  <a href="#">
-                    <strong>인기순</strong>
-                    추천 댓글 표시
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <strong>최신순</strong>
-                    스팸 가능성이 있는 댓글을 포함하여 최근 댓글 표시
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <section class ="aside-nav-container">
+          <ul>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-Library.png" alt="라이브러리">
+              <p>library</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-history.png" alt="히스토리">
+              <p>history</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-yourvideos.png" alt="나의 비디오">
+              <p>your videos</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-watchLater.png" alt="와치레이터">
+              <p>watch later</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-likedvideos.png" alt="링크 비디오">
+              <p>linke videos</p>
+            </li>
+            <li class="aside-nav-item">
+              <img src="./images/main/btn-arrowBotton.png" alt="더보기버튼">
+              <p>show more</p>
+            </li>
+          </ul>
+          </section>
+
+          <section class ="aside-nav-container">
+            <h2>subscriptions</h2>
+            <ul>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="user-avatar">
+                <p>james gouse</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3">
+                <p>alan cooper</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4">
+                <p>marcus levin</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5">
+                <p>alexis sears</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6">
+                <p>jesica lambert</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7">
+                <p>anna white</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8">
+                <p>sky dias</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-arrowBotton.png" alt="더보기">
+                <p class ="item-show">show 13 more</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class ="aside-nav-container">
+            <h2>more from youtube</h2>
+            <ul>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-youtubeprimium.png" alt="프리미엄">
+                <p>youtube premium</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-gaming.png" alt="게이밍">
+                <p>gaming</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-live.png" alt="라이브">
+                <p>live</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-sports.png" alt="스포츠">
+                <p>sports</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class ="aside-nav-container">
+            <ul>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-settings.png" alt="세팅">
+                <p>settings</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-report.png" alt="리포트">
+                <p>report history</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-help.png" alt="헬프">
+                <p> help</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-send-feedback.png" alt="피드백">
+                <p>send feedback</p>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </aside>
+
+      <main class="main video-main">
+        <section class="video-content">
+          <!-- 비디오 :: 비디오 영역 -->
+          <div class="video-iframe-bx">
+            <iframe
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/prkygi2am8E?si=ZL3-Yq1isMjuoIFL"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-        </header>
-        <div class="video-comments-bottom">
-          <div class="video-comments-bx video-comments-input">
-            <div class="video-comments-img">
-              <div class="video-img-inner"><img src="./images/video/user-img-2.jpg" alt="유저 이미지" /></div>
-            </div>
-            <div class="video-comments-info">
-              <input type="text" placeholder="Add a public comment..." />
-            </div>
-          </div>
-          <div class="video-comments-list">
-            <div class="video-comments-bx">
-              <div class="video-comments-img">
-                <div class="video-img-inner"><img src="./images/video/user-img-3.jpg" alt="유저 이미지" /></div>
+
+          <!-- 비디오 :: 제목 -->
+          <header class="video-title">
+            <h2 class="title">Blind Woodturner: Turning passion into fine art</h2>
+            <div class="video-title-info">
+              <div class="video-info-date">576,969 views . Oct 8, 2021</div>
+              <div class="video-info-btns">
+                <button class="btn-like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 1.7K</button>
+                <button class="btn-dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /> 632</button>
+                <button class="btn-share"><img src="./images/video/btn-share.svg" alt="공유" /> SHARE</button>
+                <button class="btn-save"><img src="./images/video/btn-save.svg" alt="저장" /> SAVE</button>
+                <button class="btn-more"><img src="./images/video/btn-more.svg" alt="더보기" /></button>
               </div>
-              <div class="video-comments-info">
-                <p class="name">James Gouse <span> 8 hours ago</span></p>
-                <p class="comments">Wow, world is full of different skills</p>
-                <div class="video-comments-btns">
-                  <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
-                  <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
-                  <button class="like">REPLY</button>
+            </div>
+          </header>
+
+          <!-- 비디오 :: 유저정보 -->
+          <div class="video-user">
+            <div class="user-img">
+              <div class="user-img-inner">
+                <img src="./images/video/user-img-1.jpg" alt="유저 이미지" />
+              </div>
+            </div>
+            <div class="user-info">
+              <div class="user-info-top">
+                <div class="user-name">
+                  <p class="name">Marcus Levin</p>
+                  <p class="subscribers">1.2M subscribers</p>
+                </div>
+                <div class="user-btn">
+                  <a href="#subscribeModal" class="btn-subscribes"><span>Subscribes</span></a>
+                </div>
+              </div>
+              <div class="video-info-bottom">
+                <p>Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
+                <a href="#">show more</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 비디오 :: 관련 비디오 리스트 -->
+        <section class="video-list">
+          <!-- 비디오 :: 리스트 탭 -->
+          <input type="radio" name="videoListTab" id="all" checked />
+          <input type="radio" name="videoListTab" id="from" />
+          <div class="video-tab">
+            <label for="all">All</label>
+            <label for="from">From Marcus Levin </label>
+          </div>
+          <!-- 비디오 :: 리스트 내용 -->
+          <div class="video-list-content">
+            <!-- 비디오 :: all 리스트 -->
+            <div class="video-tab-content all-content">
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-1.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-2.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living Living Living Living Living Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-3.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-4.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-5.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-6.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-7.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-8.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
                 </div>
               </div>
             </div>
-
-            <div class="video-comments-bx">
-              <div class="video-comments-img">
-                <div class="video-img-inner"><img src="./images/video/user-img-4.jpg" alt="유저 이미지" /></div>
+            <!-- 비디오 :: from 리스트 -->
+            <div class="video-tab-content from-content">
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-3.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
               </div>
-              <div class="video-comments-info">
-                <p class="name">Alan Cooper <span> 4 days ago</span></p>
-                <p class="comments">Can you provide? <br /><br />On January 2, 2022</p>
-                <div class="video-comments-btns">
-                  <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
-                  <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
-                  <button class="like">REPLY</button>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-4.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-5.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-6.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-7.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-8.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-1.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
+                </div>
+              </div>
+              <div class="video-bx">
+                <div class="video-img">
+                  <img src="./images/video/video-img-2.jpg" alt="비디오 이미지" />
+                  <span class="time">23:45</span>
+                </div>
+                <div class="video-info">
+                  <h3 class="title">Ep 6: Living Living Living Living Living Living to Serve | SEARCH ON</h3>
+                  <p class="maker">James Gouse</p>
+                  <p class="info">1M views . 3 years ago</p>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <!-- 비디오 :: 댓글 더보기 -->
-            <div class="video-comments-more">
-              <input type="checkbox" id="btnMore" />
-              <div class="comments-more">
-                <div class="video-comments-bx">
-                  <div class="video-comments-img">
-                    <div class="video-img-inner"><img src="./images/video/user-img-2.jpg" alt="유저 이미지" /></div>
+        <!-- 비디오 :: 댓글 -->
+        <section class="video-comments">
+          <header class="video-comments-top">
+            <p>286 Comments</p>
+            <div class="video-sort">
+              <button><img src="./images/video/btn-sort.svg" alt="리스트 정렬" /> sort by</button>
+              <div class="video-sort-list">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <strong>인기순</strong>
+                      추천 댓글 표시
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <strong>최신순</strong>
+                      스팸 가능성이 있는 댓글을 포함하여 최근 댓글 표시
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <div class="video-comments-bottom">
+            <div class="video-comments-bx video-comments-input">
+              <div class="video-comments-img">
+                <div class="video-img-inner"><img src="./images/video/user-img-2.jpg" alt="유저 이미지" /></div>
+              </div>
+              <div class="video-comments-info">
+                <input type="text" placeholder="Add a public comment..." />
+              </div>
+            </div>
+            <div class="video-comments-list">
+              <div class="video-comments-bx">
+                <div class="video-comments-img">
+                  <div class="video-img-inner"><img src="./images/video/user-img-3.jpg" alt="유저 이미지" /></div>
+                </div>
+                <div class="video-comments-info">
+                  <p class="name">James Gouse <span> 8 hours ago</span></p>
+                  <p class="comments">Wow, world is full of different skills</p>
+                  <div class="video-comments-btns">
+                    <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                    <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
+                    <button class="like">REPLY</button>
                   </div>
-                  <div class="video-comments-info">
-                    <p class="name">James Gouse <span> 8 hours ago</span></p>
-                    <p class="comments">Wow, world is full of different skills</p>
-                    <div class="video-comments-btns">
-                      <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
-                      <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
-                      <button class="like">REPLY</button>
+                </div>
+              </div>
+
+              <div class="video-comments-bx">
+                <div class="video-comments-img">
+                  <div class="video-img-inner"><img src="./images/video/user-img-4.jpg" alt="유저 이미지" /></div>
+                </div>
+                <div class="video-comments-info">
+                  <p class="name">Alan Cooper <span> 4 days ago</span></p>
+                  <p class="comments">Can you provide? <br /><br />On January 2, 2022</p>
+                  <div class="video-comments-btns">
+                    <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                    <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
+                    <button class="like">REPLY</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 비디오 :: 댓글 더보기 -->
+              <div class="video-comments-more">
+                <input type="checkbox" id="btnMore" />
+                <div class="comments-more">
+                  <div class="video-comments-bx">
+                    <div class="video-comments-img">
+                      <div class="video-img-inner"><img src="./images/video/user-img-2.jpg" alt="유저 이미지" /></div>
+                    </div>
+                    <div class="video-comments-info">
+                      <p class="name">James Gouse <span> 8 hours ago</span></p>
+                      <p class="comments">Wow, world is full of different skills</p>
+                      <div class="video-comments-btns">
+                        <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                        <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
+                        <button class="like">REPLY</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video-comments-bx">
+                    <div class="video-comments-img">
+                      <div class="video-img-inner"><img src="./images/video/user-img-4.jpg" alt="유저 이미지" /></div>
+                    </div>
+                    <div class="video-comments-info">
+                      <p class="name">James Gouse <span> 8 hours ago</span></p>
+                      <p class="comments">Wow, world is full of different skills. Wow, world is full of different skills Wow, world is full of different skills</p>
+                      <div class="video-comments-btns">
+                        <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
+                        <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
+                        <button class="like">REPLY</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="video-comments-bx">
-                  <div class="video-comments-img">
-                    <div class="video-img-inner"><img src="./images/video/user-img-4.jpg" alt="유저 이미지" /></div>
-                  </div>
-                  <div class="video-comments-info">
-                    <p class="name">James Gouse <span> 8 hours ago</span></p>
-                    <p class="comments">Wow, world is full of different skills. Wow, world is full of different skills Wow, world is full of different skills</p>
-                    <div class="video-comments-btns">
-                      <button class="like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 3</button>
-                      <button class="dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /></button>
-                      <button class="like">REPLY</button>
-                    </div>
-                  </div>
-                </div>
+                <label for="btnMore">댓글 <span class="open">더보기</span><span class="close">숨기기</span></label>
               </div>
-              <label for="btnMore">댓글 <span class="open">더보기</span><span class="close">숨기기</span></label>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+      </div>
 
-    <!-- 공통 :: 모달 -->
-    <div id="subscribeModal" class="modal-layout">
-      <div class="modal-layout-inner">
-        <a href="#" class="modal-bg"></a>
-        <div class="modal-content">
-          <div class="subscribe-content">
-            <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
-            <div class="subscribe-btn">
-              <a href="#">취소</a>
-              <a href="#" class="unsubscribe">구독 취소</a>
+      <!-- 공통 :: 모달 -->
+      <div id="subscribeModal" class="modal-layout">
+        <div class="modal-layout-inner">
+          <a href="#" class="modal-bg"></a>
+          <div class="modal-content">
+            <div class="subscribe-content">
+              <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
+              <div class="subscribe-btn">
+                <a href="#">취소</a>
+                <a href="#" class="unsubscribe">구독 취소</a>
             </div>
           </div>
         </div>
