@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
+    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class 1차 프로젝트 Youtube 클론 코딩입니다." />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
-    <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
+    <meta name="keywords" content="유튜브 클론, HTML, CSS, Video, 오르미, 이스트소프트" />
+    <!-- material icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
@@ -24,7 +26,7 @@
         <input type="checkbox" id="CheckBox" class="header-hamburger" />
         <div class="hamburger-container">
           <label for="CheckBox" class="hamburger-label">
-            <img src="./images/main/icon-hamburger.png" alt="햄버거버튼" />
+            <img src="./images/main/icon-hamburger.png" alt="햄버거" />
           </label>
           <img src="./images/main/Logo.png" alt="로고" class="logo-img" />
         </div>
@@ -34,7 +36,26 @@
           <label for="MobileSearch" class="back-btn">←</label>
           <!--  검색 컨테이너 -->
           <div class="header-search-container">
-            <input type="text" class="header-search" placeholder="Search" />
+            <div class="header-search">
+              <input type="text" placeholder="Search" />
+              <!-- 검색 히스토리 -->
+              <div class="search-history">
+                <ul>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 오르미 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프론트엔드 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> First Class <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프로젝트 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <button class="search-btn">
               <img src="./images/main/btn-search.png" alt="검색버튼" />
             </button>
@@ -68,7 +89,6 @@
                 </div>
                 <div class = "notification-area">
                   <h2>여기에 알림이 표시 됩니다.</h2>
-                  <p>즐겨 찾는 채널을 구독하여 최신 동영상의 알림을 받아 보세요.</p>
                 </div>
               </div>
             </div>
@@ -406,9 +426,9 @@
       <aside class="aside">
         <div class="aside-logo">
           <label for="CheckBox" class="hamburger-label">
-            <img src="./images/main/icon-hamburger.png" alt="" />
+            <img src="./images/main/icon-hamburger.png" alt="햄버거" />
           </label>
-          <img src="./images/main/Logo.png" class="logo-img" alt="" />
+          <img src="./images/main/Logo.png" class="logo-img" alt="로고" />
         </div>
         <nav class="aside-nav">
           <section class="aside-nav-container">

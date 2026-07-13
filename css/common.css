@@ -1,5 +1,5 @@
 /* 공통 :: 폰트 적용 */
-* {
+body {
   font-family: "Roboto", sans-serif;
 }
 
