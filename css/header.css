@@ -334,18 +334,18 @@
 /*=======================
 3-3. 비디오 페이지 전용 사이드바
 =======================*/
-.container.page-video {
+.page-video {
     grid-template-columns: 1fr;
     grid-template-areas:
         "header"
         "main";
 }
 
-.container.page-video:has(#CheckBox:checked) {
+.page-video:has(#CheckBox:checked) {
     grid-template-columns: 1fr;
 }
 
-.container.page-video .aside {
+.page-video .aside {
     display: block;
     width: 240px;
     top: 0;
@@ -356,34 +356,24 @@
     transition: transform 0.3s ease;
 }
 
-.container.page-video .aside h2,
-.container.page-video .aside p {
+.page-video .aside h2,
+.page-video .aside p {
     display: block;
 }
 
-.container.page-video .aside-logo {
+.page-video .aside-logo {
     display: flex;
     align-items: center;
     height: 64px;
     gap: 14px;
 }
 
-.container.page-video:has(#CheckBox:checked) .aside {
+.page-video:has(#CheckBox:checked) .aside {
     transform: translateX(0);
     width: 240px;
 }
 
-.container.page-video:has(#CheckBox:checked) .hamburger-container {
-    visibility: hidden;
-}
-
-.container.page-video:has(#CheckBox:checked) .aside-nav-item {
-    justify-content: flex-start;
-    padding: 0 24px;
-    gap: 24px;
-}
-
-.container.page-video:has(#CheckBox:checked)::after {
+.page-video:has(#CheckBox:checked)::after {
     content: "";
     display: block;
     position: fixed;
@@ -411,10 +401,6 @@
         top: 0;
         height: 100vh;
         z-index: 300;
-    }
-
-    .container:has(#CheckBox:checked) .hamburger-container {
-        visibility: hidden;
     }
 
     .container:not(.page-video):has(#CheckBox:checked) .aside-logo {
