@@ -141,14 +141,14 @@ nav.channel-toolbar ul {
 }
 
 nav.channel-toolbar li {
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    
+  height: 100%;    /* 네비바 높이 사용 */
+  display: flex;   /* 메뉴 내부 정렬 */
+  flex: 0 0 auto;  /* 반응형에서 메뉴 너비 유지 */
 }
 
-nav.channel-toolbar a {
+/* 메뉴 링크와 HOME/VIDEOS 탭의 공통 모양 */
+nav.channel-toolbar a, 
+nav.channel-toolbar .channel-tab{
     height: 100%;
 
     display: flex;
@@ -159,11 +159,14 @@ nav.channel-toolbar a {
     font-size: 0.875rem;
     font-weight: 700;
     text-decoration: none;
+    white-space: nowrap; /* 메뉴 줄바꿈 방지 */
+    cursor: pointer;     /* HOME/VIDEOS에도 손가락 표시 */
 
     position: relative;
     transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 */
 }
-nav.channel-toolbar a:hover {
+nav.channel-toolbar a:hover,
+nav.channel-toolbar .channel-tab:hover {
     color: var(--text); 
     opacity: 1; /* 마우스 올리면 선명하게 */
     
@@ -176,14 +179,16 @@ nav.channel-toolbar a.active {
 
 /* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
 
-nav.channel-toolbar li:nth-child(1) a {
-  width: 104px; /* HOME */
+/* HOME과 VIDEOS는 label 태그 */
+nav.channel-toolbar li:nth-child(1) .channel-tab {
+  width: 104px; /* HOME 너비 */
 }
 
-nav.channel-toolbar li:nth-child(2) a {
-  width: 113px; /* VIDEOS */
+nav.channel-toolbar li:nth-child(2) .channel-tab {
+  width: 113px; /* VIDEOS 너비 */
 }
 
+/* 나머지 메뉴는 a 태그 */
 nav.channel-toolbar li:nth-child(3) a {
   width: 136px; /* PLAYLISTS */
 }
@@ -200,25 +205,57 @@ nav.channel-toolbar li:nth-child(6) a {
   width: 110px; /* ABOUT */
 }
 
+/* 모든 메뉴 밑줄 */
+nav.channel-toolbar a::after,
+nav.channel-toolbar .channel-tab::after {
+  content: "";
+  width: 100%;
+  height: 1px;
 
-/* 네이게이션바 :: < 네이게이션 밑 언더바 > */
-/* 마우스를 올렸을 때 + 현재 선택된 메뉴의 밑줄 */
-nav.channel-toolbar a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--text-2);
-    opacity: 0; /* 평소에는 안 보임 */
-    transition: opacity 0.8s ease; /* 밑줄 천천히 나타남 */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background-color: var(--text-2);
+  opacity: 0;                       /* 기본 상태에서는 숨김 */
+  transition: opacity 0.8s ease;    /* 밑줄이 천천히 나타남 */
 }
+
+/* 일반 메뉴 hover 및 active 밑줄 */
 nav.channel-toolbar a:hover::after,
 nav.channel-toolbar a.active::after {
-    opacity: 1;
+  opacity: 1;
 }
 
+/* HOME과 VIDEOS hover 밑줄 */
+nav.channel-toolbar .channel-tab:hover::after {
+  opacity: 1;
+}
+
+/* 선택된 HOME 밑줄 */
+#tab-home:checked
+  ~ .channel-toolbar
+  label[for="tab-home"]::after {
+  opacity: 1;
+}
+
+/* 선택된 VIDEOS 밑줄 */
+#tab-videos:checked
+  ~ .channel-toolbar
+  label[for="tab-videos"]::after {
+  opacity: 1;
+}
+
+/* 선택된 HOME 또는 VIDEOS 글자색 */
+#tab-home:checked
+  ~ .channel-toolbar
+  label[for="tab-home"],
+#tab-videos:checked
+  ~ .channel-toolbar
+  label[for="tab-videos"] {
+  color: var(--text);
+  opacity: 1;
+}
 
 
 /* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
@@ -598,4 +635,24 @@ nav.channel-toolbar,
 nav.channel-toolbar::-webkit-scrollbar,
 .playlist-content::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
+}
+
+/* ====================================== T A P ===================================== */
+.tab-radio {
+  position: absolute; /* 라디오 버튼을 화면에서 숨김 */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-content,
+.videos-content {
+  display: none; /* 두 화면을 기본적으로 숨김 */
+}
+
+#tab-home:checked ~ .home-content {
+  display: block; /* HOME 선택 시 기존 내용 표시 */
+}
+
+#tab-videos:checked ~ .videos-content {
+  display: block; /* VIDEOS 선택 시 영상 목록 표시 */
 }
