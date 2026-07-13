@@ -440,16 +440,13 @@ nav.channel-toolbar a.active::after {
     padding: 12px;
   }
 
-  .channel-cover {
-    padding: 0 24px;
+  .channel-cover,
+  nav.channel-toolbar {
+    padding-inline: 24px;
   }
 
   .channel-arrow-btn {
     transform: translateX(20px);
-  }
-
-  nav.channel-toolbar {
-    padding: 0 24px;
   }
 
   nav.channel-toolbar ul {
@@ -474,8 +471,6 @@ nav.channel-toolbar a.active::after {
     flex: 1;
     min-width: 0;
     width: auto;
-    height: auto;
-    padding-bottom: 0;
   }
 
   .video-desc {
@@ -490,32 +485,25 @@ nav.channel-toolbar a.active::after {
   .playlist-content {
     flex-wrap: wrap;
     gap: 12px;
-    overflow-x: visible;
   }
 
   .video-card {
-    width: calc((100% - 12px) / 2); /* 태블릿에서 2개 */
+    width: calc((100% - 12px) / 2);
   }
 }
 
 /* ===================== 모바일 반응형 ===================== */
 /* 767px 이하 화면에서 적용 */
 @media (max-width: 767px) {
-  .playlist-content {
-    flex-wrap: wrap; /* 줄바꿈 */
-    gap: 16px;
-    overflow-x: visible; /* 가로 스크롤 제거 */
-  }
-
   .channel-cover {
-    height: auto; /* 내용만큼 높이 자동 */
+    height: auto;
     padding: 16px;
-    flex-direction: column; /* 프로필과 버튼 세로 배치 */
+    flex-direction: column;
     gap: 16px;
   }
 
   .channel-title {
-    gap: 12px; /* 프로필 사진과 텍스트 간격 */
+    gap: 12px;
   }
 
   .channel-title img {
@@ -530,42 +518,30 @@ nav.channel-toolbar a.active::after {
   }
 
   .btn-subscribes {
-    position: static; /* absolute 해제 */
-    width: 116px;
-    height: 36px;
+    position: static;
   }
 
   nav.channel-toolbar {
     padding: 0;
-    
-  }
-
-  nav.channel-toolbar ul {
-    flex-shrink: 0; /* 메뉴 크기 유지 */
   }
 
   .channel-actions {
-    display: none; /* 모바일에서는 검색/화살표 숨김 */
+    display: none;
   }
 
   .small-video {
-    flex-direction: column; /* 대표 영상과 설명 세로 배치 */
+    flex-direction: column;
     gap: 16px;
     padding: 16px;
   }
 
-  .player {
-    width: 100%; /* 영상 가로 꽉 차게 */
-  }
-
-  .video-description {
-    width: auto;
-    height: auto;
-    padding-bottom: 0;
+  .player,
+  .video-card {
+    width: 100%;
   }
 
   .video-desc br {
-    display: none; /* 모바일에서 강제 줄바꿈 제거 */
+    display: none;
   }
 
   .playlist {
@@ -575,15 +551,6 @@ nav.channel-toolbar a.active::after {
   .playlist-header {
     padding-top: 24px;
     margin-bottom: 16px;
-  }
-
-  .playlist-content {
-    gap: 12px;
-    
-  }
-
-  .video-card {
-    width: 100%; /* 한 줄에 1개 */
   }
 }
 /* 가로 스크롤은 가능하지만 스크롤바는 숨김 */
