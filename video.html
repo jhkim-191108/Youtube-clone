@@ -2,20 +2,20 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
     <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/video.css" />
     <title>First Class Youtube - Video</title>
   </head>
   <body>
     <div class="container">
-      
       <!-- 해더 영역 -->
       <header class="header">
         <!-- 모바일 검색창 체크 박스 -->
@@ -60,136 +60,136 @@
         </nav>
       </header>
 
-      <aside class = "aside">
+      <aside class="aside">
         <div class="aside-logo">
           <label for="CheckBox" class="hamburger-label">
-            <img src="./images/main/icon-hamburger.png" alt="">
+            <img src="./images/main/icon-hamburger.png" alt="" />
           </label>
-          <img src="./images/main/Logo.png" class="logo-img" alt="">
+          <img src="./images/main/Logo.png" class="logo-img" alt="" />
         </div>
-        <nav class ="aside-nav">
-          <section class ="aside-nav-container">
+        <nav class="aside-nav">
+          <section class="aside-nav-container">
             <ul>
               <li class="aside-nav-item active">
-                <img src="./images/main/btn-home.png" alt="홈">
+                <img src="./images/main/btn-home.png" alt="홈" />
                 <p>home</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-explore.png" alt="익스플로어">
+                <img src="./images/main/btn-explore.png" alt="익스플로어" />
                 <p>explore</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-subscriptions.png" alt="서브스크립션">
+                <img src="./images/main/btn-subscriptions.png" alt="서브스크립션" />
                 <p>subscriptions</p>
               </li>
             </ul>
-        </section>
-
-        <section class ="aside-nav-container">
-          <ul>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-Library.png" alt="라이브러리">
-              <p>library</p>
-            </li>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-history.png" alt="히스토리">
-              <p>history</p>
-            </li>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-yourvideos.png" alt="나의 비디오">
-              <p>your videos</p>
-            </li>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-watchLater.png" alt="와치레이터">
-              <p>watch later</p>
-            </li>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-likedvideos.png" alt="링크 비디오">
-              <p>linke videos</p>
-            </li>
-            <li class="aside-nav-item">
-              <img src="./images/main/btn-arrowBotton.png" alt="더보기버튼">
-              <p>show more</p>
-            </li>
-          </ul>
           </section>
 
-          <section class ="aside-nav-container">
-            <h2>subscriptions</h2>
+          <section class="aside-nav-container">
             <ul>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class ="user-avatar">
-                <p>james gouse</p>
+                <img src="./images/main/btn-Library.png" alt="라이브러리" />
+                <p>library</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3">
-                <p>alan cooper</p>
+                <img src="./images/main/btn-history.png" alt="히스토리" />
+                <p>history</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4">
-                <p>marcus levin</p>
+                <img src="./images/main/btn-yourvideos.png" alt="나의 비디오" />
+                <p>your videos</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5">
-                <p>alexis sears</p>
+                <img src="./images/main/btn-watchLater.png" alt="와치레이터" />
+                <p>watch later</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6">
-                <p>jesica lambert</p>
+                <img src="./images/main/btn-likedvideos.png" alt="링크 비디오" />
+                <p>linke videos</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7">
-                <p>anna white</p>
-              </li>
-              <li class="aside-nav-item">
-                <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8">
-                <p>sky dias</p>
-              </li>
-              <li class="aside-nav-item">
-                <img src="./images/main/btn-arrowBotton.png" alt="더보기">
-                <p class ="item-show">show 13 more</p>
+                <img src="./images/main/btn-arrowBotton.png" alt="더보기버튼" />
+                <p>show more</p>
               </li>
             </ul>
           </section>
 
-          <section class ="aside-nav-container">
+          <section class="aside-nav-container">
+            <h2>subscriptions</h2>
+            <ul>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-2.png" alt="아바타2" class="user-avatar" />
+                <p>james gouse</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-3.png" alt="아바타3" />
+                <p>alan cooper</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-4.png" alt="아바타4" />
+                <p>marcus levin</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-5.png" alt="아바타5" />
+                <p>alexis sears</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-6.png" alt="아바타6" />
+                <p>jesica lambert</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-7.png" alt="아바타7" />
+                <p>anna white</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/icon-User-Avatar-8.png" alt="아바타8" />
+                <p>sky dias</p>
+              </li>
+              <li class="aside-nav-item">
+                <img src="./images/main/btn-arrowBotton.png" alt="더보기" />
+                <p class="item-show">show 13 more</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="aside-nav-container">
             <h2>more from youtube</h2>
             <ul>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-youtubeprimium.png" alt="프리미엄">
+                <img src="./images/main/btn-youtubeprimium.png" alt="프리미엄" />
                 <p>youtube premium</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-gaming.png" alt="게이밍">
+                <img src="./images/main/btn-gaming.png" alt="게이밍" />
                 <p>gaming</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-live.png" alt="라이브">
+                <img src="./images/main/btn-live.png" alt="라이브" />
                 <p>live</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-sports.png" alt="스포츠">
+                <img src="./images/main/btn-sports.png" alt="스포츠" />
                 <p>sports</p>
               </li>
             </ul>
           </section>
 
-          <section class ="aside-nav-container">
+          <section class="aside-nav-container">
             <ul>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-settings.png" alt="세팅">
+                <img src="./images/main/btn-settings.png" alt="세팅" />
                 <p>settings</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-report.png" alt="리포트">
+                <img src="./images/main/btn-report.png" alt="리포트" />
                 <p>report history</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-help.png" alt="헬프">
-                <p> help</p>
+                <img src="./images/main/btn-help.png" alt="헬프" />
+                <p>help</p>
               </li>
               <li class="aside-nav-item">
-                <img src="./images/main/btn-send-feedback.png" alt="피드백">
+                <img src="./images/main/btn-send-feedback.png" alt="피드백" />
                 <p>send feedback</p>
               </li>
             </ul>
@@ -551,18 +551,18 @@
           </div>
         </section>
       </main>
-      </div>
+    </div>
 
-      <!-- 공통 :: 모달 -->
-      <div id="subscribeModal" class="modal-layout">
-        <div class="modal-layout-inner">
-          <a href="#" class="modal-bg"></a>
-          <div class="modal-content">
-            <div class="subscribe-content">
-              <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
-              <div class="subscribe-btn">
-                <a href="#">취소</a>
-                <a href="#" class="unsubscribe">구독 취소</a>
+    <!-- 공통 :: 모달 -->
+    <div id="subscribeModal" class="modal-layout">
+      <div class="modal-layout-inner">
+        <a href="#" class="modal-bg"></a>
+        <div class="modal-content">
+          <div class="subscribe-content">
+            <p><span>Marcus Levin</span> 구독을 취소하시겠습니까?</p>
+            <div class="subscribe-btn">
+              <a href="#">취소</a>
+              <a href="#" class="unsubscribe">구독 취소</a>
             </div>
           </div>
         </div>
