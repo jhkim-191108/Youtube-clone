@@ -48,7 +48,7 @@ button {
     /* 기존 가운데 정렬 제거 */
     align-items: flex-start;
 
-    background-color: var(--bg-3);
+    background-color: var(--bg);
 
     position: relative; /* 위치이동 기준점 */
 }
@@ -84,29 +84,32 @@ button {
 
 /*  네비게이션바 :: 메뉴 전체 영역  */
 nav.channel-toolbar {
+    width: 100%;
     height: 48px;
     padding: 0 var(--content-padding);
+    box-sizing: border-box;  
 
-    background-color: var(--bg-3);
+    background-color: var(--bg);          /* 스크롤 전 기존 네비바 색 */
+    transition: background-color 0.3s ease; /* 배경색을 부드럽게 변경 */
     border-bottom: 1px solid var(--bg-4);
 
     display: flex;
     align-items: center;
-
     position: sticky;
-    top: 0;
-    z-index: 100;
+    top: 56px;
+    z-index: 20;
 }
 .channel-actions {
-    width: 322px; /* 피그마 오른쪽 아이콘 영역 너비 */
-    height: 48px; /* 네비게이션바 높이 */
-    margin-left: 0; /* 오른쪽 끝으로 밀지 않기 */
-    padding: 0 42px 0 20px; /* 돋보기는 살짝 안쪽, 화살표는 오른쪽 */
+  width: auto;              /* 고정 너비 제거 */
+  min-width: 180px;         /* 검색·화살표가 겹치지 않을 최소 너비 */
+  height: 48px;             /* 네비게이션바 높이 */
+  margin-left: auto;        /* 오른쪽 끝으로 이동 */
+  padding: 0 25px 0 20px;  /* 화살표를 구독 버튼 오른쪽과 정렬 */
 
-    display: flex; /* 버튼 가로 배치 */
-    align-items: center; /* 세로 가운데 */
-    justify-content: space-between; /* 돋보기 왼쪽, 화살표 오른쪽 */
-    flex-shrink: 0; /* 영역 줄어들지 않게 */
+  display: flex;                  /* 검색·화살표 가로 배치 */
+  align-items: center;            /* 세로 가운데 정렬 */
+  justify-content: space-between; /* 검색은 왼쪽, 화살표는 오른쪽 */
+  flex: 1;                        /* 메뉴를 제외한 남은 폭 사용 */
 }
 /* 네비게이션바 :: 돋보기, 화살표 */
 .channel-search-btn,
@@ -126,7 +129,7 @@ nav.channel-toolbar {
     cursor: pointer;
 }
 .channel-arrow-btn {
-  transform: translateX(10px); /* 살짝 왼쪽 */
+  transform: none; /* 살짝 왼쪽 */
 }
 nav.channel-toolbar ul {
     display: flex;
@@ -330,9 +333,10 @@ nav.channel-toolbar a.active::after {
 }
 /* 섹션 :: 카드 */
 .video-card {
-    width: calc((100% - 2.4rem) / 5);       
-    flex-shrink: 0;
-    border-radius: 1px;
+    width: calc((100% - 40px) / 5);       
+    min-width: 0;                    /* 긴 글씨로 카드가 커지는 현상 방지 */
+    flex-shrink: 0;                  /* 카드 너비 유지 */
+    border-radius: 1px;              /* 카드 모서리 */
 
     transition:
     background-color 0.3s ease,
@@ -443,7 +447,13 @@ nav.channel-toolbar a.active::after {
 /* 1024px 이하 화면에서 적용 */
 @media (max-width: 1024px) {
   .channel {
-    padding: 12px;
+    width: 100%; /* 태블릿에서도 전체 너비 사용 */
+  }
+nav.channel-toolbar {
+    width: 100%;                   /* 화면 가로폭 사용 */
+    padding-inline: 24px;          /* 태블릿 좌우 여백 */           
+    overflow: hidden;     /* nav 자체의 넘침은 숨김 */
+    flex-wrap: nowrap;             /* 메뉴가 다음 줄로 내려가지 않게 설정 */
   }
 
   .channel-cover,
@@ -452,16 +462,30 @@ nav.channel-toolbar a.active::after {
   }
 
   .channel-arrow-btn {
-    transform: translateX(20px);
+    transform: none;
   }
 
   nav.channel-toolbar ul {
-    flex-shrink: 0;
+    min-width: 0;                     /* flex 내부에서 줄어들 수 있게 설정 */
+    height: 100%;                     /* 네비게이션바 높이 사용 */
+    flex: 1 1 auto;                   /* 남은 너비를 메뉴 영역이 사용 */
+    overflow-x: auto;                 /* 메뉴 영역만 가로 스크롤 */
+    overflow-y: hidden;               /* 세로 스크롤 방지 */
+    white-space: nowrap;              /* 메뉴 줄바꿈 방지 */
+    -webkit-overflow-scrolling: touch; /* 터치 스크롤 부드럽게 처리 */
+    scrollbar-width: none;    /* Firefox 스크롤바 숨김 */
+    -ms-overflow-style: none; /* 구형 Edge 스크롤바 숨김 */
   }
-
+  nav.channel-toolbar ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge 스크롤바 숨김 */
+}
+  nav.channel-toolbar li {
+    flex: 0 0 auto; /* 각 메뉴 크기가 줄어들지 않게 설정 */
+  }
   .channel-actions {
-    width: 180px;
-    padding: 0 24px 0 16px;
+    min-width: 180px;       /* 검색·화살표 영역 너비 유지 */
+    flex: 0 0 180px;        /* 버튼 영역은 스크롤되지 않게 고정 */
+    padding: 0 25px 0 16px; /* 태블릿 버튼 여백 */
   }
 
   .small-video {
@@ -528,11 +552,16 @@ nav.channel-toolbar a.active::after {
   }
 
   nav.channel-toolbar {
-    padding: 0;
+    padding: 0; /* 모바일 좌우 여백 제거 */
   }
-
+  nav.channel-toolbar ul {
+    flex: 1 1 100%; /* 메뉴가 네비게이션바 전체 너비 사용 */
+  }
+  nav.channel-toolbar li {
+    flex: 0 0 auto; /* 각 메뉴 너비 유지 */
+  }
   .channel-actions {
-    display: none;
+    display: none; /* 모바일에서는 검색·화살표 숨김 */
   }
 
   .small-video {
