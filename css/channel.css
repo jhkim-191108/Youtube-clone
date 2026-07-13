@@ -12,17 +12,16 @@ button {
 
 /* ===================== 전체 채널 ===================== */
 .channel {
-  --content-padding: clamp(24px, 3.2vw, 64px);
+  --content-padding: clamp(24px, 3.2vw, 64px); /* 화면에 따라 콘텐츠 여백 조절 */
 
-  grid-area: main;
-  width: 100%;
-  max-width: none;
-  min-width: 0;
-  margin: 0;
-  padding: 16px 24px;
-  box-sizing: border-box;
-
-  background-color: #000;
+  grid-area: main;        /* 부모 Grid의 메인 영역에 배치 */
+  width: 100%;            /* 메인 영역의 가로폭을 전부 사용 */
+  max-width: none;        /* 기존 1200px 최대 너비 제한 해제 */
+  min-width: 0;           /* 내부 콘텐츠로 인한 가로 넘침 방지 */
+  margin: 0;              /* 중복된 바깥 여백 제거 */
+  padding: 0;             /* 배너를 좌우 끝까지 표시 */
+  box-sizing: border-box; /* 패딩과 테두리를 너비 안에 포함 */
+  background-color: #000; /* 채널 영역 배경색 */
 }
 
 /* ===================== 채널 배너 ===================== */
@@ -159,7 +158,7 @@ nav.channel-toolbar a {
     text-decoration: none;
 
     position: relative;
-    transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 *//
+    transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 */
 }
 nav.channel-toolbar a:hover {
     color: var(--text); 
