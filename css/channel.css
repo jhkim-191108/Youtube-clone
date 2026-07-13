@@ -363,28 +363,48 @@ nav.channel-toolbar .channel-tab:hover::after {
 }
 /* 섹션 :: 카드 */
 .video-card {
-    width: calc((100% - 40px) / 5);       
-    min-width: 0;                    /* 긴 글씨로 카드가 커지는 현상 방지 */
-    flex-shrink: 0;                  /* 카드 너비 유지 */
-    border-radius: 1px;              /* 카드 모서리 */
-
-    transition:
+  width: calc((100% - 40px) / 5);
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 1px;
+  transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 .video-card:hover {
   background: var(--bg-4);
   box-shadow: 0 0 0 6px var(--bg-4);
 }
+
+.video-relative {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
 .video-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.1rem;
-    margin-bottom: 0.75rem;
-    cursor: pointer; 
-    
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.1rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.play-time {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 
@@ -655,41 +675,36 @@ nav.channel-toolbar::-webkit-scrollbar,
 
 
 
-/* ================================ 모달 위치 메인 중앙 =============================== */
+/* ================================ 모달 위치 중앙 =============================== */
 
 /* ================================ P C =============================== */
+/* 모달 전체 영역 */
 .modal-layout {
   position: fixed;
+  inset: 0;                  /* 화면 상하좌우 전체를 덮음 */
 
-  top: 56px;      /* 헤더 높이만큼 제외 */
-  right: 0;
-  bottom: 0;
-  left: 240px;    /* 사이드바 너비만큼 제외 */
+  width: 100%;
+  height: 100%;
 
-  width: auto;
-  height: auto;
-  z-index: 100;
+  z-index: 9999;             /* 헤더와 사이드바보다 위에 표시 */
 }
 
-/* 모달 메인 가운데 정렬 */
+/* 모달 팝업 가운데 정렬 */
 .modal-layout-inner {
   width: 100%;
   height: 100%;
 
   display: flex;
-  justify-content: center; /* 메인 영역 가로 가운데 */
-  align-items: center;     /* 메인 영역 세로 가운데 */
+  justify-content: center;   /* 화면 가로 가운데 */
+  align-items: center;       /* 화면 세로 가운데 */
 
   position: relative;
 }
 
-/* ================================ 태 블 릿 =============================== */
-/* 2. 태블릿에서 PC 설정 덮어쓰기 */
-@media (max-width: 1024px) {
-  .modal-layout {
-    left: 72px;
-  }
-}
+
+
+
+
 /* ================================ 모 바 일 =============================== */
 /* 3. 모바일에서 태블릿 설정 덮어쓰기 */
 @media (max-width: 767px) {
@@ -698,14 +713,16 @@ nav.channel-toolbar::-webkit-scrollbar,
   }
 }
 
-/* 어두운 배경을 메인 영역에 가득 채움 */
+/* 클릭을 막는 어두운 전체 배경 */
 .modal-bg {
   position: absolute;
-  inset: 0;               /* 상하좌우를 0으로 설정 */
+  inset: 0;                  /* 헤더와 사이드바까지 전체 덮기 */
+
   width: 100%;
   height: 100%;
-}
 
+  cursor: default;
+}
 /* 기존 모달의 강제 위치값 제거 */
 .modal-content {
   position: relative;
@@ -716,3 +733,22 @@ nav.channel-toolbar::-webkit-scrollbar,
   transform: none;        /* 기존 translate 위치 제거 */
   z-index: 1;             /* 어두운 배경보다 위에 표시 */
 }
+
+/* 흰색 모달 팝업 */
+.modal-content {
+  position: relative;
+  top: auto;
+  left: auto;
+
+  max-width: calc(100% - 32px); /* 모바일 화면 밖으로 나가지 않게 */
+  margin: 0;
+  transform: none;
+
+  z-index: 1;                /* 어두운 배경보다 위에 표시 */
+}
+
+/* 모달이 열렸을 때 뒷화면 스크롤 금지 */
+body:has(#subscribeModal:target) {
+  overflow: hidden;
+}
+
