@@ -12,6 +12,17 @@ button {
 
 /* ===================== 전체 채널 ===================== */
 .channel {
+
+    --layout-max-width: 1200px;
+    --content-padding: clamp(1.5rem, 3.2vw, 4rem);
+  
+    width: min(100%, var(--layout-max-width));
+    
+    
+    grid-area: main;
+    padding: 1rem 1.5rem;
+    background-color: #000;
+
   --content-padding: clamp(24px, 3.2vw, 64px);
 
   grid-area: main;
@@ -23,6 +34,7 @@ button {
   box-sizing: border-box;
 
   background-color: #000;
+
 }
 
 /* ===================== 채널 배너 ===================== */
