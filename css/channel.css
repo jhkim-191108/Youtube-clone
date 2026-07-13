@@ -363,28 +363,48 @@ nav.channel-toolbar .channel-tab:hover::after {
 }
 /* 섹션 :: 카드 */
 .video-card {
-    width: calc((100% - 40px) / 5);       
-    min-width: 0;                    /* 긴 글씨로 카드가 커지는 현상 방지 */
-    flex-shrink: 0;                  /* 카드 너비 유지 */
-    border-radius: 1px;              /* 카드 모서리 */
-
-    transition:
+  width: calc((100% - 40px) / 5);
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 1px;
+  transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 .video-card:hover {
   background: var(--bg-4);
   box-shadow: 0 0 0 6px var(--bg-4);
 }
+
+.video-relative {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
 .video-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.1rem;
-    margin-bottom: 0.75rem;
-    cursor: pointer; 
-    
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.1rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.play-time {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 
