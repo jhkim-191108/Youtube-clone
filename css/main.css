@@ -97,6 +97,7 @@ li:not(.active):hover {
   padding: 10px;
   width: 100%;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .video-card:hover {
