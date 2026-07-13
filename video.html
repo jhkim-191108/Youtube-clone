@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class Youtube 1차 프로젝트" />
+    <meta name="description" content="이스트소프트 오르미 프론트엔드 15기 First Class 1차 프로젝트 Youtube 클론 코딩입니다." />
     <meta name="author" content="정다혜, 김내현, 김지훈" />
-    <meta name="keywords" content="유튜브 클론, HTML, CSS, JavaScript, Video, 오르미, 이스트소프트" />
+    <meta name="keywords" content="유튜브 클론, HTML, CSS, Video, 오르미, 이스트소프트" />
+    <!-- material icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
@@ -15,7 +17,7 @@
     <title>First Class Youtube - Video</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container page-video">
       <!-- 해더 영역 -->
       <header class="header">
         <!-- 모바일 검색창 체크 박스 -->
@@ -34,7 +36,26 @@
           <label for="MobileSearch" class="back-btn">←</label>
           <!--  검색 컨테이너 -->
           <div class="header-search-container">
-            <input type="text" class="header-search" placeholder="Search" />
+            <div class="header-search">
+              <input type="text" placeholder="Search" />
+              <!-- 검색 히스토리 -->
+              <div class="search-history">
+                <ul>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 오르미 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프론트엔드 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> First Class <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="material-symbols-outlined"> history </span> 프로젝트 <span class="material-symbols-outlined history-close"> close </span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <button class="search-btn">
               <img src="./images/main/btn-search.png" alt="검색버튼" />
             </button>
@@ -54,8 +75,61 @@
             <!-- 헤더-오른쪽-네비 -->
             <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
             <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
-            <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-profile" />
-            <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
+           <div class="notification-container">
+              <input type="checkbox" id="NotificationBtn" class="notification-btn" />
+              <label for="NotificationBtn" class="notification-label">
+                <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-notification"/>
+              </label>
+              <div class="notification-dropdown">
+                <div class="notification-dropdown-area">
+                  <a href="#">
+                    <p>알림</p>
+                    <img src="./images/main/btn-settings.png" alt="알림 버튼" class = "header-notification">
+                  </a>
+                </div>
+                <div class = "notification-area">
+                  <h2>여기에 알림이 표시 됩니다.</h2>
+                </div>
+              </div>
+            </div>
+            <div class="profile-container">
+              <input type="checkbox" id="ProfileBtn" class="profile-btn" />
+              <label for="ProfileBtn" class="profile-label">
+                <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
+              </label>
+              <div class="profile-dropdown">
+                <div class="profile-dropdown-area">
+                  <a href="#">
+                    <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
+                    <p>Scarlett Johansson</p>
+                  </a>
+
+                </div>
+                <div class="profile-dropdown-area">
+                  <a href="#">Google 계정</a>
+                  <a href="#">계정 전환</a>
+                  <a href="#">로그아웃</a>
+                </div>
+                <div class="profile-dropdown-area">
+                  <a href="#">YouTube 스튜디오</a>
+                  <a href="#">프리미엄 혜택</a>
+                  <a href="#">구매 항목 및 멤버십</a>
+                </div>
+                <div class="profile-dropdown-area">
+                  <a href="#">YouTube의 내 데이터</a>
+                  <a href="#">디자인: 기기 테마</a>
+                  <a href="#">표시언어: 한국어</a>
+                  <a href="#">제한모드: 사용 안함</a>
+                  <a href="#">위치: 한국</a>
+                  <a href="#">키보드 단축키</a>
+                </div>
+                <div class="profile-dropdown-area profile-dropdown-last">
+                  <a href="#">설정</a>
+                  <a href="#">고객센터</a>
+                  <a href="#">의견 보내기</a>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       </header>
@@ -220,8 +294,15 @@
               <div class="video-info-btns">
                 <button class="btn-like"><img src="./images/video/btn-like.svg" alt="좋아요" /> 1.7K</button>
                 <button class="btn-dislike"><img src="./images/video/btn-dislike.svg" alt="싫어요" /> 632</button>
-                <button class="btn-share"><img src="./images/video/btn-share.svg" alt="공유" /> SHARE</button>
-                <button class="btn-save"><img src="./images/video/btn-save.svg" alt="저장" /> SAVE</button>
+                <a href="#shareModal" class="btn-share"><img src="./images/video/btn-share.svg" alt="공유" /> SHARE</a>
+                <a class="btn-save"
+                  ><img src="./images/video/btn-save.svg" alt="저장" /> SAVE
+                  <div class="save-dropdown">
+                    <p>나중에 다시 보고 싶으신가요?</p>
+                    <span>로그인하여 동영상을 재생목록에 추가하세요.</span>
+                    <button>로그인</button>
+                  </div>
+                </a>
                 <button class="btn-more"><img src="./images/video/btn-more.svg" alt="더보기" /></button>
               </div>
             </div>
@@ -563,6 +644,292 @@
             <div class="subscribe-btn">
               <a href="#">취소</a>
               <a href="#" class="unsubscribe">구독 취소</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공통 :: 공유하기 -->
+    <div id="shareModal" class="modal-layout">
+      <div class="modal-layout-inner">
+        <a href="#" class="modal-bg"></a>
+        <div class="modal-content share-modal">
+          <a href="#" class="modal-close"><span class="material-symbols-outlined history-close"> close </span></a>
+          <div class="share-content">
+            <p>공유</p>
+            <ul class="share-list">
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <circle cx="18" cy="18" r="17.5" stroke="#E7E7E7" fill="#F4F4F4" stroke-width=".5"></circle>
+                      <path d="m21.41,23.29l-0.71,-0.71l4.59,-4.58l-4.59,-4.59l0.71,-0.71l5.3,5.3l-5.3,5.29zm-6.12,-0.7l-4.58,-4.59l4.59,-4.59l-0.71,-0.7l-5.3,5.29l5.29,5.29l0.71,-0.7z" fill="#606060"></path>
+                    </svg>
+                  </div>
+                  <p>퍼가기</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g clip-path="url(#a_yt133)">
+                        <path d="M30 .5C46.292.5 59.5 13.708 59.5 30S46.292 59.5 30 59.5.5 46.292.5 30 13.708.5 30 .5Z" fill="#fff" stroke="#e8e8e8"></path>
+                        <path d="M48.128 21.552C46.768 15.508 41.457 11 35.108 11h-13.75C13.979 11 8 17.088 8 24.6c0 3.76 1.497 7.16 3.92 9.624z" fill="#b0c6ff"></path>
+                        <path d="M11.92 34.224a13.6 13.6 0 0 0 3.505 6.336l13.94 14.192c.156.16.369.248.588.248a.84.84 0 0 0 .833-.847V44.6h7.858c7.292 0 13.216-5.948 13.354-13.336.07-3.772-1.43-7.208-3.87-9.712z" fill="#578cff"></path>
+                        <path d="M35.108 38.2c7.378 0 13.358-6.089 13.358-13.6 0-1.049-.118-2.068-.338-3.049-2.49-2.56-5.964-4.152-9.747-4.152H24.894c-7.379 0-13.358 6.089-13.358 13.6 0 1.097.13 2.177.385 3.225 2.416 2.456 5.752 3.976 9.437 3.976z" fill="#0057cc"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a_yt133"><path fill="#fff" d="M0 0h60v60H0z"></path></clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <p>메시지</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g fill="none" fill-rule="evenodd">
+                        <circle cx="30" cy="30" r="30" fill="#25D366"></circle>
+                        <path
+                          d="M39.7746 19.3513C37.0512 16.5467 33.42 15 29.5578 15C21.6022 15 15.1155 21.6629 15.1155 29.8725C15.1155 32.4901 15.7758 35.0567 17.0467 37.3003L15 45L22.6585 42.9263C24.7712 44.1161 27.148 44.728 29.5578 44.728C37.5134 44.728 44 38.0652 44 29.8555C44 25.8952 42.498 22.1558 39.7746 19.3513ZM29.5578 42.2295C27.3956 42.2295 25.2829 41.6346 23.4508 40.5127L23.0051 40.2408L18.4661 41.4646L19.671 36.9093L19.3904 36.4334C18.1855 34.4618 17.5583 32.1841 17.5583 29.8555C17.5583 23.0397 22.9556 17.4986 29.5743 17.4986C32.7763 17.4986 35.7968 18.7904 38.0581 21.119C40.3193 23.4476 41.5737 26.5581 41.5737 29.8555C41.5572 36.6884 36.1764 42.2295 29.5578 42.2295ZM36.1434 32.966C35.7803 32.779 34.0142 31.8782 33.6841 31.7592C33.354 31.6402 33.1064 31.5722 32.8754 31.9462C32.6278 32.3201 31.9511 33.153 31.7365 33.4079C31.5219 33.6629 31.3238 33.6799 30.9607 33.4929C30.5976 33.306 29.4422 32.915 28.0558 31.6572C26.9829 30.6714 26.2567 29.4476 26.0421 29.0907C25.8275 28.7167 26.0256 28.5127 26.2072 28.3258C26.3722 28.1558 26.5703 27.8839 26.7518 27.6799C26.9334 27.4589 26.9994 27.3059 27.115 27.068C27.2305 26.813 27.181 26.6091 27.082 26.4221C26.9994 26.2351 26.2732 24.3994 25.9761 23.6686C25.679 22.9377 25.3819 23.0397 25.1673 23.0227C24.9528 23.0057 24.7217 23.0057 24.4741 23.0057C24.2265 23.0057 23.8469 23.0907 23.5168 23.4646C23.1867 23.8385 22.2459 24.7394 22.2459 26.5581C22.2459 28.3938 23.5333 30.1445 23.7149 30.3994C23.8964 30.6544 26.2567 34.3938 29.8714 36.0085C30.7297 36.3994 31.4064 36.6204 31.9345 36.7904C32.7928 37.0793 33.5851 37.0283 34.2123 36.9433C34.9055 36.8414 36.3415 36.0425 36.6551 35.1756C36.9522 34.3088 36.9522 33.5609 36.8697 33.4079C36.7541 33.255 36.5065 33.153 36.1434 32.966Z"
+                          fill="white"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <p>whatsApp</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g fill="none" fill-rule="evenodd">
+                        <path
+                          d="M28.4863253 59.9692983c-6.6364044-.569063-11.5630204-2.3269561-16.3219736-5.8239327C4.44376366 48.4721168 3e-7 39.6467924 3e-7 29.9869344c0-14.8753747 10.506778-27.18854591 25.2744118-29.61975392 6.0281072-.9924119 12.7038532.04926445 18.2879399 2.85362966C57.1386273 10.0389054 63.3436516 25.7618627 58.2050229 40.3239688 54.677067 50.3216743 45.4153135 57.9417536 34.81395 59.5689067c-2.0856252.3201125-5.0651487.5086456-6.3276247.4003916z"
+                          fill="#3B5998"
+                          fill-rule="nonzero"
+                        ></path>
+                        <path
+                          d="M25.7305108 45h5.4583577V30.0073333h4.0947673l.8098295-4.6846666h-4.9045968V21.928c0-1.0943333.7076019-2.2433333 1.7188899-2.2433333h2.7874519V15h-3.4161354v.021c-5.3451414.194-6.4433395 3.2896667-6.5385744 6.5413333h-.0099897v3.7603334H23v4.6846666h2.7305108V45z"
+                          fill="#FFF"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <p>Facebook</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <rect width="192" height="192" rx="96" fill="black"></rect>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42 47H76L100 78.5L127 47H144L107.5 88.5L150 145H117L91 111L61 145H44L83 100.5L42 47ZM62 57H71.5L130.5 135H121.5L62 57Z" fill="white"></path>
+                    </svg>
+                  </div>
+                  <p>X</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g fill-rule="nonzero" fill="none">
+                        <path
+                          d="M28.4863253 59.9692983c-6.6364044-.569063-11.5630204-2.3269561-16.3219736-5.8239327C4.44376366 48.4721168 3e-7 39.6467924 3e-7 29.9869344c0-14.8753747 10.506778-27.18854591 25.2744118-29.61975392 6.0281072-.9924119 12.7038532.04926445 18.2879399 2.85362966C57.1386273 10.0389054 63.3436516 25.7618627 58.2050229 40.3239688 54.677067 50.3216743 45.4153135 57.9417536 34.81395 59.5689067c-2.0856252.3201125-5.0651487.5086456-6.3276247.4003916z"
+                          fill="#888"
+                        ></path>
+                        <path d="M40.531502 19.160814h-22c-1.74 0-2.986 1.2375-3 3v16c0 1.7625 1.26 3 3 3h22c1.74 0 3-1.2375 3-3v-16c0-1.7625-1.26-3-3-3zm0 6l-11 7-11-7v-3l11 7 11-7v3z" fill="#FFF"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <p>이메일</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g clip-path="url(#clip0_1646_12789_yt137)">
+                        <mask id="mask0_1646_12789_yt137" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+                          <circle cx="128" cy="128" r="128" fill="white"></circle>
+                        </mask>
+                        <g mask="url(#mask0_1646_12789_yt137)">
+                          <path d="M256 0H0V256H256V0Z" fill="#FF4500"></path>
+                          <path d="M173.758 146.781C184.109 146.781 192.5 138.39 192.5 128.039C192.5 117.687 184.109 109.296 173.758 109.296C163.407 109.296 155.016 117.687 155.016 128.039C155.016 138.39 163.407 146.781 173.758 146.781Z" fill="url(#paint0_radial_1646_12789_yt137)"></path>
+                          <path d="M82.7422 146.781C93.0932 146.781 101.484 138.39 101.484 128.039C101.484 117.687 93.0932 109.296 82.7422 109.296C72.3912 109.296 64 117.687 64 128.039C64 138.39 72.3912 146.781 82.7422 146.781Z" fill="url(#paint1_radial_1646_12789_yt137)"></path>
+                          <path d="M128.313 184.202C157.843 184.202 181.781 166.241 181.781 144.085C181.781 121.929 157.843 103.968 128.313 103.968C98.7829 103.968 74.8442 121.929 74.8442 144.085C74.8442 166.241 98.7829 184.202 128.313 184.202Z" fill="url(#paint2_radial_1646_12789_yt137)"></path>
+                          <path d="M112.454 140.199C112.14 146.969 107.627 149.476 102.362 149.476C97.0966 149.476 93.0849 145.966 93.3983 139.196C93.7117 132.426 98.2249 127.913 103.49 127.913C108.756 127.913 112.767 133.429 112.454 140.199Z" fill="#842123"></path>
+                          <path d="M163.102 139.196C163.415 145.966 159.403 149.476 154.138 149.476C148.873 149.476 144.359 147.031 144.046 140.199C143.733 133.429 147.744 127.913 153.01 127.913C158.275 127.913 162.788 132.364 163.102 139.196Z" fill="#842123"></path>
+                          <path d="M144.109 140.826C144.422 147.157 148.622 149.476 153.511 149.476C158.401 149.476 162.161 146.029 161.911 139.635C161.597 133.304 157.398 129.104 152.508 129.104C147.619 129.104 143.795 134.432 144.109 140.826Z" fill="url(#paint3_radial_1646_12789_yt137)"></path>
+                          <path d="M112.454 140.826C112.141 147.157 107.941 149.476 103.052 149.476C98.1623 149.476 94.4014 146.029 94.7148 139.635C95.0282 133.304 99.228 129.104 104.117 129.104C109.006 129.104 112.767 134.432 112.454 140.826Z" fill="url(#paint4_radial_1646_12789_yt137)"></path>
+                          <path
+                            d="M128.313 153.989C121.668 153.989 115.337 154.303 109.445 154.867C108.442 154.992 107.815 155.995 108.191 156.873C111.451 164.583 119.224 170.036 128.313 170.036C137.402 170.036 145.112 164.645 148.434 156.873C148.81 155.932 148.183 154.929 147.18 154.867C141.288 154.303 134.957 153.989 128.313 153.989Z"
+                            fill="#BBCFDA"
+                          ></path>
+                          <path
+                            d="M128.313 155.494C121.668 155.494 115.337 155.807 109.508 156.434C108.505 156.559 107.878 157.562 108.254 158.502C111.514 166.338 119.286 171.854 128.313 171.854C137.339 171.854 145.112 166.338 148.371 158.502C148.747 157.562 148.12 156.559 147.118 156.434C141.225 155.807 134.894 155.494 128.313 155.494Z"
+                            fill="white"
+                          ></path>
+                          <path
+                            d="M128.313 154.679C121.794 154.679 115.588 154.992 109.821 155.556C108.818 155.682 108.191 156.685 108.568 157.562C111.827 165.272 119.412 170.726 128.313 170.726C137.214 170.726 144.798 165.335 148.058 157.562C148.434 156.622 147.807 155.619 146.804 155.556C141.037 155.055 134.832 154.679 128.313 154.679Z"
+                            fill="url(#paint5_radial_1646_12789_yt137)"
+                          ></path>
+                          <path d="M157.586 98.5776C164.925 98.5776 170.874 92.628 170.874 85.2888C170.874 77.9496 164.925 72 157.586 72C150.246 72 144.297 77.9496 144.297 85.2888C144.297 92.628 150.246 98.5776 157.586 98.5776Z" fill="url(#paint6_radial_1646_12789_yt137)"></path>
+                          <path
+                            d="M128.125 105.661C126.558 105.661 125.241 104.971 125.241 103.968C125.241 92.0585 134.894 82.4054 146.804 82.4054C148.371 82.4054 149.688 83.7217 149.688 85.2888C149.688 86.8559 148.371 88.1722 146.804 88.1722C138.091 88.1722 131.008 95.2554 131.008 103.968C131.008 105.034 129.692 105.661 128.125 105.661Z"
+                            fill="url(#paint7_radial_1646_12789_yt137)"
+                          ></path>
+                          <path d="M109.006 143.96C109.006 146.405 106.374 147.533 103.177 147.533C99.9799 147.533 97.3472 146.405 97.3472 143.96C97.3472 141.515 99.9799 139.51 103.177 139.51C106.374 139.51 109.006 141.453 109.006 143.96Z" fill="#FF6101"></path>
+                          <path d="M159.278 143.96C159.278 146.405 156.645 147.533 153.448 147.533C150.252 147.533 147.619 146.405 147.619 143.96C147.619 141.515 150.252 139.51 153.448 139.51C156.645 139.51 159.278 141.453 159.278 143.96Z" fill="#FF6101"></path>
+                          <path d="M107.189 137.253C108.331 137.253 109.257 136.243 109.257 134.996C109.257 133.75 108.331 132.74 107.189 132.74C106.046 132.74 105.12 133.75 105.12 134.996C105.12 136.243 106.046 137.253 107.189 137.253Z" fill="#FFC49C"></path>
+                          <path d="M156.645 137.253C157.788 137.253 158.714 136.243 158.714 134.996C158.714 133.75 157.788 132.74 156.645 132.74C155.503 132.74 154.577 133.75 154.577 134.996C154.577 136.243 155.503 137.253 156.645 137.253Z" fill="#FFC49C"></path>
+                        </g>
+                      </g>
+                      <defs>
+                        <radialGradient id="paint0_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172.951 117.92) scale(37.548 32.7547)">
+                          <stop stop-color="#FEFFFF"></stop>
+                          <stop offset="0.4" stop-color="#FEFFFF"></stop>
+                          <stop offset="0.51" stop-color="#F9FCFC"></stop>
+                          <stop offset="0.62" stop-color="#EDF3F5"></stop>
+                          <stop offset="0.7" stop-color="#DEE9EC"></stop>
+                          <stop offset="0.72" stop-color="#D8E4E8"></stop>
+                          <stop offset="0.76" stop-color="#CCD8DF"></stop>
+                          <stop offset="0.8" stop-color="#C8D5DD"></stop>
+                          <stop offset="0.83" stop-color="#CCD6DE"></stop>
+                          <stop offset="0.85" stop-color="#D8DBE2"></stop>
+                          <stop offset="0.88" stop-color="#EDE3E9"></stop>
+                          <stop offset="0.9" stop-color="#FFEBEF"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(81.9856 117.92) scale(37.548 32.7547)">
+                          <stop stop-color="#FEFFFF"></stop>
+                          <stop offset="0.4" stop-color="#FEFFFF"></stop>
+                          <stop offset="0.51" stop-color="#F9FCFC"></stop>
+                          <stop offset="0.62" stop-color="#EDF3F5"></stop>
+                          <stop offset="0.7" stop-color="#DEE9EC"></stop>
+                          <stop offset="0.72" stop-color="#D8E4E8"></stop>
+                          <stop offset="0.76" stop-color="#CCD8DF"></stop>
+                          <stop offset="0.8" stop-color="#C8D5DD"></stop>
+                          <stop offset="0.83" stop-color="#CCD6DE"></stop>
+                          <stop offset="0.85" stop-color="#D8DBE2"></stop>
+                          <stop offset="0.88" stop-color="#EDE3E9"></stop>
+                          <stop offset="0.9" stop-color="#FFEBEF"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint2_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(128.657 112.666) scale(113.26 79.5228)">
+                          <stop stop-color="#FEFFFF"></stop>
+                          <stop offset="0.4" stop-color="#FEFFFF"></stop>
+                          <stop offset="0.51" stop-color="#F9FCFC"></stop>
+                          <stop offset="0.62" stop-color="#EDF3F5"></stop>
+                          <stop offset="0.7" stop-color="#DEE9EC"></stop>
+                          <stop offset="0.72" stop-color="#D8E4E8"></stop>
+                          <stop offset="0.76" stop-color="#CCD8DF"></stop>
+                          <stop offset="0.8" stop-color="#C8D5DD"></stop>
+                          <stop offset="0.83" stop-color="#CCD6DE"></stop>
+                          <stop offset="0.85" stop-color="#D8DBE2"></stop>
+                          <stop offset="0.88" stop-color="#EDE3E9"></stop>
+                          <stop offset="0.9" stop-color="#FFEBEF"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint3_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(152.686 145.133) rotate(180) scale(9.46286 13.8923)">
+                          <stop stop-color="#FF6600"></stop>
+                          <stop offset="0.5" stop-color="#FF4500"></stop>
+                          <stop offset="0.7" stop-color="#FC4301"></stop>
+                          <stop offset="0.82" stop-color="#F43F07"></stop>
+                          <stop offset="0.92" stop-color="#E53812"></stop>
+                          <stop offset="1" stop-color="#D4301F"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint4_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(103.482 145.133) scale(9.46287 13.8923)">
+                          <stop stop-color="#FF6600"></stop>
+                          <stop offset="0.5" stop-color="#FF4500"></stop>
+                          <stop offset="0.7" stop-color="#FC4301"></stop>
+                          <stop offset="0.82" stop-color="#F43F07"></stop>
+                          <stop offset="0.92" stop-color="#E53812"></stop>
+                          <stop offset="1" stop-color="#D4301F"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint5_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(127.413 172.674) scale(33.3675 22.0084)">
+                          <stop stop-color="#172E35"></stop>
+                          <stop offset="0.29" stop-color="#0E1C21"></stop>
+                          <stop offset="0.73" stop-color="#030708"></stop>
+                          <stop offset="1"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint6_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(156.842 71.8785) scale(29.2901 29.2901)">
+                          <stop stop-color="#FEFFFF"></stop>
+                          <stop offset="0.4" stop-color="#FEFFFF"></stop>
+                          <stop offset="0.51" stop-color="#F9FCFC"></stop>
+                          <stop offset="0.62" stop-color="#EDF3F5"></stop>
+                          <stop offset="0.7" stop-color="#DEE9EC"></stop>
+                          <stop offset="0.72" stop-color="#D8E4E8"></stop>
+                          <stop offset="0.76" stop-color="#CCD8DF"></stop>
+                          <stop offset="0.8" stop-color="#C8D5DD"></stop>
+                          <stop offset="0.83" stop-color="#CCD6DE"></stop>
+                          <stop offset="0.85" stop-color="#D8DBE2"></stop>
+                          <stop offset="0.88" stop-color="#EDE3E9"></stop>
+                          <stop offset="0.9" stop-color="#FFEBEF"></stop>
+                        </radialGradient>
+                        <radialGradient id="paint7_radial_1646_12789_yt137" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(144.633 103.809) scale(24.0077)">
+                          <stop offset="0.48" stop-color="#7A9299"></stop>
+                          <stop offset="0.67" stop-color="#172E35"></stop>
+                          <stop offset="0.75"></stop>
+                          <stop offset="0.82" stop-color="#172E35"></stop>
+                        </radialGradient>
+                        <clipPath id="clip0_1646_12789_yt137">
+                          <rect width="256" height="256" fill="white"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <p>Reddit</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g fill="none" fill-rule="evenodd">
+                        <path
+                          d="M28.4863253 59.9692983c-6.6364044-.569063-11.5630204-2.3269561-16.3219736-5.8239327C4.44376366 48.4721168 3e-7 39.6467924 3e-7 29.9869344c0-14.8753747 10.506778-27.18854591 25.2744118-29.61975392 6.0281072-.9924119 12.7038532.04926445 18.2879399 2.85362966C57.1386273 10.0389054 63.3436516 25.7618627 58.2050229 40.3239688 54.677067 50.3216743 45.4153135 57.9417536 34.81395 59.5689067c-2.0856252.3201125-5.0651487.5086456-6.3276247.4003916z"
+                          fill="#BD081C"
+                          fill-rule="nonzero"
+                        ></path>
+                        <path
+                          d="M30 14c-8.8359111 0-16 7.1714944-16 16.0165392 0 6.5927634 3.9804444 12.254788 9.6650667 14.7135047-.0408889-1.1165307-.0010667-2.448039.2812444-3.6553302.3104-1.3030344 2.0682667-8.7589113 2.0682667-8.7589113s-.5134222-1.02755-.5134222-2.5444942c0-2.3797018 1.3806222-4.160741 3.0965333-4.160741 1.4609778 0 2.1671111 1.1005142 2.1671111 2.41565 0 1.4692506-.9365333 3.6667197-1.4200889 5.7022439-.4003555 1.7048716.8576 3.0968868 2.5372445 3.0968868 3.04 0 5.0876444-3.9112388 5.0876444-8.547849 0-3.5211471-2.3669333-6.159605-6.6794667-6.159605-4.8693333 0-7.9072 3.6364662-7.9072 7.6993283 0 1.3998456.4138667 2.3889558 1.0613334 3.1524109.2968889.3512961.3370666.4929535.2286222.897638-.0782222.2939925-.2510222 1.0058387-.3253333 1.2902212-.1063112.4068201-.4373334.5495453-.8046223.4000576-2.2421333-.9150783-3.2888889-3.3748628-3.2888889-6.1393174 0-4.5672052 3.8474667-10.042726 11.4766223-10.042726 6.1326222 0 10.1667555 4.4422761 10.1667555 9.2070185 0 6.3090928-3.5029333 11.0179553-8.6641778 11.0179553-1.7340444 0-3.3660444-.9385692-3.9217777-2.0020674 0 0-.9354667 3.7001765-1.1306667 4.4177174-.3370667 1.2211722-.9863111 2.4412765-1.5879111 3.4019129 1.3984.4000576 2.8768.6150352 4.4071111.6150352 8.8359111 0 16-7.1714944 16-16.0165392S38.8359111 14 30 14"
+                          fill="#FFF"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <p>Pinterest</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="share-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%">
+                      <g fill="none" fill-rule="evenodd">
+                        <path
+                          d="M28.4863253 59.9692983c-6.6364044-.569063-11.5630204-2.3269561-16.3219736-5.8239327C4.44376366 48.4721168 3e-7 39.6467924 3e-7 29.9869344c0-14.8753747 10.506778-27.18854591 25.2744118-29.61975392 6.0281072-.9924119 12.7038532.04926445 18.2879399 2.85362966C57.1386273 10.0389054 63.3436516 25.7618627 58.2050229 40.3239688 54.677067 50.3216743 45.4153135 57.9417536 34.81395 59.5689067c-2.0856252.3201125-5.0651487.5086456-6.3276247.4003916z"
+                          fill="#0077B5"
+                          fill-rule="nonzero"
+                        ></path>
+                        <g fill="#FFF">
+                          <path
+                            d="M17.88024691 22.0816337c2.14182716 0 3.87817284-1.58346229 3.87817284-3.53891365C21.75841975 16.58553851 20.02207407 15 17.88024691 15 15.73634568 15 14 16.58553851 14 18.54272005c0 1.95545136 1.73634568 3.53891365 3.88024691 3.53891365M14.88888889 44.8468474h6.95851852V24.77777778h-6.95851852zM31.6137778 33.6848316c0-2.3014877 1.0888889-4.552108 3.6925432-4.552108 2.6036543 0 3.2438518 2.2506203 3.2438518 4.4970883v10.960701h6.9274074V33.1816948c0-7.9263084-4.6853333-9.29280591-7.5676049-9.29280591-2.8798518 0-4.4682469.9740923-6.2961975 3.33440621v-2.70185178h-6.9471111V44.5905129h6.9471111V33.6848316z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <p>LinkdIn</p>
+                </a>
+              </li>
+            </ul>
+            <div class="share-url">
+              <p>https://www.youtube.com/</p>
+              <button>복사</button>
             </div>
           </div>
         </div>

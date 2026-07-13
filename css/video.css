@@ -17,7 +17,7 @@ body {
   padding: 0 24px;
   margin: 0 auto;
   padding-bottom: 50px;
-  margin-top: 75px;
+  margin-top: 24px;
 }
 
 .video-content {
@@ -71,7 +71,9 @@ body {
   align-items: center;
 }
 
-.video-title-info .video-info-btns button {
+.video-title-info .video-info-btns > button,
+.video-title-info .video-info-btns > a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   height: 36px;
@@ -84,11 +86,67 @@ body {
   transition: color 0.3s;
 }
 
-.video-title-info .video-info-btns button:hover {
+.save-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 2;
+  width: 350px;
+  padding: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.video-title-info .btn-save:hover .save-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.save-dropdown p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #0f0f0f;
+  margin-bottom: 8px;
+}
+
+.save-dropdown span {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+.save-dropdown button {
+  font-size: 1rem;
+  color: var(--text);
+  width: 100%;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 0;
+  background-color: var(--bg-3);
+  margin-top: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.save-dropdown button:hover {
+  background-color: var(--hover);
+}
+
+.video-title-info .video-info-btns > button:hover,
+.video-title-info .video-info-btns > a:hover {
   color: var(--text-2);
 }
 
-.video-title-info .video-info-btns button img {
+.video-title-info .video-info-btns button img,
+.video-title-info .video-info-btns a img {
   margin-right: 8px;
 }
 
@@ -221,6 +279,10 @@ body {
   cursor: pointer;
   padding: 10px 0;
   transition: color 0.3s;
+}
+
+.video-comments .video-sort img {
+  display: inline-block;
 }
 
 .video-comments .video-sort:hover button {
@@ -506,6 +568,84 @@ body {
   color: var(--text-2);
 }
 
+/* 비디오 :: 공유하기 모달 */
+.modal-content.share-modal {
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  max-height: none;
+  height: auto;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #000;
+}
+
+.share-list {
+  display: flex;
+  overflow: hidden;
+  gap: 8px;
+  overflow-x: scroll;
+  margin-top: 8px;
+}
+
+.share-list li {
+  flex: 1;
+  text-align: center;
+}
+
+.share-list li a {
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.share-list li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.share-list .share-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.share-list p {
+  font-size: 0.75rem;
+  color: #0f0f0f;
+  margin-top: 8px;
+}
+
+.share-url {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+.share-url p {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.share-url button {
+  flex: 0 0 65px;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 0 15px;
+  height: 40px;
+  cursor: pointer;
+}
+
 /* 반응형 :: Tablet */
 @media (max-width: 1024px) {
   .video-main {
@@ -526,6 +666,13 @@ body {
 
   .video-title-info .video-info-btns {
     margin-top: 8px;
+  }
+
+  .save-dropdown {
+    width: 250px;
+    right: 0;
+    transform: translate(50%, 0);
+    word-break: keep-all;
   }
 
   /* 비디오 :: 관련 비디오 리스트 */
@@ -567,69 +714,4 @@ body {
   .video-comments .video-sort-list {
     width: 200px;
   }
-}
-
-/*사이드바 동작*/
-.container {
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "header"
-    "main";
-}
-
-.container:has(#CheckBox:checked) {
-  grid-template-columns: 1fr;
-}
-
-.aside {
-  display: block;
-  width: 240px;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 20;
-  margin-bottom: 24px;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-
-.aside h2,
-.aside p {
-  display: block;
-}
-
-.aside-logo {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  gap: 14px;
-}
-
-.container:has(#CheckBox:checked) .aside {
-  transform: translateX(0);
-  width: 240px;
-}
-
-.container:has(#CheckBox:checked) .hamburger-container {
-  visibility: hidden;
-}
-
-.container:has(#CheckBox:checked) .aside h2,
-.container:has(#CheckBox:checked) .aside p {
-  display: block;
-}
-
-.container:has(#CheckBox:checked) .aside-nav-item {
-  justify-content: flex-start;
-  padding: 0 24px;
-  gap: 24px;
-}
-
-.container:has(#CheckBox:checked)::after {
-  content: "";
-  display: block;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 15;
 }

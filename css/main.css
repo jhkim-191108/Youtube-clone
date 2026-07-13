@@ -1,5 +1,5 @@
 /*=======================
-5.메인
+1-1.메인
 =======================*/
 .main {
   grid-area: main;
@@ -9,7 +9,7 @@
 }
 
 /*=======================
-5-1.메인 네비
+1-2.메인 네비
 =======================*/
 .main-nav-wrapper {
   position: sticky;
@@ -84,7 +84,7 @@ li:not(.active):hover {
 }
 
 /*=======================
-5-2.비디오 카드
+2-1.비디오 카드
 =======================*/
 .video-list {
   display: grid;
@@ -97,6 +97,7 @@ li:not(.active):hover {
   padding: 10px;
   width: 100%;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .video-card:hover {
