@@ -593,6 +593,7 @@ body {
   display: block;
   padding: 8px;
   border-radius: 8px;
+  transition: background 0.3s;
 }
 
 .share-list li a:hover {
@@ -636,6 +637,11 @@ body {
   padding: 0 15px;
   height: 40px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.share-url button:hover {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* 반응형 :: Tablet */
