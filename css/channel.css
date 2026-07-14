@@ -413,6 +413,7 @@ nav.channel-toolbar .channel-tab:hover::after {
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 20px;
+  color: var(--text);
   cursor: pointer;
 }
 /* 섹션 :: name | views | days */
