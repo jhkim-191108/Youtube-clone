@@ -314,7 +314,7 @@
 .notification-dropdown {
   display: none;
   position: absolute;
-  top: calc(100vh-10px);
+  top: 42px;
   right: 0;
   min-width: 300px;
   min-height: 500px;
@@ -389,8 +389,8 @@
 .profile-dropdown {
   display: none;
   position: absolute;
-  top: 0;
-  right: 40px;
+  top: 42px;
+  right: 0;
   min-width: 200px;
   background: var(--bg-4);
   border-radius: 12px;
