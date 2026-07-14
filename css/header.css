@@ -608,6 +608,14 @@
   cursor: pointer;
 }
 
+.aside-nav-item a {
+  display: flex;
+  gap: 24px;
+  height: 40px;
+  align-items: center;
+  color: var(--text);
+}
+
 .aside-nav-item p:not(.item-show) {
   text-transform: capitalize;
 }
