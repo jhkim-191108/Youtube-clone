@@ -384,6 +384,7 @@
 }
 .profile-label:hover {
   background: var(--hover);
+  transform: scale(1.1);
 }
 .profile-dropdown {
   display: none;

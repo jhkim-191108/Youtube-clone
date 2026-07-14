@@ -103,6 +103,7 @@ li:not(.active):hover {
 .video-card:hover {
   background: var(--bg-4);
   transition: background 0.3s;
+  transform: scale(1.1);
 }
 
 .video-relative {
