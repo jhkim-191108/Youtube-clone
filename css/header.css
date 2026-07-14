@@ -241,6 +241,7 @@
 2-6.헤더 마이크
 =======================*/
 .header-mic-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,6 +263,31 @@
   background: var(--hover);
 }
 
+.header-mic-container::after {
+  content: "음성으로 검색";
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  background: #3f3f3f;
+  color: var(--text);
+  font-size: 0.8125rem;
+  line-height: 1;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+}
+
+.header-mic-container:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 /*=======================
 2-7.헤더 네비
 =======================*/
@@ -281,6 +307,7 @@
 
 .header-notification {
   border-radius: 50%;
+  display: block;
 }
 
 .header-notification-setting{
@@ -293,28 +320,100 @@
   background: var(--hover);
 }
 
+.notification-btn {
+  display: none;
+}
+
+.notification-container {
+  position: relative;
+}
+
+.notification-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .header-notification:hover {
   background: var(--hover);
   cursor: pointer;
 }
 
-.notification-btn {
-  display: none;
+.notification-label::after {
+  content: "알림";
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  background: #3f3f3f;
+  color: var(--text);
+  font-size: 0.8125rem;
+  line-height: 1;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
 }
-.notification-container {
+
+.notification-label:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.notification-btn:checked ~ .notification-label::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header-icon-tooltip {
   position: relative;
-}
-.notification-label {
   display: flex;
-  /* cursor: pointer; */
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-icon-tooltip .header-profile:hover {
+  background: var(--hover);
+}
+
+.header-icon-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  background: #3f3f3f;
+  color: var(--text);
+  font-size: 0.8125rem;
+  line-height: 1;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+}
+
+.header-icon-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .notification-dropdown {
   display: none;
   position: absolute;
-  top: 42px;
+  top: 44px;
   right: 0;
   min-width: 300px;
   min-height: 500px;

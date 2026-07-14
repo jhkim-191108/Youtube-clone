@@ -98,12 +98,12 @@ li:not(.active):hover {
   width: 100%;
   cursor: pointer;
   border-radius: 10px;
+  transition: background 0.3s, scale 0.3s;
 }
 
 .video-card:hover {
   background: var(--bg-4);
-  transition: background 0.3s;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .video-relative {
