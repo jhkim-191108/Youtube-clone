@@ -335,9 +335,19 @@ nav.channel-toolbar .channel-tab:hover::after {
 .playlist-title {
   font-size: 1rem;
   font-weight: 500;
-  gap: 1rem;
+  gap: 16px;
+  margin: 0;
+  line-height: 1;
 }
 .play-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  
   color: var(--text-2);
   font-size: 1rem;
   font-weight: 700;
@@ -681,4 +691,9 @@ nav.channel-toolbar::-webkit-scrollbar,
     grid-template-columns: 1fr;
     row-gap: 24px;
   }
+}
+
+/* VIDEOS 탭의 제목 위 구분선 제거 */
+.videos-content .playlist-header::before {
+  display: none;
 }
