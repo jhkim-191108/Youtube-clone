@@ -225,13 +225,12 @@
 
 .mobile-search-label {
   display: none;
+  border-radius: 50%;
 }
 
 .mobile-search-label img {
-  width: 30px;
-  height: 30px;
+  padding: 7px;
   cursor: pointer;
-  border-radius: 50%;
 }
 
 .mobile-search-label:hover {
@@ -277,16 +276,27 @@
   align-items: center;
   height: 100%;
   margin-right: 30px;
+  
 }
 
 .header-notification {
+  border-radius: 50%;
+}
+
+.header-notification-setting{
   cursor: pointer;
   border-radius: 50%;
-  padding: 3px;
+  padding: 5px;
 }
+
+.header-notification-setting:hover{
+  background: var(--hover);
+}
+
 
 .header-notification:hover {
   background: var(--hover);
+  cursor: pointer;
 }
 
 .notification-btn {
@@ -297,7 +307,7 @@
 }
 .notification-label {
   display: flex;
-  cursor: pointer;
+  /* cursor: pointer; */
   border-radius: 50%;
 }
 
@@ -305,12 +315,11 @@
   display: none;
   position: absolute;
   top: calc(100vh-10px);
-  right: 0px;
+  right: 0;
   min-width: 300px;
   min-height: 500px;
   background: var(--bg-4);
   border-radius: 12px;
-  padding: 8px 0;
   z-index: 1000;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
@@ -319,9 +328,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-right: 15px;
+  padding: 0 15px;
   font-size: 0.875rem;
   color: var(--text);
+  height: 50px;
+  cursor: auto;
 }
 .notification-area {
   display: flex;
@@ -335,7 +346,6 @@
 .notification-area p {
   color: var(--text);
   font-size: 0.875rem;
-  padding: 10px 20px;
 }
 
 .notification-dropdown-area {
@@ -349,15 +359,17 @@
 .notification-btn:checked ~ .notification-dropdown {
   display: block;
 }
-/* -------------------------- */
+
 .header-profile {
   cursor: pointer;
   border-radius: 50%;
 }
 
 .header-profile:hover {
-  background: gray;
+  background: var(--hover);
 }
+
+
 
 .profile-btn {
   display: none;
@@ -372,6 +384,7 @@
 }
 .profile-label:hover {
   background: var(--hover);
+  transform: scale(1.1);
 }
 .profile-dropdown {
   display: none;
@@ -388,9 +401,10 @@
 .profile-dropdown a {
   display: flex;
   align-items: center;
-  padding: 10px 16px;
+  padding: 15px 16px;
   font-size: 0.875rem;
   color: var(--text);
+  gap: 12px;
 }
 .profile-dropdown-area {
   border-bottom: 1px solid var(--hover);
@@ -402,6 +416,19 @@
 .profile-dropdown a:hover {
   background: var(--hover);
 }
+
+.header-profile-name a{
+  cursor: auto;
+}
+
+.header-profile-name a:hover{
+  background: inherit;
+}
+
+.header-profile-img{
+  cursor: auto;
+}
+
 .profile-btn:checked ~ .profile-dropdown {
   display: block;
 }
@@ -703,7 +730,6 @@
   .mobile-search-label {
     display: block;
   }
-
   #MobileSearch:checked ~ .header-nav {
     display: none;
   }

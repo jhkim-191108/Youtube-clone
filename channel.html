@@ -75,19 +75,20 @@
             <!-- 헤더-오른쪽-네비 -->
             <img src="./images/main/btn-video.png" alt="비디오버튼" class="header-profile header-play" />
             <img src="./images/main/btn-apps.png" alt="앱버튼" class="header-profile" />
+
             <div class="notification-container">
               <input type="checkbox" id="NotificationBtn" class="notification-btn" />
               <label for="NotificationBtn" class="notification-label">
-                <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-notification"/>
+                <img src="./images/main/btn-notifications.png" alt="알림버튼" class="header-notification" />
               </label>
               <div class="notification-dropdown">
                 <div class="notification-dropdown-area">
                   <a href="#">
                     <p>알림</p>
-                    <img src="./images/main/btn-settings.png" alt="알림 버튼" class = "header-notification">
+                    <img src="./images/main/btn-settings.png" alt="알림 버튼" class="header-notification" />
                   </a>
                 </div>
-                <div class = "notification-area">
+                <div class="notification-area">
                   <h2>여기에 알림이 표시 됩니다.</h2>
                 </div>
               </div>
@@ -103,7 +104,6 @@
                     <img src="./images/main/icon-User-Avatar-1.png" alt="프로필" class="header-profile" />
                     <p>Scarlett Johansson</p>
                   </a>
-
                 </div>
                 <div class="profile-dropdown-area">
                   <a href="#">Google 계정</a>
@@ -167,13 +167,15 @@
             <li><a href="#">COMMUNITY</a></li>
             <li><a href="#">CHANNELS</a></li>
             <li><a href="#">ABOUT</a></li>
+            <li class="tab-search">
+              <button class="channel-search-btn">
+                <!-- 돋보기 이미지 -->
+                <img src="./images/img/search.png" alt="검색" />
+              </button>
+            </li>
           </ul>
-          <!--  네이게이션바 안에 있는 버튼 (돋보기 , 화살표)  -->
+          <!--  네이게이션바 안에 있는 버튼 (화살표)  -->
           <div class="channel-actions">
-            <button class="channel-search-btn">
-              <!-- 돋보기 이미지 -->
-              <img src="./images/img/search.png" alt="검색" />
-            </button>
             <button class="channel-arrow-btn">
               <!-- 오른쪽 화살표 이미지 -->
               <img src="./images/img/chevron-right.png" alt="다음" />
@@ -183,421 +185,385 @@
 
         <!-- HOME에서 보여줄 기존 내용 -->
         <div class="home-content">
+          <!-- ===================== 채널 :: 왼쪽 유튜브 영상 ===================== -->
+          <section class="small-video">
+            <div class="player">
+              <iframe class="youtube-player" src="https://www.youtube.com/embed/jqlDfEeY0co" title="Blind Woodturner: Turning passion into fine art" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
+            </div>
+            <!-- 채널 :: 오른쪽 | 영상 설명 -->
+            <div class="video-description">
+              <h2 class="video-title">Blind Woodturner: Turning passion into fine art</h2>
+              <p class="video-time">576,969 views · 3 weeks ago</p>
+              <p class="video-desc">
+                Chris Fisher, also known as the Blind Woodturner, learned his<br />
+                craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator<br />
+                himself, sells his products worldwide, and does<br />
+                demonstrations all around the country.
+              </p>
+            </div>
+          </section>
 
-        <!-- ===================== 채널 :: 왼쪽 유튜브 영상 ===================== -->
-        <section class="small-video">
-          <div class="player">
-            <iframe class="youtube-player" src="https://www.youtube.com/embed/jqlDfEeY0co" title="Blind Woodturner: Turning passion into fine art" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
-          </div>
-          <!-- 채널 :: 오른쪽 | 영상 설명 -->
-          <div class="video-description">
-            <h2 class="video-title">Blind Woodturner: Turning passion into fine art</h2>
-            <p class="video-time">576,969 views · 3 weeks ago</p>
-            <p class="video-desc">
-              Chris Fisher, also known as the Blind Woodturner, learned his<br />
-              craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator<br />
-              himself, sells his products worldwide, and does<br />
-              demonstrations all around the country.
-            </p>
-          </div>
+          <!-- ===================== 영상 섹션 1 ===================== -->
+          <section class="playlist">
+            <!-- 섹션 1 :: 제목 -->
+            <div class="playlist-header">
+              <h2 class="playlist-title">Search On '21</h2>
+              <!-- PLAY ALL -->
+              <button type="button" class="play-all-btn">▶ &nbsp;&nbsp;&nbsp;PLAY ALL</button>
+            </div>
+            <!-- 섹션 1 :: 영상 카드 목록 -->
+            <div class="playlist-content">
+              <!-- 섹션 1 :: 영상 카드 -->
+              <!-----------------------------------< 영상 01 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 02 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 03 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 04 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 05 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+            </div>
+          </section>
+          <section class="playlist">
+            <!-- 섹션 1 :: 제목 -->
+            <div class="playlist-header">
+              <h2 class="playlist-title">Search On '21</h2>
+              <!-- PLAY ALL -->
+              <button type="button" class="play-all-btn">▶ &nbsp;&nbsp;&nbsp;PLAY ALL</button>
+            </div>
+            <!-- 섹션 1 :: 영상 카드 목록 -->
+            <div class="playlist-content">
+              <!-- 섹션 1 :: 영상 카드 -->
+              <!-----------------------------------< 영상 01 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 02 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 03 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 04 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 05 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+            </div>
+          </section>
 
+          <!-- ===================== 영상 섹션 2 ===================== -->
+          <section class="playlist">
+            <!-- 섹션 2 ::  제목 -->
+            <div class="playlist-header">
+              <h2 class="playlist-title">Search On '21</h2>
+              <!-- PLAY ALL -->
+              <button type="button" class="play-all-btn">▶&nbsp;&nbsp;&nbsp;PLAY ALL</button>
+            </div>
+            <!-- 섹션 2 :: 영상 카드 목록 -->
+            <div class="playlist-content">
+              <!-- 섹션 2 :: 영상 카드 -->
+              <!-----------------------------------< 영상 01 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 02 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 03 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 04 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-----------------------------------< 영상 05 >---------------------------------->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+            </div>
+          </section>
+        </div>
 
-        </section>
+        <!-- VIDEOS 선택 시 표시할 내용 -->
+        <div class="videos-content">
+          <section class="playlist">
+            <div class="playlist-header">
+              <h2 class="playlist-title">Videos</h2>
+              <button type="button" class="play-all-btn">▶&nbsp;&nbsp;PLAY ALL</button>
+            </div>
 
-        <!-- ===================== 영상 섹션 1 ===================== -->
-        <section class="playlist">
-          <!-- 섹션 1 :: 제목 -->
-          <div class="playlist-header">
-            <h2 class="playlist-title">Search On '21</h2>
-            <!-- PLAY ALL -->
-            <button type="button" class="play-all-btn">▶ &nbsp;&nbsp;&nbsp;PLAY ALL</button>
-          </div>
-          <!-- 섹션 1 :: 영상 카드 목록 -->
-          <div class="playlist-content">
-            <!-- 섹션 1 :: 영상 카드 -->
-            <!-----------------------------------< 영상 01 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 02 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 03 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 04 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 05 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-          </div>
-        </section>
-        <section class="playlist">
-          <!-- 섹션 1 :: 제목 -->
-          <div class="playlist-header">
-            <h2 class="playlist-title">Search On '21</h2>
-            <!-- PLAY ALL -->
-            <button type="button" class="play-all-btn">▶ &nbsp;&nbsp;&nbsp;PLAY ALL</button>
-          </div>
-          <!-- 섹션 1 :: 영상 카드 목록 -->
-          <div class="playlist-content">
-            <!-- 섹션 1 :: 영상 카드 -->
-            <!-----------------------------------< 영상 01 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 02 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 03 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 04 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 05 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-          </div>
-        </section>
+            <div class="playlist-content">
+              <!-- 비디오 카드 넣는 위치 -->
 
-        <!-- ===================== 영상 섹션 2 ===================== -->
-        <section class="playlist">
-          <!-- 섹션 2 ::  제목 -->
-          <div class="playlist-header">
-            <h2 class="playlist-title">Search On '21</h2>
-            <!-- PLAY ALL -->
-            <button type="button" class="play-all-btn">▶&nbsp;&nbsp;&nbsp;PLAY ALL</button>
-          </div>
-          <!-- 섹션 2 :: 영상 카드 목록 -->
-          <div class="playlist-content">
-            <!-- 섹션 2 :: 영상 카드 -->
-            <!-----------------------------------< 영상 01 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 02 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 03 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 04 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-----------------------------------< 영상 05 >---------------------------------->
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-          </div>
-        </section>
+              <!-- ------------------- 비 디 오 섹 션 0 1 --------------------- -->
 
-      </div>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-      <!-- VIDEOS 선택 시 표시할 내용 -->
-      <div class="videos-content">
-        <section class="playlist">
-          <div class="playlist-header">
-            <h2 class="playlist-title">Videos</h2>
-            <button type="button" class="play-all-btn">
-              ▶&nbsp;&nbsp;PLAY ALL
-            </button>
-          </div>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-          <div class="playlist-content">
-            <!-- 비디오 카드 넣는 위치 -->
-            
-            <!-- ------------------- 비 디 오 섹 션 0 1 --------------------- -->
-            
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <!-- ------------------- 비 디 오 섹 션 0 2 --------------------- -->
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <!-- ------------------- 비 디 오 섹 션 0 2 --------------------- -->
-          
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+              <!-- ------------------- 비 디 오 섹 션 0 3 --------------------- -->
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-            <!-- ------------------- 비 디 오 섹 션 0 3 --------------------- -->
-          <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/Netflix-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/youtube-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/twitter-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/tictok-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
+              <article class="video-card">
+                <div class="video-relative">
+                  <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
+                  <span class="play-time">23:45</span>
+                </div>
+                <h3 class="video-card-title">Lorem ipsum dolor sit amet, consecte...</h3>
+                <p class="video-channel">Marcus Levin</p>
+                <p class="video-meta">329K views · 1 month ago</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
 
-            <article class="video-card">
-              <div class="video-relative">
-                <img src="./images/img/instagram-img.png" alt="영상 썸네일" />
-                <span class="play-time">23:45</span>
-              </div>
-              <h3 class="video-card-title">
-                Lorem ipsum dolor sit amet, consecte...
-              </h3>
-              <p class="video-channel">Marcus Levin</p>
-              <p class="video-meta">329K views · 1 month ago</p>
-            </article>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <aside class="aside">
+      <aside class="aside">
         <div class="aside-logo">
           <label for="CheckBox" class="hamburger-label">
             <img src="./images/main/icon-hamburger.png" alt="" />
