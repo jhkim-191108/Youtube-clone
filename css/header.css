@@ -91,7 +91,6 @@
   transition: max-width 0.3s ease;
 }
 
-
 .search-container:focus-within {
   max-width: 860px;
 }
@@ -110,7 +109,6 @@
   outline: 0.05px solid var(--hover);
 }
 
-
 .search-focus-icon {
   position: absolute;
   left: 12px;
@@ -120,8 +118,10 @@
   height: 24px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  pointer-events:none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  pointer-events: none;
 }
 
 .header-search input {
@@ -133,6 +133,7 @@
   height: 100%;
   padding: 8px;
   background: #121212;
+  border-radius: 15px;
   transition: padding 0.3s ease;
 }
 
@@ -311,7 +312,9 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 1001;
 }
 
@@ -334,7 +337,6 @@
   align-items: center;
   height: 100%;
   margin-right: 30px;
-  
 }
 
 .header-notification {
@@ -342,13 +344,13 @@
   display: block;
 }
 
-.header-notification-setting{
+.header-notification-setting {
   cursor: pointer;
   border-radius: 50%;
   padding: 5px;
 }
 
-.header-notification-setting:hover{
+.header-notification-setting:hover {
   background: var(--hover);
 }
 
@@ -390,7 +392,9 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 1001;
 }
 
@@ -433,7 +437,9 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 1001;
 }
 
@@ -500,8 +506,6 @@
   background: var(--hover);
 }
 
-
-
 .profile-btn {
   display: none;
 }
@@ -548,15 +552,15 @@
   background: var(--hover);
 }
 
-.header-profile-name a{
+.header-profile-name a {
   cursor: auto;
 }
 
-.header-profile-name a:hover{
+.header-profile-name a:hover {
   background: inherit;
 }
 
-.header-profile-img{
+.header-profile-img {
   cursor: auto;
 }
 
@@ -810,11 +814,10 @@
 4-2.반응형(모바일)
 =======================*/
 @media (max-width: 768px) {
-
-  .header-nav{
+  .header-nav {
     width: auto;
   }
-  .header-nav-container{
+  .header-nav-container {
     gap: 12px;
     margin-right: 15px;
   }
