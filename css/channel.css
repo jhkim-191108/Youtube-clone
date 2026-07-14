@@ -1,375 +1,700 @@
-:root {
-  --bg: #212121;
-  --bg-2: #000000;
-  --bg-3: #181818;
-  --bg-4: #303030;
-  --text: #ffffff;
-  --text-2: #aaaaaa;
-  --accent: #cc0000;
-}
-/* 네이게이션 바에 사용할 구글 아이콘 적용 */
-.material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    display: inline-block;
-    line-height: 1;
-}
-
-html {
-    font-size: 16px; /* 1rem = 16px 기준 고정 */
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 /* ===================== 기본 설정 ===================== */
-
 body {
-    margin: 0;
-
-    background-color: var(--bg-2);
-    color: var(--text);
-    font-family: Roboto, sans-serif; 
+  background-color: var(--bg-2);
+  color: var(--text);
 }
 
 button {
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-img {
-    display: block;
-
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 /* ===================== 전체 채널 ===================== */
 .channel {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background-color: #000;
+  --content-padding: clamp(24px, 3.2vw, 64px); /* 화면에 따라 콘텐츠 여백 조절 */
+  grid-area: main; /* 부모 Grid의 메인 영역에 배치 */
+  width: 100%; /* 메인 영역의 가로폭을 전부 사용 */
+  max-width: none; /* 기존 1200px 최대 너비 제한 해제 */
+  min-width: 0; /* 내부 콘텐츠로 인한 가로 넘침 방지 */
+  margin: 0; /* 중복된 바깥 여백 제거 */
+  padding: 0; /* 배너를 좌우 끝까지 표시 */
+  box-sizing: border-box; /* 패딩과 테두리를 너비 안에 포함 */
+  background-color: #000; /* 채널 영역 배경색 */
 }
 
 /* ===================== 채널 배너 ===================== */
 
 .channel-banner {
-    width: 100%;
+  width: 100%;
 }
 
 .channel-banner img {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 /* ===================== 채널 정보 ===================== */
-
-/* 프로필 + 구독 버튼 영역 */
+/* ===================== 프로필 + 구독 버튼 전체 영역 ===================== */
 .channel-cover {
-    width: 100%;
-    height: 6.6rem;
-    padding: 0 4.0625rem;
-    padding-top: 0.3rem;
-  
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 100%;
+  height: 106px;
+  padding: 0 var(--content-padding);
 
-    background-color: var(--bg-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  background-color: var(--bg);
+  position: relative;
 }
 
 .channel-title {
-    
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .channel-title img {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    margin-top: 1rem;
-    opacity: 65%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 16px;
+  opacity: 65%;
+  cursor: pointer;
 }
 
 .channel-name {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    font-weight: 400;
+  margin-top: 16px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
 }
 /* 채널 :: 구독자수 */
 .channel-subscribers {
-    margin-top: 0.3125rem;
-    font-size: 0.875rem;
-    color: var(--text-2);
+  margin-top: 5px;
+  font-size: 0.875rem;
+  color: var(--text-2);
 }
-
-
-/* ===================== 구독 버튼 ===================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===================== 채널 :: 네이게이션바 ===================== */
 
 /*  네비게이션바 :: 메뉴 전체 영역  */
 nav.channel-toolbar {
-    height: 3rem;
-    padding: 0 0.4375rem;
-  
-    background-color: var(--bg-3);
-    border-bottom: 0.0625rem solid var(--bg-4); 
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--content-padding);
+  box-sizing: border-box;
 
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding-left: 4.0625rem;
+  background-color: var(--bg);
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--bg-4);
 
-    /* 스크롤 시 화면 상단에 고정 */
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 56px;
+  z-index: 20;
 }
-/* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
-nav.channel-toolbar ul {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    gap: 5rem;
 
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.channel-actions {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding-right: calc(var(--content-padding) + 18px);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg);
+  z-index: 1;
+}
+
+/* 네비게이션바 :: 돋보기, 화살표 */
+.channel-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 100%;
+
+  border: none; /* 평소에는 안 보임 */
+  border-radius: 4px;
+  cursor: pointer;
+}
+.channel-arrow-btn {
+  transform: none; /* 살짝 왼쪽 */
+}
+nav.channel-toolbar ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 0 1 calc(100% - 85px);
+  overflow-x: auto;
+}
+
+nav.channel-toolbar ul::-webkit-scrollbar {
+  height: 4px;
+}
+
+nav.channel-toolbar ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+nav.channel-toolbar ul::-webkit-scrollbar-thumb {
+  background: var(--hover);
+  border-radius: 10px;
+}
+
+nav.channel-toolbar ul::-webkit-scrollbar-thumb:hover {
+  background: #909090;
 }
 
 nav.channel-toolbar li {
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-
-    width: auto;
+  height: 100%; /* 네비바 높이 사용 */
+  display: flex; /* 메뉴 내부 정렬 */
+  flex: 0 0 auto; /* 반응형에서 메뉴 너비 유지 */
 }
 
-nav.channel-toolbar a {
-    padding: 0 0.5rem;
-    width: 100%;
-    height: 100%;
+/* 메뉴 링크와 HOME/VIDEOS 탭의 공통 모양 */
+nav.channel-toolbar a,
+nav.channel-toolbar .channel-tab {
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    color: var(--text-2);
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-decoration: none;
+  color: var(--text-2);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap; /* 메뉴 줄바꿈 방지 */
+  cursor: pointer; /* HOME/VIDEOS에도 손가락 표시 */
 
-    position: relative;
+  position: relative;
+  transition: opacity 0.01s ease; /* 투명도가 부드럽게 바뀜 */
 }
-nav.channel-toolbar a:hover {
-    color: var(--text); 
+nav.channel-toolbar a:hover,
+nav.channel-toolbar .channel-tab:hover {
+  color: var(--text);
+  opacity: 1; /* 마우스 올리면 선명하게 */
 }
 /* 현재 선택된 메뉴의 글자색 유지 */
 nav.channel-toolbar a.active {
-    color: var(--text);
+  color: var(--text);
+  opacity: 1; /* 선택된 메뉴는 항상 선명하게 */
 }
 
-/* 네이게이션바 :: < 네이게이션 밑 언더바 > */
-/* 마우스를 올렸을 때 + 현재 선택된 메뉴의 밑줄 */
-nav.channel-toolbar a:hover::after
+/* 네비게이션바 :: HOME, VIDEOS, PLAYLISTS, COMMUNITY, CHANNELS, ABOUT */
+
+/* HOME과 VIDEOS는 label 태그 */
+nav.channel-toolbar li .channel-tab,
+nav.channel-toolbar li a {
+  padding: 0 32px;
+}
+
+nav.channel-toolbar li.tab-search {
+  padding: 0 24px;
+}
+
+nav.channel-toolbar li.tab-search button {
+  padding: 0 11px;
+  cursor: pointer;
+}
+
+/* 모든 메뉴 밑줄 */
+nav.channel-toolbar a::after,
+nav.channel-toolbar .channel-tab::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background-color: var(--text-2);
+  opacity: 0; /* 기본 상태에서는 숨김 */
+  transition: opacity 0.8s ease; /* 밑줄이 천천히 나타남 */
+}
+
+/* 일반 메뉴 hover 및 active 밑줄 */
+nav.channel-toolbar a:hover::after,
 nav.channel-toolbar a.active::after {
-    content: "";
-    position: absolute;
-
-    left: 50%;
-    bottom: -0.1rem;
-
-    width: 150%; 
-    height: 0.1875rem;
-
-    border-bottom: 0.1rem solid var(--text-2);
-    transform: translateX(-50%);
+  opacity: 1;
 }
 
-
-/* 네비게이션바 :: 돋보기, 화살표 */
-.channel-search-btn {
-    width: 3.75rem;
-    height: 3rem;
-    margin-left: 3rem;
-
-    color: var(--text-2);
-    font-size: 1.125rem;
+/* HOME과 VIDEOS hover 밑줄 */
+nav.channel-toolbar .channel-tab:hover::after {
+  opacity: 1;
 }
-.channel-arrow-btn {
-    margin-left: auto;
-    margin-right: 5rem;
 
-    width: 3rem;
-    height: 3rem;
+/* 선택된 HOME 밑줄 */
+#tab-home:checked ~ .channel-toolbar label[for="tab-home"]::after {
+  opacity: 1;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* 선택된 VIDEOS 밑줄 */
+#tab-videos:checked ~ .channel-toolbar label[for="tab-videos"]::after {
+  opacity: 1;
+}
 
-    color: var(--text-2);
+/* 선택된 HOME 또는 VIDEOS 글자색 */
+#tab-home:checked ~ .channel-toolbar label[for="tab-home"],
+#tab-videos:checked ~ .channel-toolbar label[for="tab-videos"] {
+  color: var(--text);
+  opacity: 1;
 }
-/*  네비게이션바 :: 화살표만 크게  */
-.channel-arrow-btn .material-symbols-outlined {
-    font-size: 2.3rem;      
-    color: var(--text-2);
-    margin-bottom: 0.01rem;
-    transform: translateY(0.125rem); 
-}
-.channel-search-btn .material-symbols-outlined {
-    transform: translateY(0.125rem); 
-}
+
 /* ===================== 채널 :: 왼쪽 유튜브 영상 ===================== */
 .small-video {
-    display: flex;
-    gap: 2.5rem;
-    padding: 1rem 4rem;
+  display: flex;
+  gap: 40px;
 
-    background-color: var(--bg-2);
+  padding-top: 8px; /* 위 간격 */
+  padding-bottom: 8px; /* 아래 간격 */
+  padding-left: var(--content-padding); /* 좌우 기존 유지 */
+  padding-right: var(--content-padding);
 
-    margin-top: 1.5rem;
+  background-color: var(--bg-2);
+  margin-top: 12px; /* 네비게이션바와 영상 사이 간격 */
 }
 /* 채널 :: 유튜브 영상 박스 */
 .player {
-    width: 35%;
-    aspect-ratio: 16 / 9;
-    flex-shrink: 0;
+  width: 42%; /* 고정값 없이 기존보다 크게 */
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
 }
 /* 채널 :: iframe 실제 유튜브 영상 */
 .youtube-player {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* 채널 :: 오른쪽 | 영상 설명 */
 .video-description {
-    flex: 1;
-    width: 25rem;
-    height: 14.875rem;
-    padding-bottom: 5rem;
-
-    flex: none;
-    line-height: 1.6rem;
-
-    
+  width: 400px;
+  height: auto; /* 기존 고정 높이 제거 */
+  padding-bottom: 0; /* 아래 여백 제거 */
+  flex: none;
+  line-height: 25.6px;
 }
 .video-title {
-    margin: 0 0 0.875rem;
-    
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.375rem;
+  margin: 0 0 14px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 22px;
+
+  cursor: pointer;
 }
 
 .video-time {
-    margin: 0 0 0.875rem;
-    color: var(--text-2);
+  margin: 0 0 14px;
+  color: var(--text-2);
 }
 
 .video-desc {
-    margin: 0;
+  margin: 0;
 
-    font-size: 0.825rem;
-    line-height: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 20px;
 }
 
-/* ===================== 섹션 :: 1 , 2 공 통 ===================== */
-
-.playlist { 
-    padding: 0 4rem 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-    
+/* ===================== 섹션 :: 1 , 2 , 3 공 통 ===================== */
+.playlist {
+  width: 100%;
+  margin: 16px 0;
+  padding: 0 var(--content-padding) 16px;
+  box-sizing: border-box;
 }
 
 .playlist-header {
-    position: relative;
-
-    padding-top: 2rem;
-    margin-bottom: 2.5rem;
-    
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    
+  position: relative;
+  padding-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 /* ===== 섹션 :: 헤더 위에 선 추가 ===== */
 .playlist-header::before {
-    content: "";
-    position: absolute; 
+  content: "";
+  position: absolute;
 
-    top: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    height: 0.1rem;
-    background: var(--bg-4);
+  height: 1.6px;
+  background: var(--bg-4);
 }
 .playlist-title {
-    font-size: 1rem;
-    font-weight: 500;
-    gap: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 16px;
+  margin: 0;
+  line-height: 1;
 }
 .play-all-btn {
-    color: var(--text-2);
-    font-size: 1rem;
-    font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  color: var(--text-2);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.3s ease; /* 색이 부드럽게 바뀜 */
+}
+.play-all-btn:hover {
+  color: var(--text); /* 마우스를 올리면 흰색 */
 }
 /* 섹션 :: 카드 목록 */
 .playlist-content {
-    display: flex;
-    gap: 0.6rem;
+  display: flex; /* 카드를 가로로 배치 */
+  width: 100%; /* 카드 목록 너비 통일 */
+  gap: 10px; /* 카드 사이 간격 */
 }
 /* 섹션 :: 카드 */
 .video-card {
-    width: calc((100% - 2.4rem) / 5);       
-    flex-shrink: 0;
-    
+  width: calc((100% - 40px) / 5);
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 1px;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.video-card:hover {
+  background: var(--bg-4);
+  box-shadow: 0 0 0 6px var(--bg-4);
+}
+
+.video-relative {
+  position: relative;
+  margin-bottom: 12px;
+}
+
 .video-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.1rem;
-    margin-bottom: 0.75rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1.6px;
+  margin-bottom: 0;
+  cursor: pointer;
+  display: block;
 }
+
+.play-time {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
 .video-card-title {
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 700;
-    line-height: 1.25rem;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--text);
+  cursor: pointer;
 }
 /* 섹션 :: name | views | days */
-.video-meta {
-    font-size: 0.75rem;
-    color: var(--text-2);
+.video-meta,
+.video-channel {
+  font-size: 0.75rem;
+  color: var(--text-2);
 }
 
 .video-channel {
-    margin-bottom: 0.25rem;
+  margin-bottom: 4px;
+}
 
-    font-size: 0.75rem;
-    color: var(--text-2);
+/* 포인터 올렸을때 흰색으로 */
+.channel-toolbar .channel-search-btn img,
+.channel-toolbar .channel-arrow-btn img {
+  transition: filter 1s ease; /* 부드럽게 색 변화 */
+}
+
+.channel-toolbar .channel-search-btn:hover img,
+.channel-toolbar .channel-arrow-btn:hover img {
+  filter: brightness(0) invert(1); /* 아이콘만 흰색 */
+}
+
+/* ===================== 구독 버튼 ===================== */
+.btn-subscribes {
+  position: absolute;
+
+  top: 38px; /* 회색 배경 위쪽에서 38px */
+  inset-inline-end: calc(var(--content-padding) + 25px);
+
+  width: 116px;
+  height: 36px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--accent);
+  border-radius: 2px;
+
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.btn-subscribes::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.btn-subscribes:hover::before {
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+}
+
+.btn-subscribes span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.875rem;
+  color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn-subscribes:hover span {
+  color: var(--accent);
+}
+
+/* ===================== 태블릿 반응형 ===================== */
+/* 1024px 이하 화면에서 적용 */
+@media (max-width: 1024px) {
+  .channel {
+    width: 100%; /* 태블릿에서도 전체 너비 사용 */
+  }
+
+  nav.channel-toolbar {
+    width: 100%; /* 화면 가로폭 사용 */
+    padding-inline: 24px; /* 태블릿 좌우 여백 */
+    overflow: hidden; /* nav 자체의 넘침은 숨김 */
+    flex-wrap: nowrap; /* 메뉴가 다음 줄로 내려가지 않게 설정 */
+  }
+
+  .channel-cover,
+  nav.channel-toolbar {
+    padding-inline: 24px;
+  }
+
+  .channel-arrow-btn {
+    transform: none;
+  }
+
+  .small-video {
+    gap: 24px;
+    padding: 16px 24px;
+  }
+
+  .player {
+    width: 55%;
+  }
+
+  .video-description {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .video-desc {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .playlist {
+    padding: 0 24px 24px;
+  }
+
+  .playlist-content {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .video-card {
+    width: calc((100% - 12px) / 2);
+  }
+}
+/* ===================== 모바일 반응형 ===================== */
+/* 767px 이하 화면에서 적용 */
+@media (max-width: 767px) {
+  .channel-cover {
+    height: auto;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .channel-title {
+    gap: 12px;
+  }
+
+  .channel-title img {
+    width: 56px;
+    height: 56px;
+    margin-top: 0;
+  }
+
+  .channel-name {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+
+  .btn-subscribes {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+  }
+
+  .btn-subscribes:hover::before {
+    width: 800px;
+    height: 800px;
+  }
+
+  nav.channel-toolbar {
+    padding: 0; /* 모바일 좌우 여백 제거 */
+  }
+
+  nav.channel-toolbar ul {
+    flex: 0 1 calc(100% - 56px);
+  }
+
+  .channel-actions {
+    padding-right: 0;
+  }
+
+  .small-video {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .player,
+  .video-card {
+    width: 100%;
+  }
+
+  .video-desc br {
+    display: none;
+  }
+
+  .playlist {
+    padding: 0 16px 24px;
+  }
+
+  .playlist-header {
+    padding-top: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+/* 가로 스크롤은 가능하지만 스크롤바는 숨김 */
+nav.channel-toolbar,
+.playlist-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+
+nav.channel-toolbar::-webkit-scrollbar,
+.playlist-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* ====================================== T A P ===================================== */
+
+/* ======================== HOME / VIDEOS 탭 전환 ======================== */
+
+/* 라디오 버튼은 화면에서 숨김 */
+.tab-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HOME와 VIDEOS 콘텐츠는 기본적으로 모두 숨김 */
+.home-content,
+.videos-content {
+  display: none;
+}
+
+/* HOME 탭이 선택되면 기존 채널 콘텐츠 표시 */
+#tab-home:checked ~ .home-content {
+  display: block;
+}
+
+/* HOME 탭에서는 새로 추가한 VIDEOS 콘텐츠 숨김 */
+#tab-home:checked ~ .videos-content {
+  display: none;
+}
+/* VIDEOS 탭이 선택되면 새로 추가한 비디오 콘텐츠 표시 */
+#tab-videos:checked ~ .videos-content {
+  display: block;
+}
+
+/* ====================================== VIDEOS 탭: PC에서 5개씩 3줄 */
+.videos-content .playlist-content {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* 가로 간격 10px, 세로 간격 32px */
+  column-gap: 10px;
+  row-gap: 32px;
+}
+.videos-content .video-card {
+  width: 100%;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .videos-content .playlist-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .videos-content .playlist-content {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+}
+
+/* VIDEOS 탭의 제목 위 구분선 제거 */
+.videos-content .playlist-header::before {
+  display: none;
 }
