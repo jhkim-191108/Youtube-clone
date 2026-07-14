@@ -98,7 +98,9 @@ li:not(.active):hover {
   width: 100%;
   cursor: pointer;
   border-radius: 10px;
-  transition: background 0.3s, scale 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s;
 }
 
 .video-card:hover {
@@ -171,4 +173,3 @@ li:not(.active):hover {
 .video-card-content img {
   border-radius: 50%;
 }
-
