@@ -88,6 +88,12 @@
   box-sizing: border-box;
   align-items: center;
   height: 40px;
+  transition: max-width 0.3s ease;
+}
+
+
+.search-container:focus-within {
+  max-width: 860px;
 }
 
 .header-search {
@@ -98,6 +104,25 @@
   border: 1px solid var(--bg-4);
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
+  overflow: hidden;
+}
+
+.header-search:focus-within {
+  outline: 0.05px solid var(--hover);
+}
+
+
+.search-focus-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events:none;
 }
 
 .header-search input {
@@ -109,12 +134,20 @@
   height: 100%;
   padding: 8px;
   background: #121212;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  transition: padding 0.3s ease;
 }
 
-.header-search:focus {
-  outline: 0.05px solid var(--hover);
+.header-search input:focus {
+  outline: none;
+}
+
+.header-search:focus-within .search-focus-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-search:focus-within input {
+  padding-left: 40px;
 }
 
 .header-search-container {
@@ -163,7 +196,7 @@
 /*=======================
 2-4-1.헤더 검색창 히스토리
 =======================*/
-.header-search input:focus ~ .search-history {
+.header-search:focus-within .search-history {
   display: block;
 }
 
@@ -213,7 +246,7 @@
 }
 
 /*=======================
-2-5.헤더 모바일 검색창용
+2-4-2.헤더 모바일 검색창용
 =======================*/
 .mobile-search-container {
   display: none;
