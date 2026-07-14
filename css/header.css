@@ -225,13 +225,12 @@
 
 .mobile-search-label {
   display: none;
+  border-radius: 50%;
 }
 
 .mobile-search-label img {
-  width: 30px;
-  height: 30px;
+  padding: 7px;
   cursor: pointer;
-  border-radius: 50%;
 }
 
 .mobile-search-label:hover {
@@ -277,6 +276,7 @@
   align-items: center;
   height: 100%;
   margin-right: 30px;
+  
 }
 
 .header-notification {
@@ -359,7 +359,7 @@
 .notification-btn:checked ~ .notification-dropdown {
   display: block;
 }
-/* -------------------------- */
+
 .header-profile {
   cursor: pointer;
   border-radius: 50%;
@@ -368,6 +368,8 @@
 .header-profile:hover {
   background: var(--hover);
 }
+
+
 
 .profile-btn {
   display: none;
@@ -727,7 +729,6 @@
   .mobile-search-label {
     display: block;
   }
-
   #MobileSearch:checked ~ .header-nav {
     display: none;
   }
