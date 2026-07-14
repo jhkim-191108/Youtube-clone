@@ -625,21 +625,60 @@ nav.channel-toolbar::-webkit-scrollbar,
 }
 
 /* ====================================== T A P ===================================== */
+
+/* ======================== HOME / VIDEOS 탭 전환 ======================== */
+
+/* 라디오 버튼은 화면에서 숨김 */
 .tab-radio {
-  position: absolute; /* 라디오 버튼을 화면에서 숨김 */
+  position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
+/* HOME와 VIDEOS 콘텐츠는 기본적으로 모두 숨김 */
 .home-content,
 .videos-content {
-  display: none; /* 두 화면을 기본적으로 숨김 */
+  display: none;
 }
 
+/* HOME 탭이 선택되면 기존 채널 콘텐츠 표시 */
 #tab-home:checked ~ .home-content {
-  display: block; /* HOME 선택 시 기존 내용 표시 */
+  display: block;
 }
 
+/* HOME 탭에서는 새로 추가한 VIDEOS 콘텐츠 숨김 */
+#tab-home:checked ~ .videos-content {
+  display: none;
+}
+/* VIDEOS 탭이 선택되면 새로 추가한 비디오 콘텐츠 표시 */
 #tab-videos:checked ~ .videos-content {
-  display: block; /* VIDEOS 선택 시 영상 목록 표시 */
+  display: block;
+}
+
+/* ====================================== VIDEOS 탭: PC에서 5개씩 3줄 */
+.videos-content .playlist-content {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* 가로 간격 10px, 세로 간격 32px */
+  column-gap: 10px;
+  row-gap: 32px;
+}
+.videos-content .video-card {
+  width: 100%;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .videos-content .playlist-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .videos-content .playlist-content {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
 }
