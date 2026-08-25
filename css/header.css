@@ -24,6 +24,8 @@
   grid-area: header;
   width: 100%;
   height: 64px;
+  gap: 8px;
+  min-width: 0;
   z-index: 30;
 }
 
@@ -34,6 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .hamburger-label {
@@ -82,7 +85,9 @@
 =======================*/
 .search-container {
   display: flex;
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
   max-width: 800px;
   padding: 0 32px;
   box-sizing: border-box;
@@ -99,6 +104,7 @@
   position: relative;
   background: #121212;
   width: 100%;
+  min-width: 0;
   height: 100%;
   border: 1px solid var(--bg-4);
   border-top-left-radius: 12px;
@@ -130,6 +136,7 @@
   font-weight: 400;
   border: none;
   width: 100%;
+  min-width: 0;
   height: 100%;
   padding: 8px;
   background: #121212;
@@ -153,6 +160,8 @@
 .header-search-container {
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
   width: 100%;
   height: 100%;
 }
@@ -162,11 +171,10 @@
   justify-content: center;
   align-items: center;
   background-color: var(--bg-4);
+  flex-shrink: 0;
   width: 64px;
-  height: 40px;
-  border: none;
   height: 100%;
-  width: 15%;
+  border: none;
   cursor: pointer;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -327,6 +335,7 @@
 2-7.헤더 네비
 =======================*/
 .header-nav {
+  flex-shrink: 0;
   min-width: 230px;
   height: 40px;
 }
@@ -764,6 +773,18 @@
     gap: 12px;
   }
 
+  .search-container {
+    padding: 0 16px;
+  }
+
+  .header-nav {
+    min-width: 0;
+  }
+
+  .header-nav-container {
+    margin-right: 16px;
+  }
+
   .mic-container {
     margin-left: 10px;
   }
@@ -827,11 +848,33 @@
 =======================*/
 @media (max-width: 768px) {
   .header-nav {
+    min-width: auto;
     width: auto;
   }
   .header-nav-container {
-    gap: 12px;
-    margin-right: 15px;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-right: 6px;
+  }
+
+  .hamburger-label {
+    margin-left: 12px;
+  }
+
+  .notification-dropdown {
+    position: fixed;
+    top: 64px;
+    right: 8px;
+    left: 8px;
+    min-width: 0;
+    width: auto;
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+  }
+
+  .profile-dropdown {
+    right: 0;
+    max-width: calc(100vw - 16px);
   }
 
   .container:not(.page-video) {
@@ -880,6 +923,7 @@
 
   .search-container {
     display: none;
+    padding: 0 8px;
   }
 
   .mobile-search-label {
@@ -895,26 +939,45 @@
 
   #MobileSearch:checked ~ .search-container {
     display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
     width: 100%;
+    max-width: none;
     height: 40px;
     align-items: center;
+    padding: 0 8px;
   }
 
   .back-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 40px;
     height: 40px;
     padding: 0 7px;
-    margin-right: 24px;
-    margin-left: 12px;
+    margin-right: 8px;
+    margin-left: 4px;
     cursor: pointer;
     color: var(--text);
     font-size: 1.5rem;
   }
 
   .header-mic-container {
-    margin-right: 12px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-label {
+    margin-left: 8px;
+  }
+
+  .header-nav-container > .header-profile {
+    display: none;
+  }
+
+  .header-nav-container {
+    margin-right: 8px;
   }
 }
