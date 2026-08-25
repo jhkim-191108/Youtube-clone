@@ -5,9 +5,8 @@ HTML/CSS만으로 데스크탑·태블릿·모바일 반응형 레이아웃을 �
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/)
 
-**[Live Demo](https://jungdahye.github.io/YouTube_First_Class/)** · **[Figma](https://www.figma.com/design/hF0mWmuYpECZ1bclHkTuPb/%EC%83%98%ED%94%8C%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Youtube-%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9?node-id=0-1)**
+**[배포](https://youtube-clone.kro.kr)**
 
 ---
 
@@ -18,6 +17,7 @@ HTML/CSS만으로 데스크탑·태블릿·모바일 반응형 레이아웃을 �
 | 기간 | 2026.07.07 ~ 2026.07.15 |
 | 인원 | 3인 (정다혜, 김내현, 김지훈) |
 | 기술 | HTML5, CSS3 (JavaScript 없이 구현) |
+| 배포 | [https://youtube-clone.kro.kr](https://youtube-clone.kro.kr) |
 | 특징 | 100% 반응형, CSS `:has()` / checkbox hack으로 인터랙션 처리 |
 
 ---
@@ -123,5 +123,4 @@ HTML/CSS만으로 데스크탑·태블릿·모바일 반응형 레이아웃을 �
 
 ## 링크
 
-- [GitHub Pages](https://jungdahye.github.io/YouTube_First_Class/)
-- [Figma 디자인](https://www.figma.com/design/hF0mWmuYpECZ1bclHkTuPb/%EC%83%98%ED%94%8C%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Youtube-%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9?node-id=0-1)
+- **배포**: [https://youtube-clone.kro.kr](https://youtube-clone.kro.kr)
